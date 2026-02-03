@@ -1,5 +1,6 @@
 import MenuBar from "./MenuBar"
 import Screen1 from "./Screen1"
+import Screen2 from "./Screen2"
 import { useState } from "react"
 
 export default function MainContainer() {
