@@ -13,6 +13,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --total: 8; /* How many items to be displayed in a ring on Screen2 */
+  --radius: 150px; /* Circle size */
 }
 
 .container {
@@ -77,4 +80,39 @@ main {
       font-size: 2rem;
     }
   }
+}
+
+
+/* SCREEN 2 */
+.screen-2 {
+  position: relative;
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  margin: auto;
+}
+
+.clone-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  margin: -45px;
+  
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  
+  --angle: calc(360deg / var(--total) * var(--i));
+  
+  transform: 
+    rotate(var(--angle))              /* Rotate to position */
+    translateX(var(--radius))         /* Move away from center */
+    rotate(calc(-1 * var(--angle)));  /* Rotate back */
+    /* Credit: https://medium.com/@mohitphogat/how-to-arrange-elements-in-a-circle-using-just-css-no-javascript-required-1bd35582307f */
 }
