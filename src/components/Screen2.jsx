@@ -1,4 +1,4 @@
-export default function Screen2() {
+export default function Screen2({ setMyJob }) {
 
     const jobOptions = [
         // We have to start with east, not north, because of how the CSS renders the buttons in a circle
@@ -56,7 +56,7 @@ export default function Screen2() {
         <div className="screen-2">
             {jobOptions.map((job, index) => {
                 return (
-                    <button className="clone-button" style={{"--i": index}} key={index}>
+                    <button className="clone-button" style={{"--i": index}} key={index} onClick={() => setMyJob(job)}>
                         {job.location}
                     </button>
                 )
