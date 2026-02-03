@@ -10,10 +10,15 @@ export default function MainContainer() {
         <div className="container">
             <MenuBar />
             <div className="stored-variables">
-                <p>{cardsOrInters}</p>
+                {cardsOrInters && <p>{cardsOrInters}</p>}
             </div>
             <main>
-                <Screen1 setCardsOrInters={setCardsOrInters} />
+                {!cardsOrInters ? (
+                    <Screen1 setCardsOrInters={setCardsOrInters} />
+                ) : (
+                    <Screen2 />
+                )}
+                
             </main>
         </div>
     )
