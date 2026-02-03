@@ -8,7 +8,9 @@ export default function MainContainer() {
     return (
         <div className="container">
             <MenuBar />
-            <p>{cardsOrInters}</p>
+            <div className="stored-variables">
+                <p>{cardsOrInters}</p>
+            </div>
             <main>
                 <Screen1 setCardsOrInters={setCardsOrInters} />
             </main>

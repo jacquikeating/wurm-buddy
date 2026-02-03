@@ -32,9 +32,22 @@ nav {
   background: black;
 }
 
+.stored-variables {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  p {
+    border: 1px solid white;
+    padding: 0.5rem;
+  }
+}
+
 main {
   display: flex;
-  height: calc(100% - 2.1rem);
+  height: calc(100% - 4.6rem);
   width: 100%;
   border-top: 1px solid transparent;
 }
