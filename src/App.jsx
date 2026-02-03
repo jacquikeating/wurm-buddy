@@ -1,12 +1,11 @@
 import { useState } from 'react'
+import MainContainer from './components/MainContainer.jsx'
 import './index.css'
 
 function App() {
 
   return (
-    <>
-      <h1>WurmBuddy</h1>
-    </>
+    <MainContainer />
   )
 }
 
