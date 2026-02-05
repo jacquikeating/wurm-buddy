@@ -1,15 +1,16 @@
 import MenuBar from "./MenuBar"
 import Screen1 from "./Screen1"
 import Screen2 from "./Screen2"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function MainContainer() {
+    const [uptime, setUptime] = useState(true)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
 
     return (
         <div className="container">
-            <MenuBar />
+            <MenuBar uptime={uptime} setUptime={setUptime} />
             <div className="stored-variables">
                 {cardsOrInters && <p>{cardsOrInters}</p>}
                 {myJob && <p>{myJob.mechanic}</p>}
