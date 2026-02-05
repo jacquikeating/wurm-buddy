@@ -17,25 +17,29 @@ export default function Screen2({ setMyJob }) {
         {
             location: "S",
             quadrant: 1,
-            mechanic: "def 1",
+            mechanic: "def",
+            defNum: 1,
             group: 1
         },
         {
             location: "SW",
             quadrant: 2,
-            mechanic: "def 2",
+            mechanic: "def",
+            defNum: 2,
             group: 1
         },
         {
             location: "W",
             quadrant: 3,
-            mechanic: "def 1",
+            mechanic: "def",
+            defNum: 1,
             group: 2
         },
         {
             location: "NW",
             quadrant: 4,
-            mechanic: "def 2",
+            mechanic: "def",
+            defNum: 2,
             group: 2
         },
         {
