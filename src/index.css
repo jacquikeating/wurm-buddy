@@ -1,3 +1,4 @@
+/* GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +26,7 @@
   margin: 2rem;
 }
 
-nav {
+.menu-bar {
   border-bottom: 1px solid white;
   width: calc(400px - 1rem);
   display: flex;
@@ -33,6 +34,12 @@ nav {
   padding: 0 0.5rem;
   height: 2rem;
   background: black;
+
+  .toggle-button {
+    background: transparent;
+    border: none;
+    color: white;
+  }
 }
 
 .stored-variables {
@@ -45,6 +52,7 @@ nav {
   p {
     border: 1px solid white;
     padding: 0.5rem;
+    font-size: 0.9rem;
   }
 }
 
