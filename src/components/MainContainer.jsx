@@ -7,6 +7,7 @@ export default function MainContainer() {
     const [uptime, setUptime] = useState(true)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
+    const [firstMech, setFirstMech] = useState(null)
 
     return (
         <div className="container">
