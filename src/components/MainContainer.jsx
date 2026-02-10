@@ -14,6 +14,37 @@ export default function MainContainer() {
     const [hourglassLocation, setHourglassLocation] = useState(null)
     const [firstMech, setFirstMech] = useState(null)
     const [tower, setTower] = useState(null)
+    useEffect(() => {
+        if (myJob) {
+            let stackLocation = "?"
+            let defLocation = ""
+
+            if (myJob.group == 1) {
+                if (uptime) {
+                    stackLocation = "E"
+                    defLocation = "NE"
+                } else {
+                    stackLocation = "N"
+                    defLocation = "E"
+                }
+            } else if (myJob.group == 2) {
+            if (uptime) {
+                    stackLocation = "W"
+                    defLocation = "NW"
+                } else {
+                    stackLocation = "S"
+                    defLocation = "W"
+                } 
+            }
+
+            if (myJob.mechanic === "stack") {
+                setInstructions("stack " + stackLocation)
+            } else if (myJob.mechanic === "def 1" || "def 2") {
+                setInstructions(`def ${myJob.defNum} ${defLocation}, party ${stackLocation}`)
+            }
+        }
+    }, [myJob, uptime])
+
 
     return (
         <div className="container">
