@@ -4,6 +4,7 @@ import Screen2 from "./Screen2"
 import Screen3 from "./Screen3"
 import Screen4 from "./Screen4"
 import Screen5 from "./Screen5"
+import Screen6 from "./Screen6"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
@@ -14,6 +15,7 @@ export default function MainContainer() {
     const [hourglassLocation, setHourglassLocation] = useState(null)
     const [firstMech, setFirstMech] = useState(null)
     const [tower, setTower] = useState(null)
+    const [portalClone, setPortalClone] = useState(null)
     useEffect(() => {
         if (myJob) {
             let stackLocation = "?"
