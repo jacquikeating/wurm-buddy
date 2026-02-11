@@ -73,7 +73,11 @@ export default function MainContainer() {
             <MenuBar uptime={uptime} setUptime={setUptime} />
             <div className="stored-variables">
                 {cardsOrInters && <p>{cardsOrInters}</p>}
-                {myJob && <p>{myJob.mechanic}</p>}
+                {myJob && (<p>take {myJob.mechanic} tether in quadrant {myJob.quadrant}</p>)}
+                {myJob && (<p>{instructions}</p>)}
+                {hourglassLocation && (<p>{hourglassLocation}</p>)}
+                {firstMech && (<p>{firstMech} first</p>)}
+                {tower && (<p>back {tower[0]} ({tower[1]})</p>)}
             </div>
             <main>
                 {renderContent()}
