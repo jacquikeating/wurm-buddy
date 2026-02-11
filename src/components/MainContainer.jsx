@@ -50,6 +50,23 @@ export default function MainContainer() {
         }
     }, [myJob, uptime])
 
+    function renderContent() {
+        if (!cardsOrInters) {
+            return <Screen1 setCardsOrInters={setCardsOrInters} />
+        } else if (!myJob) {
+            return <Screen2 setMyJob={setMyJob} />
+        } else if (!hourglassLocation) {
+            return <Screen3 setHourglassLocation={setHourglassLocation} />
+        } else if (!firstMech) {
+            return <Screen4 setFirstMech={setFirstMech} />
+        } else if (!tower) {
+            return <Screen5 setTower={setTower} />
+        } else if (!portalClone) {
+            return <Screen6 setPortalClone={setPortalClone} />
+        } else if (!safePlatform) {
+            return <Screen7 setSafePlatform={setSafePlatform} />
+         }
+    }
 
     return (
         <div className="container">
@@ -59,11 +76,7 @@ export default function MainContainer() {
                 {myJob && <p>{myJob.mechanic}</p>}
             </div>
             <main>
-                {!cardsOrInters ? (
-                    <Screen1 setCardsOrInters={setCardsOrInters} />
-                ) : (
-                    <Screen2 setMyJob={setMyJob} />
-                )}
+                {renderContent()}
                 
             </main>
         </div>
