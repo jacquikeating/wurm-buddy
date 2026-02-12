@@ -60,7 +60,6 @@ export default function MainContainer() {
             <SummaryScreen summary={summary} />
             <main>
                 {renderContent()}
-                
             </main>
         </div>
     )
