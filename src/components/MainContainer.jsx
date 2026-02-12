@@ -7,6 +7,7 @@ import Screen5 from "./Screen5"
 import Screen6 from "./Screen6"
 import Screen7 from "./Screen7"
 import SummaryScreen from "./SummaryScreen"
+import getStackDefInstructions from "../utils/functions"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
@@ -21,34 +22,7 @@ export default function MainContainer() {
     const [safePlatform, setSafePlatform] = useState(null)
 
     useEffect(() => {
-        if (myJob) {
-            let stackLocation = "?"
-            let defLocation = ""
-
-            if (myJob.group == 1) {
-                if (uptime) {
-                    stackLocation = "E"
-                    defLocation = "NE"
-                } else {
-                    stackLocation = "N"
-                    defLocation = "E"
-                }
-            } else if (myJob.group == 2) {
-            if (uptime) {
-                    stackLocation = "W"
-                    defLocation = "NW"
-                } else {
-                    stackLocation = "S"
-                    defLocation = "W"
-                } 
-            }
-
-            if (myJob.mechanic === "stack") {
-                setInstructions("stack " + stackLocation)
-            } else if (myJob.mechanic === "def 1" || "def 2") {
-                setInstructions(`def ${myJob.defNum} ${defLocation}, party ${stackLocation}`)
-            }
-        }
+        setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
     }, [myJob, uptime])
 
     function renderContent() {
@@ -75,7 +49,7 @@ export default function MainContainer() {
             <div className="stored-variables">
                 {cardsOrInters && <p>{cardsOrInters}</p>}
                 {myJob && (<p>take {myJob.mechanic} tether in quadrant {myJob.quadrant}</p>)}
-                {myJob && (<p>{instructions}</p>)}
+                {myJob && (<p>{instructions[0]}</p>)}
                 {hourglassLocation && (<p>{hourglassLocation}</p>)}
                 {firstMech && (<p>{firstMech} first</p>)}
                 {tower && (<p>back {tower[0]} ({tower[1]})</p>)}
