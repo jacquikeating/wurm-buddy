@@ -7,7 +7,7 @@ import Screen5 from "./Screen5"
 import Screen6 from "./Screen6"
 import Screen7 from "./Screen7"
 import SummaryScreen from "./SummaryScreen"
-import getStackDefInstructions from "../utils/functions"
+import { getStackDefInstructions } from "../utils/functions"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
@@ -22,8 +22,8 @@ export default function MainContainer() {
     const [safePlatform, setSafePlatform] = useState(null)
 
     useEffect(() => {
-        setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
-    }, [myJob, uptime])
+        firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
+    }, [myJob, uptime, firstMech])
 
     function renderContent() {
         if (!cardsOrInters) {
