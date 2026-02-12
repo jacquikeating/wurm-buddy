@@ -11,6 +11,7 @@ import { getStackDefInstructions } from "../utils/functions"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
+    const [step, setStep] = useState(1)
     const [uptime, setUptime] = useState(true)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
@@ -37,20 +38,20 @@ export default function MainContainer() {
     }, [myJob, uptime, firstMech])
 
     function renderContent() {
-        if (!cardsOrInters) {
-            return <Screen1 setCardsOrInters={setCardsOrInters} />
+        if (step == 1) {
+            return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
         } else if (!myJob) {
-            return <Screen2 setMyJob={setMyJob} />
+            return <Screen2 setMyJob={setMyJob} setStep={setStep} />
         } else if (!hourglassLocation) {
-            return <Screen3 setHourglassLocation={setHourglassLocation} />
+            return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />
         } else if (!firstMech) {
-            return <Screen4 setFirstMech={setFirstMech} />
+            return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />
         } else if (!tower) {
-            return <Screen5 setTower={setTower} />
+            return <Screen5 setTower={setTower} setStep={setStep} />
         } else if (!portalClone) {
-            return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation} />
+            return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation} setStep={setStep} />
         } else if (!safePlatform) {
-            return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone} />
+            return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone} setStep={setStep} />
          }
     }
 
