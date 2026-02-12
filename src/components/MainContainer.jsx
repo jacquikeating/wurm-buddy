@@ -40,7 +40,7 @@ export default function MainContainer() {
     function renderContent() {
         if (step == 1) {
             return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
-        } else if (!myJob) {
+        } else if (step == 2) {
             return <Screen2 setMyJob={setMyJob} setStep={setStep} />
         } else if (!hourglassLocation) {
             return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />
