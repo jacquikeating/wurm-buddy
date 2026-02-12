@@ -24,20 +24,20 @@ export function getStackDefInstructions(uptime, myJob, firstMech) {
         } 
     }
 
-    if (myJob.mechanic === "stack") {
-        if (firstMech === "stack") {
-            return [`stack ${stackLocation}`, `stack ${stackLocation}`, "go S", `stack ${stackLocation}`, "go S" ]
-        } else if (firstMech === "def") {
+    if (myJob.mechanic == "stack") {
+        if (firstMech == "stacks") {
+            return [`stack ${stackLocation}`, `stack ${stackLocation}`, "go S", `stack ${stackLocation}`, "go S"]
+        } else if (firstMech == "defs") {
             return [`stack ${stackLocation}`, "go S", `stack ${stackLocation}`, "go S", `stack ${stackLocation}`]
-        }
+    }
     } else if (myJob.mechanic === "def 1" || "def 2") {
-        if (firstMech === "stack") {
+        if (firstMech === "stacks") {
             if (myJob.defNum == 1) {
                 return [`def 1 ${defLocation}, party ${stackLocation}`, `stack ${stackLocation}`, `take def ${defLocation}`, `stack ${stackLocation}`, "go S"]
             } else if (myJob.defNum == 2) {
                 return [`def 2 ${defLocation}, party ${stackLocation}`, `stack ${stackLocation}`, "go S", `stack ${stackLocation}`, `take def ${defLocation}`]
             }
-        } else if (firstMech === "def") {
+        } else if (firstMech === "defs") {
             if (myJob.defNum == 1) {
                 return [`def 1 ${defLocation}, party ${stackLocation}`, `take def ${defLocation}`, `stack ${stackLocation}`, "go S", `stack ${stackLocation}`,]
             } else if (myJob.defNum == 2) {
@@ -45,5 +45,4 @@ export function getStackDefInstructions(uptime, myJob, firstMech) {
             }
         }
     }
-        
 }

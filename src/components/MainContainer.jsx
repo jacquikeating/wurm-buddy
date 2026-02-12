@@ -37,9 +37,9 @@ export default function MainContainer() {
         } else if (!tower) {
             return <Screen5 setTower={setTower} />
         } else if (!portalClone) {
-            return <Screen6 setPortalClone={setPortalClone} />
+            return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation} />
         } else if (!safePlatform) {
-            return <Screen7 setSafePlatform={setSafePlatform} />
+            return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone} />
          }
     }
 
