@@ -20,6 +20,17 @@ export default function MainContainer() {
     const [tower, setTower] = useState(null)
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(null)
+    let summary = {
+        quadrant: myJob?.quadrant,
+        hourglass: hourglassLocation,
+        tetherType: myJob?.mechanic,
+        firstMech: firstMech,
+        instructions: instructions,
+        tower: tower,
+        cardsOrInters: cardsOrInters,
+        safePlatform: safePlatform,
+        portalClone: portalClone
+    }
 
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
@@ -46,14 +57,7 @@ export default function MainContainer() {
     return (
         <div className="container">
             <MenuBar uptime={uptime} setUptime={setUptime} />
-            <div className="stored-variables">
-                {cardsOrInters && <p>{cardsOrInters}</p>}
-                {myJob && (<p>take {myJob.mechanic} tether in quadrant {myJob.quadrant}</p>)}
-                {myJob && (<p>{instructions[0]}</p>)}
-                {hourglassLocation && (<p>{hourglassLocation}</p>)}
-                {firstMech && (<p>{firstMech} first</p>)}
-                {tower && (<p>back {tower[0]} ({tower[1]})</p>)}
-            </div>
+            <SummaryScreen summary={summary} />
             <main>
                 {renderContent()}
                 
