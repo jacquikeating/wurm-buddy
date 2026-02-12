@@ -38,27 +38,34 @@ export default function MainContainer() {
     }, [myJob, uptime, firstMech])
 
     function renderContent() {
-        if (step == 1) {
-            return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
-        } else if (step == 2) {
-            return <Screen2 setMyJob={setMyJob} setStep={setStep} />
-        } else if (!hourglassLocation) {
-            return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />
-        } else if (!firstMech) {
-            return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />
-        } else if (!tower) {
-            return <Screen5 setTower={setTower} setStep={setStep} />
-        } else if (!portalClone) {
-            return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation} setStep={setStep} />
-        } else if (!safePlatform) {
-            return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone} setStep={setStep} />
-         }
+        switch (step) {
+            case 1: return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />;
+            case 2: return <Screen2 setMyJob={setMyJob} setStep={setStep} />;
+            case 3: return <SummaryScreen summary={summary} />;
+        }
+        // if (step == 1) {
+        //     return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
+        // } else if (step == 2) {
+        //     return <Screen2 setMyJob={setMyJob} setStep={setStep} />
+        // } else if (!hourglassLocation) {
+        //     return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />
+        // } else if (!firstMech) {
+        //     return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />
+        // } else if (!tower) {
+        //     return <Screen5 setTower={setTower} setStep={setStep} />
+        // } else if (!portalClone) {
+        //     return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation} setStep={setStep} />
+        // } else if (!safePlatform) {
+        //     return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone} setStep={setStep} />
+        //  }
     }
+
+    
 
     return (
         <div className="container">
             <MenuBar uptime={uptime} setUptime={setUptime} />
-            <SummaryScreen summary={summary} />
+            {/* <SummaryScreen summary={summary} /> */}
             <main>
                 {renderContent()}
             </main>
