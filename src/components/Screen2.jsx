@@ -1,9 +1,11 @@
 export default function Screen2({ setMyJob, setStep }) {
 
     function handleInput(selectedOption) {
+        // callout: `go to ${job.quadrant} quadrant` 
         setMyJob(selectedOption)
         setStep(3)
     }
+
     const jobOptions = [
         // We have to start with east, not north, because of how the CSS renders the buttons in a circle
         {
