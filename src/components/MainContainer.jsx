@@ -43,6 +43,8 @@ export default function MainContainer() {
             case 2: return <Screen2 setMyJob={setMyJob} setStep={setStep} />;
             case 3: return <SummaryScreen summary={summary} />;
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />;
+            case 5: return <SummaryScreen summary={summary} />;
+            case 6: return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />;
         }
         // if (step == 1) {
         //     return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
