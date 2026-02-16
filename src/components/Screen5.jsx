@@ -8,37 +8,37 @@ export default function Screen5({ setTower, setStep }) {
     return (
         <div className="screen-5">
             <div className="option-row">
-                <div className="option" onClick={() => handleInput(["left", "fire"])}>
+                <div className="option fire" onClick={() => handleInput(["left", "fire"])}>
                     <span className="option-name">Fire</span>
                 </div>
-                <div className="option" onClick={() => handleInput(["right", "fire"])}>
+                <div className="option fire" onClick={() => handleInput(["right", "fire"])}>
                     <span className="option-name">Fire</span>
                 </div>
             </div>
 
             <div className="option-row">
-                <div className="option" onClick={() => handleInput(["left", "earth"])}>
+                <div className="option earth" onClick={() => handleInput(["left", "earth"])}>
                     <span className="option-name">Earth</span>
                 </div>
-                <div className="option" onClick={() => handleInput(["right", "earth"])}>
+                <div className="option earth" onClick={() => handleInput(["right", "earth"])}>
                     <span className="option-name">Earth</span>
                 </div>
             </div>
 
             <div className="option-row">
-                <div className="option" onClick={() => handleInput(["left", "wind"])}>
+                <div className="option wind" onClick={() => handleInput(["left", "wind"])}>
                     <span className="option-name">Wind</span>
                 </div>
-                <div className="option" onClick={() => handleInput(["right", "wind"])}>
+                <div className="option wind" onClick={() => handleInput(["right", "wind"])}>
                     <span className="option-name">Wind</span>
                 </div>
             </div>
 
             <div className="option-row">
-                <div className="option" onClick={() => handleInput(["left", "dark"])}>
+                <div className="option dark" onClick={() => handleInput(["left", "dark"])}>
                     <span className="option-name">Dark</span>
                 </div>
-                <div className="option" onClick={() => handleInput(["right", "dark"])}>
+                <div className="option dark" onClick={() => handleInput(["right", "dark"])}>
                     <span className="option-name">Dark</span>
                 </div>
             </div>

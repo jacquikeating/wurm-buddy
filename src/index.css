@@ -58,7 +58,7 @@
 
 main {
   display: flex;
-  height: calc(100% - 4.6rem);
+  height: calc(100% - 2.2rem);
   width: 100%;
   border-top: 1px solid transparent;
 }
@@ -79,6 +79,30 @@ main {
     display: flex;
     height: 25%;
     border-top: 1px solid white;
+
+    .option {
+      height: 100%;
+      
+      &:first-of-type {
+        border-right: 1px solid white;
+      }
+
+      &.fire {
+        background: rgb(189, 62, 23);
+      }
+
+      &.earth {
+        background: rgb(177, 146, 4);
+      }
+
+      &.wind {
+        background: rgb(80, 177, 99);
+      }
+
+      &.dark {
+        background: rgb(87, 47, 148);
+      }
+    }
   }
 
   .option {
@@ -89,11 +113,11 @@ main {
     justify-content: center;
 
     &:nth-child(1) {
-      background: rgb(125, 15, 15);
+      background: rgb(180, 50, 80);
     }
 
     &:nth-child(2) {
-      background: rgb(25, 8, 157);
+      background: rgb(30, 135, 255);
     }
 
     .option-name {
