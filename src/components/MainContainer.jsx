@@ -42,7 +42,7 @@ export default function MainContainer() {
         switch (step) {
             case 1: return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />;
             case 2: return <Screen2 setMyJob={setMyJob} setStep={setStep} />;
-            case 3: return <Output messages={["test 1", "test 2"]} timeout={10} setStep={setStep} />;
+            case 3: return <Output messages={["test 1", "test 2"]} timeout={5000} step={step} setStep={setStep} />;
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />;
             case 5: return <SummaryScreen summary={summary} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />;
