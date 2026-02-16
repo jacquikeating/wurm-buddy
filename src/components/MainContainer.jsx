@@ -8,7 +8,7 @@ import Screen6 from "./Screen6"
 import Screen7 from "./Screen7"
 import SummaryScreen from "./SummaryScreen"
 import { getStackDefInstructions } from "../utils/functions"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useEffectEvent } from "react"
 
 export default function MainContainer() {
     const [step, setStep] = useState(1)
@@ -32,6 +32,62 @@ export default function MainContainer() {
         safePlatform: safePlatform,
         portalClone: portalClone
     }
+    
+    const runTask = useEffectEvent((task) => {
+        task();
+    });
+
+    useEffect(() => {
+        let current = 0;
+        let timeout;
+
+        const tasks = [
+            { time: 10000, action: () => console.log(myJob)},
+            { time: 26000, action: () => setStep(4) },
+            // { time: 48000, action: () => timeline48() },
+            // { time: 55000, action: () => console.log(`Run ${hourglassLocation}`)}
+        ];
+
+        function timeline48 () {
+        // let tether = summary.tetherType
+        setStep(6);
+        // callout: `Take ${myJob.mechanic} tether. Eprog.`
+        // console.log(tether)
+        console.log(`Take ${myJob.mechanic} tether. Eprog.`)
+    }
+
+        const runNext = () => {
+            if (current >= tasks.length) return;
+
+            const delay =
+                current === 0
+                ? tasks[current].time
+                : tasks[current].time - tasks[current - 1].time;
+
+            timeout = setTimeout(() => {
+                runTask(tasks[current].action);
+                current++;
+                runNext();
+            }, delay);
+        };
+
+        runNext();
+        return () => clearTimeout(timeout);
+  }, []);
+
+
+    
+    // useEffect(() => {
+    //     if (cardsOrInters) {
+    //         const hourglassCloneTimer = setTimeout(() => {
+    //             setStep(4)
+    //         }, 26000)
+
+    //         return () => {
+    //             clearTimeout(hourglassCloneTimer);
+    //         };
+    //     }
+    // }, [cardsOrInters])
 
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
@@ -46,7 +102,7 @@ export default function MainContainer() {
             case 5: return <SummaryScreen summary={summary} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />;
             case 7: return <Screen5 setTower={setTower} setStep={setStep} />;
-            
+
         }
         // if (step == 1) {
         //     return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
