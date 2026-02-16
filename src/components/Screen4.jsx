@@ -1,10 +1,16 @@
-export default function Screen4({ setFirstMech }) {
+export default function Screen4({ setFirstMech, setStep }) {
+
+    function handleInput(selectedOption) {
+        setFirstMech(selectedOption)
+        setStep(7)
+    }
+
     return (
         <div className="screen-4">
-            <div className="option" onClick={() => setFirstMech("stacks")}>
+            <div className="option" onClick={() => handleInput("stacks")}>
                 <span className="option-name">Stacks First</span>
             </div>
-            <div className="option" onClick={() => setFirstMech("defs")}>
+            <div className="option" onClick={() => handleInput("defs")}>
                 <span className="option-name">Defs First</span>
             </div>
         </div>
