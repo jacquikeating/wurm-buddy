@@ -6,7 +6,7 @@ export default function Screen3({ setHourglassLocation  }) {
 
     function handleInput(selectedOption) {
         setHourglassLocation(selectedOption)
-        setStep(5)
+        setStep(step + 1)
     }
 
     return (

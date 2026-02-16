@@ -6,7 +6,7 @@ export default function Screen7({ portalClone, setSafePlatform }) {
 
     function handleInput(selectedOption) {
         setSafePlatform(selectedOption)
-        setStep(10)
+        setStep(step + 1)
     }
 
     let safeSide = portalClone == "sides safe" ? ("north safe") : ("boss safe")

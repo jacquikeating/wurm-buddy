@@ -6,7 +6,7 @@ export default function Screen4({ setFirstMech }) {
 
     function handleInput(selectedOption) {
         setFirstMech(selectedOption)
-        setStep(7)
+        setStep(step + 1)
     }
 
     return (

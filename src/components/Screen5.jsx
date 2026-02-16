@@ -6,7 +6,7 @@ export default function Screen5({ setTower }) {
 
     function handleInput(selectedOption) {
         setTower(selectedOption)
-        setStep(8)
+        setStep(step + 1)
     }
 
     return (

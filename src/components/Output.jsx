@@ -6,12 +6,12 @@ export default function Output({ messages, timeout }) {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setStep(step + 1);
-        }, timeout);
+            setStep(step + 1)
+        }, timeout)
 
         return () => {
-            clearTimeout(timer);
-        };
+            clearTimeout(timer)
+        }
     }, [messages])
 
     return (

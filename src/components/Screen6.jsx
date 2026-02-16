@@ -6,7 +6,7 @@ export default function Screen6({ hourglassLocation, setPortalClone }) {
 
     function handleInput(selectedOption) {
         setPortalClone(selectedOption)
-        setStep(9)
+        setStep(step + 1)
     }
 
     return (

@@ -7,7 +7,7 @@ export default function Screen2({ setMyJob }) {
     function handleInput(selectedOption) {
         // callout: `go to ${job.quadrant} quadrant` 
         setMyJob(selectedOption)
-        setStep(3)
+        setStep(step + 1)
     }
 
     const jobOptions = [
