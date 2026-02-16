@@ -9,7 +9,8 @@ import Screen7 from "./Screen7"
 import SummaryScreen from "./SummaryScreen"
 import Output from "./Output"
 import { getStackDefInstructions } from "../utils/functions"
-import { useState, useEffect } from "react"
+import { StepContext } from "../utils/context.js"
+import { useState, useEffect, useContext } from "react"
 
 export default function MainContainer() {
     const [step, setStep] = useState(1)
