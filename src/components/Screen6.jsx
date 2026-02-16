@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { StepContext } from "../utils/context.js"
+
 export default function Screen6({ hourglassLocation, setPortalClone, setStep }) {
 
     function handleInput(selectedOption) {

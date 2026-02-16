@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { StepContext } from "../utils/context.js"
+
 export default function Screen4({ setFirstMech, setStep }) {
 
     function handleInput(selectedOption) {

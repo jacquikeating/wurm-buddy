@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { StepContext } from "../utils/context.js"
+
 export default function Screen7({ portalClone, setSafePlatform }) {
 
     function handleInput(selectedOption) {
