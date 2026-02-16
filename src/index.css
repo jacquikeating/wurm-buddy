@@ -165,3 +165,22 @@ main {
     }
   }
 }
+
+
+.output {
+  ul {
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+
+    &:first-of-type {
+      font-size: 3rem;
+    }
+  }
+}
