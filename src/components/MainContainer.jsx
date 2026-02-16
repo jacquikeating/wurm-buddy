@@ -34,6 +34,22 @@ export default function MainContainer() {
         portalClone: portalClone
     }
 
+    let outputMessages = [
+        [`${myJob?.quadrant}`, `${myJob?.group == 1 ? "east" : "west"} ${myJob?.mechanic} ${myJob?.defNum || ""} later`],
+        [`${myJob?.mechanic}`],
+        [`${hourglassLocation || "?"}`, `eprog`],
+        [`East`, `late kera`, `ixo eprog`],
+        
+    ]
+
+    // let outputMessagesLong = [
+    //     [`Go to ${myJob?.quadrant}`, `I will be ${myJob?.group == 1 ? "east" : "west"} ${myJob?.mechanic} ${myJob?.defNum || ""}`],
+    //     [`Take ${myJob?.mechanic} tether`],
+    //     [`${hourglassLocation || "?"} safe`, `eprog`],
+    //     [`East platform`, `late kera`, `ixo eprog`],
+        
+    // ]
+
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
     }, [myJob, uptime, firstMech])
