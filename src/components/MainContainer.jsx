@@ -17,7 +17,7 @@ export default function MainContainer() {
     const [uptime, setUptime] = useState(true)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
-    const [instructions, setInstructions] = useState(null)
+    const [instructions, setInstructions] = useState(["", "", "", "", ""])
     const [hourglassLocation, setHourglassLocation] = useState(null)
     const [firstMech, setFirstMech] = useState(null)
     const [tower, setTower] = useState(null)
