@@ -10,10 +10,10 @@ export default function Output({ messages, timeout, step, setStep }) {
         return () => {
             clearTimeout(timer);
         };
-    }, [])
+    }, [messages])
 
     return (
-        <main>
+        <main className="output">
             <ul>
                 {messages.map((message, index) => {
                     return (
