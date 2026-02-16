@@ -7,6 +7,7 @@ import Screen5 from "./Screen5"
 import Screen6 from "./Screen6"
 import Screen7 from "./Screen7"
 import SummaryScreen from "./SummaryScreen"
+import Output from "./Output"
 import { getStackDefInstructions } from "../utils/functions"
 import { useState, useEffect } from "react"
 
@@ -41,12 +42,11 @@ export default function MainContainer() {
         switch (step) {
             case 1: return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />;
             case 2: return <Screen2 setMyJob={setMyJob} setStep={setStep} />;
-            case 3: return <SummaryScreen summary={summary} />;
+            case 3: return <Output />;
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />;
             case 5: return <SummaryScreen summary={summary} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />;
             case 7: return <Screen5 setTower={setTower} setStep={setStep} />;
-            
         }
         // if (step == 1) {
         //     return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
