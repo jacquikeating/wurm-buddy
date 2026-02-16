@@ -1,4 +1,4 @@
-export default function Output() {
+export default function Output({ messages, timeout, setStep }) {
 
     return (
         <main>
