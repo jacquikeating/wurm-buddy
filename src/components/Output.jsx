@@ -2,7 +2,13 @@ export default function Output({ messages, timeout, setStep }) {
 
     return (
         <main>
-            <h1>Output goes here</h1>
+            <ul>
+                {messages.map((message, index) => {
+                    return (
+                        <li key={index}>{message}</li>
+                    )
+                })}
+            </ul>
         </main>
     )
 }
