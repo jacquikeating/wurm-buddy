@@ -1,6 +1,8 @@
-import { useEffect } from "react"
+import { useEffect, useContext } from "react"
+import { StepContext } from "../utils/context.js"
 
-export default function Output({ messages, timeout, step, setStep }) {
+export default function Output({ messages, timeout }) {
+    const { step, setStep } = useContext(StepContext)
 
     useEffect(() => {
         const timer = setTimeout(() => {
