@@ -1,4 +1,16 @@
-export default function Output({ messages, timeout, setStep }) {
+import { useEffect } from "react"
+
+export default function Output({ messages, timeout, step, setStep }) {
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setStep(step + 1);
+        }, timeout);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [])
 
     return (
         <main>
