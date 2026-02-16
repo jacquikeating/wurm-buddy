@@ -58,11 +58,13 @@ export default function MainContainer() {
         switch (step) {
             case 1: return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />;
             case 2: return <Screen2 setMyJob={setMyJob} setStep={setStep} />;
-            case 3: return <Output messages={["test 1", "test 2"]} timeout={5000} step={step} setStep={setStep} />;
+            case 3: return <Output messages={outputMessages[0]} timeout={20000} step={step} setStep={setStep} />;
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />;
-            case 5: return <SummaryScreen summary={summary} />;
+            case 5: return <Output messages={outputMessages[1]} timeout={20000} step={step} setStep={setStep} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />;
-            case 7: return <Screen5 setTower={setTower} setStep={setStep} />;
+            case 7: return <Output messages={outputMessages[2]} timeout={10000} step={step} setStep={setStep} />;
+            case 8: return <Output messages={outputMessages[3]} timeout={10000} step={step} setStep={setStep} />;
+            case 9: return <Screen5 setTower={setTower} setStep={setStep} />;
         }
         // if (step == 1) {
         //     return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
