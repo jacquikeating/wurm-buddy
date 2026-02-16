@@ -87,12 +87,14 @@ export default function MainContainer() {
     
 
     return (
-        <div className="container">
-            <MenuBar uptime={uptime} setUptime={setUptime} />
-            {/* <SummaryScreen summary={summary} /> */}
-            <main>
-                {renderContent()}
-            </main>
-        </div>
+        <StepContext.Provider value={{ step, setStep }}>
+            <div className="container">
+                <MenuBar uptime={uptime} setUptime={setUptime} />
+                {/* <SummaryScreen summary={summary} /> */}
+                <main>
+                    {renderContent()}
+                </main>
+            </div>
+        </StepContext.Provider>
     )
 }

@@ -1,8 +1,12 @@
-export default function Screen1({ setCardsOrInters, setStep }) {
+import { useContext } from "react"
+import { StepContext } from "../utils/context.js"
+
+export default function Screen1({ setCardsOrInters }) {
+    const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         setCardsOrInters(selectedOption)
-        setStep(2)
+        setStep(step + 1)
     }
 
     return (
