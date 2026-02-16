@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
 export default function Screen7({ portalClone, setSafePlatform }) {
+    const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         setSafePlatform(selectedOption)

@@ -1,7 +1,8 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Screen2({ setMyJob, setStep }) {
+export default function Screen2({ setMyJob }) {
+    const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         // callout: `go to ${job.quadrant} quadrant` 

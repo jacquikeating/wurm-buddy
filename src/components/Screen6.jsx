@@ -1,7 +1,8 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Screen6({ hourglassLocation, setPortalClone, setStep }) {
+export default function Screen6({ hourglassLocation, setPortalClone }) {
+    const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         setPortalClone(selectedOption)

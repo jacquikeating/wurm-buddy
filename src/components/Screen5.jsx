@@ -1,7 +1,8 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Screen5({ setTower, setStep }) {
+export default function Screen5({ setTower }) {
+    const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         setTower(selectedOption)

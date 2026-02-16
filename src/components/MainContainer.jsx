@@ -57,30 +57,30 @@ export default function MainContainer() {
 
     function renderContent() {
         switch (step) {
-            case 1: return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />;
-            case 2: return <Screen2 setMyJob={setMyJob} setStep={setStep} />;
-            case 3: return <Output messages={outputMessages[0]} timeout={20000} step={step} setStep={setStep} />;
-            case 4: return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />;
-            case 5: return <Output messages={outputMessages[1]} timeout={20000} step={step} setStep={setStep} />;
-            case 6: return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />;
-            case 7: return <Output messages={outputMessages[2]} timeout={10000} step={step} setStep={setStep} />;
-            case 8: return <Output messages={outputMessages[3]} timeout={10000} step={step} setStep={setStep} />;
-            case 9: return <Screen5 setTower={setTower} setStep={setStep} />;
+            case 1: return <Screen1 setCardsOrInters={setCardsOrInters} />;
+            case 2: return <Screen2 setMyJob={setMyJob} />;
+            case 3: return <Output messages={outputMessages[0]} timeout={20000} />;
+            case 4: return <Screen3 setHourglassLocation={setHourglassLocation} />;
+            case 5: return <Output messages={outputMessages[1]} timeout={20000} />;
+            case 6: return <Screen4 setFirstMech={setFirstMech} />;
+            case 7: return <Output messages={outputMessages[2]} timeout={10000} />;
+            case 8: return <Output messages={outputMessages[3]} timeout={10000} />;
+            case 9: return <Screen5 setTower={setTower} />;
         }
         // if (step == 1) {
-        //     return <Screen1 setCardsOrInters={setCardsOrInters} setStep={setStep} />
+        //     return <Screen1 setCardsOrInters={setCardsOrInters}  />
         // } else if (step == 2) {
-        //     return <Screen2 setMyJob={setMyJob} setStep={setStep} />
+        //     return <Screen2 setMyJob={setMyJob}  />
         // } else if (!hourglassLocation) {
-        //     return <Screen3 setHourglassLocation={setHourglassLocation} setStep={setStep} />
+        //     return <Screen3 setHourglassLocation={setHourglassLocation}  />
         // } else if (!firstMech) {
-        //     return <Screen4 setFirstMech={setFirstMech} setStep={setStep} />
+        //     return <Screen4 setFirstMech={setFirstMech}  />
         // } else if (!tower) {
-        //     return <Screen5 setTower={setTower} setStep={setStep} />
+        //     return <Screen5 setTower={setTower}  />
         // } else if (!portalClone) {
-        //     return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation} setStep={setStep} />
+        //     return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation}  />
         // } else if (!safePlatform) {
-        //     return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone} setStep={setStep} />
+        //     return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone}  />
         //  }
     }
 

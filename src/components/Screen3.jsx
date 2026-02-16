@@ -1,7 +1,8 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Screen3({ setHourglassLocation, setStep  }) {
+export default function Screen3({ setHourglassLocation  }) {
+    const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         setHourglassLocation(selectedOption)
