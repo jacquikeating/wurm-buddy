@@ -1,5 +1,18 @@
 export default function SummaryScreen({ summary }) {
 
+    // // DERIVED VARIABLES FROM STATE VARIABLES. PUT IN MAINCONTAINER, PASS TO THIS COMPONENT AS A PROP
+    // let summary = {
+    //     quadrant: myJob?.quadrant,
+    //     hourglass: hourglassLocation,
+    //     tetherType: myJob?.mechanic,
+    //     firstMech: firstMech,
+    //     instructions: instructions,
+    //     tower: tower,
+    //     cardsOrInters: cardsOrInters,
+    //     safePlatform: safePlatform,
+    //     portalClone: portalClone
+    // }
+
     const {quadrant, hourglass, tetherType, firstMech, instructions, tower, cardsOrInters, safePlatform, portalClone} = summary
 
     return (

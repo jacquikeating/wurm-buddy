@@ -6,13 +6,13 @@ import Screen4 from "./Screen4"
 import Screen5 from "./Screen5"
 import Screen6 from "./Screen6"
 import Screen7 from "./Screen7"
-import SummaryScreen from "./SummaryScreen"
 import Output from "./Output"
 import { getFirstMessage, getStackDefInstructions } from "../utils/functions"
 import { StepContext } from "../utils/context.js"
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 
 export default function MainContainer() {
+    // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
     // const [step, setStep] = useState(21)
     // const [uptime, setUptime] = useState(true)
     // const [cardsOrInters, setCardsOrInters] = useState("cards")
@@ -29,7 +29,7 @@ export default function MainContainer() {
     // const [portalClone, setPortalClone] = useState("sides safe")
     // const [safePlatform, setSafePlatform] = useState("west platform, north safe")
 
-    // ORIGINALS - RETURN TO THESE AFTER DEVELOPMENT
+    // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
     const [step, setStep] = useState(1)
     const [uptime, setUptime] = useState(true)
     const [cardsOrInters, setCardsOrInters] = useState(null)
@@ -41,20 +41,7 @@ export default function MainContainer() {
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(null)
 
-    let summary = {
-        quadrant: myJob?.quadrant,
-        hourglass: hourglassLocation,
-        tetherType: myJob?.mechanic,
-        firstMech: firstMech,
-        instructions: instructions,
-        tower: tower,
-        cardsOrInters: cardsOrInters,
-        safePlatform: safePlatform,
-        portalClone: portalClone
-    }
-
     let outputMessages = [
-        // [`${myJob?.quadrant}`, `${myJob?.group == 1 ? "east" : "west"} ${myJob?.mechanic} ${myJob?.defNum || ""} later`],
         [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],
         [`${myJob?.quadrant} ${myJob?.mechanic}`],
         [`${hourglassLocation || "?"}`, `eprog`],
@@ -77,17 +64,9 @@ export default function MainContainer() {
         [`pan kera eprog`]
     ]
 
-    // let outputMessagesLong = [
-    //     [`Go to ${myJob?.quadrant}`, `I will be ${myJob?.group == 1 ? "east" : "west"} ${myJob?.mechanic} ${myJob?.defNum || ""}`],
-    //     [`Take ${myJob?.mechanic} tether`],
-    //     [`${hourglassLocation || "?"} safe`, `eprog`],
-    //     [`East platform`, `late kera`, `ixo eprog`],
-        
-    // ]
-
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
-    }, [myJob, uptime, firstMech])
+    }, [firstMech])
 
     function renderContent() {
         switch (step) {
@@ -122,30 +101,12 @@ export default function MainContainer() {
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
         }
-        // if (step == 1) {
-        //     return <Screen1 setCardsOrInters={setCardsOrInters}  />
-        // } else if (step == 2) {
-        //     return <Screen2 setMyJob={setMyJob}  />
-        // } else if (!hourglassLocation) {
-        //     return <Screen3 setHourglassLocation={setHourglassLocation}  />
-        // } else if (!firstMech) {
-        //     return <Screen4 setFirstMech={setFirstMech}  />
-        // } else if (!tower) {
-        //     return <Screen5 setTower={setTower}  />
-        // } else if (!portalClone) {
-        //     return <Screen6 setPortalClone={setPortalClone} hourglassLocation={hourglassLocation}  />
-        // } else if (!safePlatform) {
-        //     return <Screen7 setSafePlatform={setSafePlatform} portalClone={portalClone}  />
-        //  }
     }
-
-    
 
     return (
         <StepContext.Provider value={{ step, setStep }}>
             <div className="container">
                 <MenuBar uptime={uptime} setUptime={setUptime} />
-                {/* <SummaryScreen summary={summary} /> */}
                 <main>
                     {renderContent()}
                 </main>
