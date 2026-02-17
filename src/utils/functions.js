@@ -1,3 +1,41 @@
+export function getFirstMessage(uptime, myJob) {
+    if (!myJob) {
+        return ("")
+    }
+
+    let { group, mechanic, defNum } = myJob
+
+    let msg = ""
+    let stackSpot = ""
+    let defSpot = ""
+
+    if (uptime) {
+        if (group == 1) {
+            stackSpot = "E"
+            defSpot = "NE"
+        } else if (group == 2) {
+            stackSpot = "W"
+            defSpot = "NW"
+        }
+    } else if (!uptime) {
+        if (group == 1) {
+            stackSpot = "N"
+            defSpot = "E"
+        } else if (group == 2) {
+            stackSpot = "S"
+            defSpot = "W"
+        }
+    }
+
+    if (mechanic == "stack") {
+        msg = `stack ${stackSpot} later`
+    } else if (mechanic == "def"){
+        msg = `def ${defNum} ${defSpot} / party ${stackSpot} later`
+    }
+
+    return msg
+}
+
 export function getStackDefInstructions(uptime, myJob, firstMech) {
     // Returns an array with instructions to resolve the stacks/defs mechanic. 
     // [0] is a summary for display on SummaryScreen.

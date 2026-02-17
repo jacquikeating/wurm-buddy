@@ -8,7 +8,7 @@ import Screen6 from "./Screen6"
 import Screen7 from "./Screen7"
 import SummaryScreen from "./SummaryScreen"
 import Output from "./Output"
-import { getStackDefInstructions } from "../utils/functions"
+import { getFirstMessage, getStackDefInstructions } from "../utils/functions"
 import { StepContext } from "../utils/context.js"
 import { useState, useEffect, useContext } from "react"
 
@@ -53,47 +53,9 @@ export default function MainContainer() {
         portalClone: portalClone
     }
 
-    function getFirstMessage() {
-        if (!myJob) {
-            return ("")
-        }
-
-        let { group, mechanic, defNum } = myJob
-
-        let msg = ""
-        let stackSpot = ""
-        let defSpot = ""
-
-        if (uptime) {
-            if (group == 1) {
-                stackSpot = "E"
-                defSpot = "NE"
-            } else if (group == 2) {
-                stackSpot = "W"
-                defSpot = "NW"
-            }
-        } else if (!uptime) {
-            if (group == 1) {
-                stackSpot = "N"
-                defSpot = "E"
-            } else if (group == 2) {
-                stackSpot = "S"
-                defSpot = "W"
-            }
-        }
-
-        if (mechanic == "stack") {
-            msg = `stack ${stackSpot} later`
-        } else if (mechanic == "def"){
-            msg = `def ${defNum} ${defSpot} / party ${stackSpot} later`
-        }
-
-        return msg
-    }
-
     let outputMessages = [
         // [`${myJob?.quadrant}`, `${myJob?.group == 1 ? "east" : "west"} ${myJob?.mechanic} ${myJob?.defNum || ""} later`],
-        [`${myJob?.quadrant}`, `${getFirstMessage()}`],
+        [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],
         [`${myJob?.quadrant} ${myJob?.mechanic}`],
         [`${hourglassLocation || "?"}`, `eprog`],
         [`east`, `late kera`, `ixo eprog`],
