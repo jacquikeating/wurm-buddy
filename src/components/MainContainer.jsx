@@ -110,7 +110,7 @@ export default function MainContainer() {
         [`${safePlatform}`, `ixo`],
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`, `eprog`],
         [`${portalClone}`, `eprog kera`],
-        [`pot!`],
+        [`pot soon!`],
         [`phys eprog holos`, `zoe`],
         [`pan kera eprog`]
     ]
@@ -154,9 +154,9 @@ export default function MainContainer() {
             case 23: return <Output messages={outputMessages[14]} timeout={12000} />; // safe platform
             case 24: return <Output messages={outputMessages[15]} timeout={10000} />; // second stacks
             case 25: return <Output messages={outputMessages[16]} timeout={12000} />; // portal clone --> castbar damage
-            case 26: return <Output messages={[` `]} timeout={10000} />; // just hit boss time
-            case 27: return <Output messages={outputMessages[17]} timeout={10000} />; // pot reminder for 8:00 burst
-            case 28: return <Output messages={[` `]} timeout={15000} />; // just hit boss time
+            case 26: return <Output messages={[` `]} timeout={7000} />; // just hit boss time
+            case 27: return <Output messages={outputMessages[17]} timeout={18000} />; // pot reminder for 8:00 burst
+            case 28: return <Output messages={[` `]} timeout={10000} />; // just hit boss time
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
         }
