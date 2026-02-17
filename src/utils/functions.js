@@ -30,7 +30,7 @@ export function getFirstMessage(uptime, myJob) {
     if (mechanic == "stack") {
         msg = `stack ${stackSpot} later`
     } else if (mechanic == "def"){
-        msg = `def ${defNum} ${defSpot} / party ${stackSpot} later`
+        msg = `def ${defNum} ${defSpot} later`
     }
 
     return msg
@@ -39,7 +39,7 @@ export function getFirstMessage(uptime, myJob) {
 export function getStackDefInstructions(uptime, myJob, firstMech) {
     // Returns an array with instructions to resolve the stacks/defs mechanic. 
     // [0] is a summary for display on SummaryScreen.
-    // [1] to [4] will become the verbal commands called out in the timeline.
+    // [1] to [4] will become the text/verbal commands called out in the timeline.
     
     let stackSpot = ""
     let defSpot = ""
