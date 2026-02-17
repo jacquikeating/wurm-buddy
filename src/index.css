@@ -123,6 +123,16 @@ main {
     .option-name {
       font-size: 2rem;
     }
+
+    &.west {
+      height: 100%;
+      background: rgb(151, 59, 237)!important;
+    }
+
+    &.east {
+      height: 100%;
+      background: rgb(255, 200, 0)!important;
+    }
   }
 }
 
