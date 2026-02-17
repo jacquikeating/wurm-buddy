@@ -94,7 +94,7 @@ export default function MainContainer() {
     let outputMessages = [
         // [`${myJob?.quadrant}`, `${myJob?.group == 1 ? "east" : "west"} ${myJob?.mechanic} ${myJob?.defNum || ""} later`],
         [`${myJob?.quadrant}`, `${getFirstMessage()}`],
-        [`${myJob?.mechanic}`],
+        [`${myJob?.quadrant} ${myJob?.mechanic}`],
         [`${hourglassLocation || "?"}`, `eprog`],
         [`east`, `late kera`, `ixo eprog`],
         [`phys phil eprog`, `${instructions[1]} after`],
