@@ -32,7 +32,6 @@ export default function MainContainer() {
 
     // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
     const [step, setStep] = useState(1)
-    const [uptime, setUptime] = useState(true)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
@@ -42,7 +41,11 @@ export default function MainContainer() {
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(null)
 
-    const setAll = [setStep, setUptime, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
+    // PREFERENCES
+    const [prefsOpen, setPrefsOpen] = useState(false)
+    const [uptime, setUptime] = useState(true)
+
+    const setAll = [setPrefsOpen, setUptime, setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
     let outputMessages = [
         [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],
@@ -110,6 +113,7 @@ export default function MainContainer() {
         <StepContext.Provider value={{ step, setStep }}>
             <div className="container">
                 <MenuBar uptime={uptime} setAll={setAll} />
+                <Preferences prefsOpen={prefsOpen} />
                 <main>
                     {renderContent()}
                 </main>
