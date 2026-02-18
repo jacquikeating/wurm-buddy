@@ -41,11 +41,13 @@ export default function MainContainer() {
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(null)
 
+    const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
+
     // PREFERENCES
     const [prefsOpen, setPrefsOpen] = useState(false)
     const [uptime, setUptime] = useState(true)
 
-    const setAll = [setPrefsOpen, setUptime, setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
+    const prefs = [prefsOpen, setPrefsOpen, uptime, setUptime]
 
     let outputMessages = [
         [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],
@@ -112,8 +114,8 @@ export default function MainContainer() {
     return (
         <StepContext.Provider value={{ step, setStep }}>
             <div className="container">
-                <MenuBar uptime={uptime} setAll={setAll} prefsOpen={prefsOpen} />
-                <Preferences prefsOpen={prefsOpen} uptime={uptime} setUptime={setUptime} />
+                <MenuBar setMechanicVariables={setMechanicVariables} prefs={prefs} />
+                <Preferences prefs={prefs} />
                 <main>
                     {renderContent()}
                 </main>

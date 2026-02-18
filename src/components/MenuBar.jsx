@@ -1,6 +1,6 @@
-export default function MenuBar({ prefsOpen, setAll }) {
-
-    const [setPrefsOpen, setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setAll
+export default function MenuBar({ setMechanicVariables, prefs }) {
+    const [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setMechanicVariables
+    const [prefsOpen, setPrefsOpen] = prefs
 
     function reset() {
         setStep(1)
