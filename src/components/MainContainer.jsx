@@ -113,7 +113,7 @@ export default function MainContainer() {
         <StepContext.Provider value={{ step, setStep }}>
             <div className="container">
                 <MenuBar uptime={uptime} setAll={setAll} prefsOpen={prefsOpen} />
-                <Preferences prefsOpen={prefsOpen} />
+                <Preferences prefsOpen={prefsOpen} uptime={uptime} setUptime={setUptime} />
                 <main>
                     {renderContent()}
                 </main>

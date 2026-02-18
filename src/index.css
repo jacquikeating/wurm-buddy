@@ -240,6 +240,7 @@ main {
   top: calc(2rem + 2px);
   left: 1px;
   z-index: 1;
+  color: white;
 
   &.open {
     display: block!important;
