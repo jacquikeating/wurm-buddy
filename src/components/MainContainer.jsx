@@ -46,8 +46,9 @@ export default function MainContainer() {
     // PREFERENCES
     const [prefsOpen, setPrefsOpen] = useState(false)
     const [uptime, setUptime] = useState(true)
+    const [size, setSize] = useState("large")
 
-    const prefs = [prefsOpen, setPrefsOpen, uptime, setUptime]
+    const prefs = [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize]
 
     let outputMessages = [
         [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],

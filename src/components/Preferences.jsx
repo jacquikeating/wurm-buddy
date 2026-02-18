@@ -1,5 +1,5 @@
 export default function Preferences({ prefs }) {
-    const [prefsOpen, setPrefsOpen, uptime, setUptime] = prefs
+    const [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize] = prefs
 
     return (
         <div className={prefsOpen ? ("prefs open") : ("prefs")}>
