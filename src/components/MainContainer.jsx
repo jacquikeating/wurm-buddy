@@ -41,6 +41,8 @@ export default function MainContainer() {
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(null)
 
+    const setAll = [setStep, setUptime, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
+
     let outputMessages = [
         [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],
         [`${myJob?.quadrant} ${myJob?.mechanic}`],
@@ -106,7 +108,7 @@ export default function MainContainer() {
     return (
         <StepContext.Provider value={{ step, setStep }}>
             <div className="container">
-                <MenuBar uptime={uptime} setUptime={setUptime} />
+                <MenuBar uptime={uptime} setAll={setAll} />
                 <main>
                     {renderContent()}
                 </main>

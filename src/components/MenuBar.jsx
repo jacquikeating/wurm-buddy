@@ -1,4 +1,6 @@
-export default function MenuBar({ uptime, setUptime }) {
+export default function MenuBar({ uptime, setAll }) {
+
+    const [setUptime] = setAll
 
     function reset() {
         console.log("reset")
