@@ -6,7 +6,6 @@ export default function Preferences({ prefsOpen, uptime, setUptime }) {
                 <p>strat:</p>
                 <button className={uptime ? "settings-button" : "settings-button active"} onClick={() => setUptime(false)}>regular</button>
                 <button className={uptime ? "settings-button active" : "settings-button"} onClick={() => setUptime(true)}>uptime</button>
-                <p>{uptime ? ("uptime") : ("regular")}</p>
             </div>
 
             <div className="pref-group">
