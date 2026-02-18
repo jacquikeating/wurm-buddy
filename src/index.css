@@ -298,4 +298,16 @@ main {
       border: 1px solid rgb(144, 51, 153);
     }
   }
+
+  .close-prefs {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all ease 0.15s;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 1rem;
+  }
 }

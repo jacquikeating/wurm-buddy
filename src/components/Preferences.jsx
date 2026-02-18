@@ -10,7 +10,7 @@ export default function Preferences({ prefs }) {
             </div>
 
             <div className="pref-group">
-                <p>size: {size}</p>
+                <p>size:</p>
                 <button className={size == "large" ? "settings-button active" : "settings-button"} onClick={() => setSize("large")}>large</button>
                 <button className={size == "mini" ? "settings-button active" : "settings-button"} onClick={() => setSize("mini")}>mini</button>
             </div>
@@ -19,6 +19,7 @@ export default function Preferences({ prefs }) {
                 <p>role:</p>
             </div>
             
+            <button className="close-prefs" onClick={() => setPrefsOpen(false)}>x</button>
         </div>
     )
 }
