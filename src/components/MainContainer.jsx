@@ -52,7 +52,7 @@ export default function MainContainer() {
         [`${instructions[3]}`, `${firstMech == "stacks" ? ("top-up") : ("eprog holos")}`],
         [`${instructions[4]}`, `${firstMech == "stacks" ? ("eprog ixo") : ("top-up")}`],
         [`east`, `${firstMech == "stacks" ? ("top-up") : ("eprog ixo")}`],
-        [`back ${tower[0]}`, `${tower[2]}`],
+        [`${tower[0]}`, `${tower[2]}`],
         [`esuna`, `${tower[3]}`],
         [`${tower[3]}`],
         [`${cardsOrInters}`, `eprog kera`],
@@ -60,8 +60,8 @@ export default function MainContainer() {
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`, `eprog`],
         [`${portalClone}`, `eprog kera`],
         [`pot soon!`],
-        [`phys eprog holos`, `zoe`],
-        [`pan kera eprog`]
+        [`phys eprog holos`, `zoe eprog`],
+        [`pan kera`]
     ]
 
     useEffect(() => {
