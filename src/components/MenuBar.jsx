@@ -6,8 +6,8 @@ export default function MenuBar({ uptime, setUptime }) {
 
     return (
         <div className="menu-bar">
-            <button className="toggle-button" onClick={() => setUptime(!uptime)}>{ uptime ? "uptime" : "regular"}</button>
-            <button className="toggle-button" onClick={reset}>reset</button>
+            <button className="menu-button" onClick={() => setUptime(!uptime)}>{ uptime ? "uptime" : "regular"}</button>
+            <button className="menu-button" onClick={reset}>reset</button>
         </div>
     )
 }

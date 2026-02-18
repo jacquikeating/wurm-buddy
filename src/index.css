@@ -31,14 +31,21 @@
   width: calc(400px - 1rem);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 0.5rem;
   height: 2rem;
   background: black;
 
-  .toggle-button {
+  .menu-button {
     background: transparent;
     border: none;
     color: white;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
 
@@ -111,9 +118,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: default;
+    transition: all 0.15s ease;
 
     &:nth-child(1) {
       background: rgb(180, 50, 80);
+      border-bottom: 1px solid white;
     }
 
     &:nth-child(2) {
@@ -132,6 +142,10 @@ main {
     &.east {
       height: 100%;
       background: rgb(255, 200, 0)!important;
+    }
+
+    &:hover {
+      opacity: 0.9;
     }
   }
 }
