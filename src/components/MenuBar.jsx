@@ -1,9 +1,16 @@
 export default function MenuBar({ uptime, setAll }) {
 
-    const [setUptime] = setAll
+    const [setStep, setUptime, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setAll
 
     function reset() {
-        console.log("reset")
+        setStep(1)
+        setCardsOrInters(null)
+        setMyJob(null)
+        setHourglassLocation(null)
+        setFirstMech(null)
+        setTower(["", "", "", ""])
+        setPortalClone(null)
+        setSafePlatform(null)
     }
 
     return (
