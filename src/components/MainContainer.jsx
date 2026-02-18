@@ -114,7 +114,7 @@ export default function MainContainer() {
 
     return (
         <StepContext.Provider value={{ step, setStep }}>
-            <div className="container">
+            <div className={size == "large" ? "container" : "container mini"}>
                 <MenuBar setMechanicVariables={setMechanicVariables} prefs={prefs} />
                 <Preferences prefs={prefs} />
                 <main>

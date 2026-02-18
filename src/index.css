@@ -17,17 +17,38 @@
 
   --total: 8; /* How many items to be displayed in a ring on Screen2 */
   --radius: 150px; /* Circle size */
+  --radius-mini: 90px;
 }
 
 .container {
   width: 400px;
   height: 600px;
   border: 1px solid white;
+
+  &.mini {
+    width: 250px;
+    height: 350px;
+
+    .prefs {
+      width: calc(250px - 2rem);
+    }
+
+    .clone-button {
+      width: 60px;
+      height: 60px;
+      margin: -30px;
+      
+      transform: 
+        rotate(var(--angle))
+        translateX(var(--radius-mini))
+        rotate(calc(-1 * var(--angle)));
+    }
+  }
 }
 
 .menu-bar {
   border-bottom: 1px solid white;
-  width: calc(400px - 1rem);
+  width: 100cw;
   display: flex;
   align-items: center;
   justify-content: space-between;
