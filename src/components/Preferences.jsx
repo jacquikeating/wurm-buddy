@@ -1,6 +1,7 @@
-export default function Preferences() {
+export default function Preferences({ prefsOpen }) {
+
     return (
-        <div>
+        <div className={prefsOpen ? ("prefs open") : ("prefs")}>
             <h2>Preferences</h2>
         </div>
     )

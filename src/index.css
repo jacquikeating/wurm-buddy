@@ -231,3 +231,17 @@ main {
     }
   }
 }
+
+.prefs {
+  display: none;
+  background: rgb(25,25,25);
+  width: calc(400px - 2rem);
+  position: absolute;
+  top: calc(2rem + 2px);
+  left: 1px;
+  z-index: 1;
+
+  &.open {
+    display: block!important;
+  }
+}
