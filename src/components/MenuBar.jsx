@@ -1,6 +1,6 @@
-export default function MenuBar({ uptime, setAll }) {
+export default function MenuBar({ prefsOpen, setAll }) {
 
-    const [setStep, setUptime, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setAll
+    const [setPrefsOpen, setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setAll
 
     function reset() {
         setStep(1)
@@ -15,7 +15,7 @@ export default function MenuBar({ uptime, setAll }) {
 
     return (
         <div className="menu-bar">
-            <button className="menu-button" onClick={() => setUptime(!uptime)}>{ uptime ? "uptime" : "regular"}</button>
+            <button className="menu-button" onClick={() => setPrefsOpen(!prefsOpen)}>prefs</button>
             <button className="menu-button" onClick={reset}>reset</button>
         </div>
     )
