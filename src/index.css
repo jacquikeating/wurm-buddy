@@ -23,7 +23,6 @@
   width: 400px;
   height: 600px;
   border: 1px solid white;
-  margin: 2rem;
 }
 
 .menu-bar {
@@ -118,7 +117,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: default;
+    cursor: pointer;
     transition: all 0.15s ease;
 
     &:nth-child(1) {
