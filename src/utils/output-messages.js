@@ -1,0 +1,22 @@
+let outputMessages = [
+    [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],
+    [`${myJob?.quadrant} ${myJob?.mechanic}`],
+    [`${hourglassLocation || "?"}`, `eprog`],
+    [`east`, `late kera`, `ixo eprog`],
+    [`phys phil eprog`, `${instructions[1]} after`],
+    [`${instructions[1]}`, `pan zoe kera`],
+    [`${instructions[2]}`, `${firstMech == "stacks" ? ("eprog holos") : ("top-up")}`],
+    [`${instructions[3]}`, `${firstMech == "stacks" ? ("top-up") : ("eprog holos")}`],
+    [`${instructions[4]}`, `${firstMech == "stacks" ? ("eprog ixo") : ("top-up")}`],
+    [`east`, `${firstMech == "stacks" ? ("top-up") : ("eprog ixo")}`],
+    [`${tower[0]}`, `${tower[2]}`],
+    [`esuna`, `${tower[3]}`],
+    [`${tower[3]}`],
+    [`${cardsOrInters}`, `eprog kera`],
+    [`${safePlatform}`, `ixo`],
+    [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`, `eprog`],
+    [`${portalClone}`, `eprog kera`],
+    [`pot soon!`],
+    [`phys eprog holos`, `zoe eprog`],
+    [`pan kera`]
+]
