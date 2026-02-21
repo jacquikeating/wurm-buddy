@@ -17,6 +17,8 @@ export default function Preferences({ prefs }) {
 
             <div className="pref-group">
                 <p>role:</p>
+                <button className={size == "large" ? "settings-button active" : "settings-button"} onClick={() => setSize("large")}>SGE</button>
+                <button className={size == "mini" ? "settings-button active" : "settings-button"} onClick={() => setSize("mini")}>not SGE</button>
             </div>
             
             <button className="close-prefs" onClick={() => setPrefsOpen(false)}>x</button>
