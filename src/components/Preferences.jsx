@@ -1,5 +1,5 @@
 export default function Preferences({ prefs }) {
-    const [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize] = prefs
+    const [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize, role, setRole] = prefs
 
     return (
         <div className={prefsOpen ? ("prefs open") : ("prefs")}>
@@ -16,9 +16,9 @@ export default function Preferences({ prefs }) {
             </div>
 
             <div className="pref-group">
-                <p>role:</p>
-                <button className={size == "large" ? "settings-button active" : "settings-button"} onClick={() => setSize("large")}>SGE</button>
-                <button className={size == "mini" ? "settings-button active" : "settings-button"} onClick={() => setSize("mini")}>not SGE</button>
+                <p>role:{role}</p>
+                <button className={role == "SGE" ? "settings-button active" : "settings-button"} onClick={() => setRole("SGE")}>SGE</button>
+                <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => setRole("Generic")}>not SGE</button>
             </div>
             
             <button className="close-prefs" onClick={() => setPrefsOpen(false)}>x</button>

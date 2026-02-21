@@ -48,9 +48,9 @@ export default function MainContainer() {
     const [prefsOpen, setPrefsOpen] = useState(false)
     const [uptime, setUptime] = useState(true)
     const [size, setSize] = useState("large")
-    const [role, setRole] = useState("generic")
+    const [role, setRole] = useState("Generic")
 
-    const prefs = [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize]
+    const prefs = [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize, role, setRole]
 
     // OUTPUT MESSAGES
     const outputGeneric = [
