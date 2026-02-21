@@ -32,7 +32,7 @@ export default function MainContainer() {
     // const [safePlatform, setSafePlatform] = useState("west platform, north safe")
 
     // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(8)
+    const [step, setStep] = useState(21)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
     const [instructions, setInstructions] = useState(["", "", "", "", ""])

@@ -29,6 +29,10 @@
     width: 250px;
     height: 350px;
 
+    main {
+      height: calc(100% - 2rem);
+    }
+
     .prefs {
       width: calc(250px - 2rem);
     }
@@ -55,6 +59,7 @@
   padding: 0 0.5rem;
   height: 2rem;
   background: black;
+  margin-bottom: -1px;
 
   .menu-button {
     background: transparent;
@@ -85,7 +90,7 @@
 
 main {
   display: flex;
-  height: calc(100% - 2.2rem);
+  height: calc(100% - 2.1rem);
   width: 100%;
   border-top: 1px solid transparent;
 }
@@ -105,7 +110,11 @@ main {
   .option-row {
     display: flex;
     height: 25%;
-    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
 
     .option {
       height: 100%;
@@ -128,6 +137,7 @@ main {
 
       &.dark {
         background: rgb(87, 47, 148);
+        border-bottom: none;
       }
     }
   }
@@ -135,6 +145,7 @@ main {
   .option {
     width: 100%;
     height: 50%;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,6 +168,8 @@ main {
     &.west {
       height: 100%;
       background: rgb(151, 59, 237)!important;
+      border-bottom: none;
+      border-right: 1px solid white;
     }
 
     &.east {
@@ -273,17 +286,22 @@ main {
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 
     &:last-of-type {
       margin-bottom: 0.5rem;
+    }
+
+    .pref-name {
+      font-size: 0.85rem;
+      color: white;
     }
   }
 
   .settings-button {
     background: transparent;
     border: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     transition: all ease 0.15s;
     padding: 0.35rem;
@@ -291,11 +309,12 @@ main {
     border: 1px solid transparent;
 
     &:hover {
-      opacity: 0.9;
+      color: white;
     }
 
     &.active {
-      border: 1px solid rgb(144, 51, 153);
+      border: 1px solid white;
+      color: white;
     }
   }
 
@@ -309,5 +328,9 @@ main {
     right: 1rem;
     bottom: 1rem;
     font-size: 1rem;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
   }
 }

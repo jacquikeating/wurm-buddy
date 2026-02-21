@@ -14,19 +14,19 @@ export default function Screen6({ hourglassLocation, setPortalClone }) {
             {hourglassLocation == "north" ? ( 
                 <>
                     <div className="option" onClick={() => handleInput("sides safe")}>
-                        <span className="option-name">North (Hourglass)</span>
+                        <span className="option-name">North<br />(Hourglass)</span>
                     </div>
                     <div className="option" onClick={() => handleInput("boss safe")}>
-                        <span className="option-name">South (Bowtie)</span>
+                        <span className="option-name">South<br />(Bowtie)</span>
                     </div>
                 </>   
             ) : (
                   <>
                     <div className="option" onClick={() => handleInput("boss safe")}>
-                        <span className="option-name">North (Bowtie)</span>
+                        <span className="option-name">North<br />(Bowtie)</span>
                     </div>
                     <div className="option" onClick={() => handleInput("sides safe")}>
-                        <span className="option-name">South (Hourglass)</span>
+                        <span className="option-name">South<br />(Hourglass)</span>
                     </div>
                 </>  
             )}
