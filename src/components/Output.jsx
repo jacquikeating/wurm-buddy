@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react"
 import { StepContext } from "../utils/context.js"
 import AudioPlayer from "./AudioPlayer.jsx"
 
-export default function Output({ messages, timeout }) {
+export default function Output({ messages, timeout, audio }) {
     const { step, setStep } = useContext(StepContext)
 
     useEffect(() => {
@@ -24,7 +24,7 @@ export default function Output({ messages, timeout }) {
                     )
                 })}
             </ul>
-            <AudioPlayer />
+            <AudioPlayer src={audio} />
         </main>
     )
 }
