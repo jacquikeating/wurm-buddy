@@ -1,7 +1,9 @@
 export default function AudioPlayer({ src }) {
     return (
         <div>
-           <p>Audio</p>
+           <audio autoPlay>
+            <source src={src} type="audio/wav" />
+           </audio>
         </div>
     )
 }
