@@ -32,7 +32,7 @@ export default function MainContainer() {
     // const [safePlatform, setSafePlatform] = useState("west platform, north safe")
 
     // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(21)
+    const [step, setStep] = useState(1)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
@@ -112,7 +112,7 @@ export default function MainContainer() {
         switch (step) {
             case 1: return <Screen1 setCardsOrInters={setCardsOrInters} />;
             case 2: return <Screen2 setMyJob={setMyJob} />;
-            case 3: return <Output messages={outputMessages[0]} timeout={20000} audio={[`/${myJob.quadrant}.wav`]} />;
+            case 3: return <Output messages={outputMessages[0]} timeout={20000} audio={[`/${myJob.quadrant}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} />;
             case 5: return <Output messages={outputMessages[1]} timeout={20000} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} />;
