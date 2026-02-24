@@ -249,6 +249,8 @@ main {
 
 
 .output {
+  position: relative;
+
   ul {
     width: 100%;
     text-align: center;
@@ -333,4 +335,15 @@ main {
       color: rgba(255, 255, 255, 0.7);
     }
   }
+}
+
+.missed-input {
+  position: absolute;
+  bottom: -31px;
+  width: calc(100% - 2rem);
+  height: 65px;
+  text-align: center;
+  padding: 1rem;
+  background: rgb(180, 50, 80);
+  border-top: 1px solid white;
 }
