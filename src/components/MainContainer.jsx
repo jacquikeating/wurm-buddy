@@ -15,8 +15,8 @@ import { useState, useEffect } from "react"
 
 export default function MainContainer() {
     // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
-    const [step, setStep] = useState(9)
-    const [cardsOrInters, setCardsOrInters] = useState("cards")
+    const [step, setStep] = useState(21)
+    const [cardsOrInters, setCardsOrInters] = useState("intercards")
     const [myJob, setMyJob] = useState({
             location: "SE",
             quadrant: 4,
@@ -130,9 +130,9 @@ export default function MainContainer() {
             case 19: return <Output messages={[` `]} timeout={9000} />; // chilling waiting for clones
             case 20: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} />;
             case 21: return <Screen7 portalClone={portalClone} setSafePlatform={setSafePlatform} />;
-            case 22: return <Output messages={outputMessages[13]} timeout={12000} />; // where to go for first stacks
-            case 23: return <Output messages={outputMessages[14]} timeout={12000} />; // safe platform
-            case 24: return <Output messages={outputMessages[15]} timeout={10000} />; // second stacks
+            case 22: return <Output messages={outputMessages[13]} timeout={12000} audio={[`/${cardsOrInters}.wav`]} />; // where to go for first stacks
+            case 23: return <Output messages={outputMessages[14]} timeout={12000} not-audio={"change safePlatform to an array"} />; // safe platform
+            case 24: return <Output messages={outputMessages[15]} timeout={10000} audio={[`/${cardsOrInters == "cards" ? ("intercards.wav") : ("cards.wav")}`]} />; // second stacks
             case 25: return <Output messages={outputMessages[16]} timeout={12000} />; // portal clone --> castbar damage
             case 26: return <Output messages={[` `]} timeout={7000} />; // just hit boss time
             case 27: return <Output messages={outputMessages[17]} timeout={18000} />; // pot reminder for 8:00 burst
