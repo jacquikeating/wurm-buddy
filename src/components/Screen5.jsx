@@ -39,10 +39,10 @@ export default function Screen5({ setTower }) {
             </div>
 
             <div className="option-row">
-                <div className="option dark" onClick={() => handleInput(["left", "dark", "edge", "N"])}>
+                <div className="option dark" onClick={() => handleInput(["left", "dark", "point outside", "N"])}>
                     <span className="option-name">Dark</span>
                 </div>
-                <div className="option dark" onClick={() => handleInput(["right", "dark", "edge", "N"])}>
+                <div className="option dark" onClick={() => handleInput(["right", "dark", "point outside", "N"])}>
                     <span className="option-name">Dark</span>
                 </div>
             </div>
