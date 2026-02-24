@@ -41,6 +41,7 @@ export default function MainContainer() {
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(["", ""])
 
+    const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
     // PREFERENCES
@@ -143,7 +144,7 @@ export default function MainContainer() {
     }
 
     return (
-        <StepContext.Provider value={{ step, setStep }}>
+        <StepContext.Provider value={{ step, setStep, mechanicVariables, setMechanicVariables }}>
             <div className={size == "large" ? "container" : "container mini"}>
                 <MenuBar setMechanicVariables={setMechanicVariables} prefs={prefs} />
                 <Preferences prefs={prefs} />
