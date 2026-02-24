@@ -10,7 +10,7 @@ export default function MenuBar({ setMechanicVariables, prefs }) {
         setFirstMech(null)
         setTower(["", "", "", ""])
         setPortalClone(null)
-        setSafePlatform(null)
+        setSafePlatform(["", ""])
     }
 
     return (
