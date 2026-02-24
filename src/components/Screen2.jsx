@@ -1,17 +1,44 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { StepContext } from "../utils/context.js"
+import AudioPlayer from "./AudioPlayer.jsx"
 
-export default function Screen2({ setMyJob }) {
+export default function Screen2({ setMyJob, timeout }) {
     const { step, setStep } = useContext(StepContext)
+    const [playReminder, setPlayReminder] = useState(false)
 
     function handleInput(selectedOption) {
-        // callout: `go to ${job.quadrant} quadrant` 
         setMyJob(selectedOption)
         setStep(step + 1)
     }
 
+    useEffect(() => {
+        const reminderTimer = setTimeout(() => {
+            setPlayReminder(true)
+        }, timeout * 0.66)
+
+        return () => {
+            clearTimeout(reminderTimer)
+        }
+    }, [])
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMyJob({
+                location: "unknown",
+                quadrant: "?",
+                mechanic: "unknown",
+                group: 0
+            })
+            setStep(step + 1)
+        }, timeout)
+
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [])
+
     const jobOptions = [
-        // We have to start with east, not north, because of how the CSS renders the buttons in a circle
+        // Has to start with east, not north, because of how the CSS renders the buttons in a circle
         {
             location: "E",
             quadrant: 3,
@@ -75,6 +102,7 @@ export default function Screen2({ setMyJob }) {
                     </button>
                 )
             })}
+            {playReminder && <AudioPlayer audio={["/soft ding.mp3"]} />}
         </div>
     )
 }
