@@ -15,32 +15,31 @@ import { useState, useEffect } from "react"
 
 export default function MainContainer() {
     // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
-    // const [step, setStep] = useState(21)
-    // const [uptime, setUptime] = useState(true)
-    // const [cardsOrInters, setCardsOrInters] = useState("cards")
-    // const [myJob, setMyJob] = useState({
-    //         location: "SE",
-    //         quadrant: 4,
-    //         mechanic: "stack",
-    //         group: 2
-    //     })
-    // const [instructions, setInstructions] = useState(["", "", "", "", ""])
-    // const [hourglassLocation, setHourglassLocation] = useState("south")
-    // const [firstMech, setFirstMech] = useState("defs")
-    // const [tower, setTower] = useState(["left", "fire", "pyretic", "S"])
-    // const [portalClone, setPortalClone] = useState("sides safe")
-    // const [safePlatform, setSafePlatform] = useState("west platform, north safe")
-
-    // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(1)
-    const [cardsOrInters, setCardsOrInters] = useState(null)
-    const [myJob, setMyJob] = useState(null)
+    const [step, setStep] = useState(6)
+    const [cardsOrInters, setCardsOrInters] = useState("cards")
+    const [myJob, setMyJob] = useState({
+            location: "SE",
+            quadrant: 4,
+            mechanic: "stack",
+            group: 2
+        })
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
-    const [hourglassLocation, setHourglassLocation] = useState(null)
-    const [firstMech, setFirstMech] = useState(null)
-    const [tower, setTower] = useState(["", "", "", ""])
-    const [portalClone, setPortalClone] = useState(null)
-    const [safePlatform, setSafePlatform] = useState(null)
+    const [hourglassLocation, setHourglassLocation] = useState("south")
+    const [firstMech, setFirstMech] = useState("defs")
+    const [tower, setTower] = useState(["left", "fire", "pyretic", "S"])
+    const [portalClone, setPortalClone] = useState("sides safe")
+    const [safePlatform, setSafePlatform] = useState("west platform, north safe")
+
+    // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
+    // const [step, setStep] = useState(6)
+    // const [cardsOrInters, setCardsOrInters] = useState(null)
+    // const [myJob, setMyJob] = useState(null)
+    // const [instructions, setInstructions] = useState(["", "", "", "", ""])
+    // const [hourglassLocation, setHourglassLocation] = useState("north")
+    // const [firstMech, setFirstMech] = useState(null)
+    // const [tower, setTower] = useState(["", "", "", ""])
+    // const [portalClone, setPortalClone] = useState(null)
+    // const [safePlatform, setSafePlatform] = useState(null)
 
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
@@ -116,8 +115,8 @@ export default function MainContainer() {
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} />;
             case 5: return <Output messages={outputMessages[1]} timeout={20000} audio={[`/${myJob.quadrant}.wav`, `${myJob.mechanic}.wav`]} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} />;
-            case 7: return <Output messages={outputMessages[2]} timeout={10000} />;
-            case 8: return <Output messages={outputMessages[3]} timeout={10000} />;
+            case 7: return <Output messages={outputMessages[2]} timeout={10000} audio={[`/${hourglassLocation}.wav`]} />;
+            case 8: return <Output messages={outputMessages[3]} timeout={10000} audio={[`/platform.wav`]} />;
             case 9: return <Screen5 setTower={setTower} />;
             case 10: return <Output messages={outputMessages[4]} timeout={6000} />; // after tower
             case 11: return <Output messages={outputMessages[5]} timeout={6000} />; // running to first mech
