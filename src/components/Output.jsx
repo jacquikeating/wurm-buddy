@@ -1,9 +1,11 @@
-import { useEffect, useContext } from "react"
+import { useEffect, useContext, useState } from "react"
 import { StepContext } from "../utils/context.js"
 import AudioPlayer from "./AudioPlayer.jsx"
 
-export default function Output({ messages, timeout, audio }) {
+export default function Output({ messages, timeout, audio, delay }) {
     const { step, setStep } = useContext(StepContext)
+
+    const [playing, setPlaying] = useState(false)
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -15,6 +17,17 @@ export default function Output({ messages, timeout, audio }) {
         }
     }, [messages])
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setPlaying(true)
+        }, delay)
+
+        return () => {
+            clearTimeout(timer)
+            setPlaying(false)
+        }
+    }, [audio])
+
     return (
         <main className="output">
             <ul>
@@ -24,7 +37,7 @@ export default function Output({ messages, timeout, audio }) {
                     )
                 })}
             </ul>
-            {audio && <AudioPlayer audio={audio} /> }
+            {playing && audio && <AudioPlayer audio={audio} /> }
         </main>
     )
 }
