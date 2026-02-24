@@ -39,7 +39,7 @@ export default function MainContainer() {
     const [firstMech, setFirstMech] = useState(null)
     const [tower, setTower] = useState(["", "", "", ""])
     const [portalClone, setPortalClone] = useState(null)
-    const [safePlatform, setSafePlatform] = useState(null)
+    const [safePlatform, setSafePlatform] = useState(["", ""])
 
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
