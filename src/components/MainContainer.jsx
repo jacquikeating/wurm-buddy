@@ -124,8 +124,8 @@ export default function MainContainer() {
             case 13: return <Output messages={outputMessages[7]} timeout={5000} audio={[`/${instructions[3]}.wav`]} />; // btwn 2nd and 3rd
             case 14: return <Output messages={outputMessages[8]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
             case 15: return <Output messages={outputMessages[9]} timeout={5000} audio={[`/platform.wav`]} />; // otw to tower spots
-            case 16: return <Output messages={outputMessages[10]} timeout={8000} />; // tower type
-            case 17: return <Output messages={outputMessages[11]} timeout={5000} />; // esuna & spread spot
+            case 16: return <Output messages={outputMessages[10]} timeout={8000} audio={[`/${tower[0]}.wav`, `/${tower[2]}.wav`]} />; // tower type
+            case 17: return <Output messages={outputMessages[11]} timeout={5000} audio={[`/${tower[3]}.wav`]} />; // esuna & spread spot
             case 18: return <Output messages={outputMessages[12]} timeout={6000} />; // just spread spot
             case 19: return <Output messages={[` `]} timeout={9000} />; // chilling waiting for clones
             case 20: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} />;
