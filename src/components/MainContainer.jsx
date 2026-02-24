@@ -15,7 +15,7 @@ import { useState, useEffect } from "react"
 
 export default function MainContainer() {
     // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
-    const [step, setStep] = useState(6)
+    const [step, setStep] = useState(9)
     const [cardsOrInters, setCardsOrInters] = useState("cards")
     const [myJob, setMyJob] = useState({
             location: "SE",
@@ -119,11 +119,11 @@ export default function MainContainer() {
             case 8: return <Output messages={outputMessages[3]} timeout={10000} audio={[`/platform.wav`]} />;
             case 9: return <Screen5 setTower={setTower} />;
             case 10: return <Output messages={outputMessages[4]} timeout={6000} />; // after tower
-            case 11: return <Output messages={outputMessages[5]} timeout={6000} />; // running to first mech
-            case 12: return <Output messages={outputMessages[6]} timeout={5000} />; // btwn 1st and 2nd
-            case 13: return <Output messages={outputMessages[7]} timeout={5000} />; // btwn 2nd and 3rd
-            case 14: return <Output messages={outputMessages[8]} timeout={6000} />; // btwn 3rd and 4th
-            case 15: return <Output messages={outputMessages[9]} timeout={5000} />; // otw to tower spots
+            case 11: return <Output messages={outputMessages[5]} timeout={6000} audio={[`/${instructions[1]}.wav`]} />; // running to first mech
+            case 12: return <Output messages={outputMessages[6]} timeout={5000} audio={[`/${instructions[2]}.wav`]} />; // btwn 1st and 2nd
+            case 13: return <Output messages={outputMessages[7]} timeout={5000} audio={[`/${instructions[3]}.wav`]} />; // btwn 2nd and 3rd
+            case 14: return <Output messages={outputMessages[8]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
+            case 15: return <Output messages={outputMessages[9]} timeout={5000} audio={[`/platform.wav`]} />; // otw to tower spots
             case 16: return <Output messages={outputMessages[10]} timeout={8000} />; // tower type
             case 17: return <Output messages={outputMessages[11]} timeout={5000} />; // esuna & spread spot
             case 18: return <Output messages={outputMessages[12]} timeout={6000} />; // just spread spot
