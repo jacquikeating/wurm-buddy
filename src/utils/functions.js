@@ -30,7 +30,7 @@ export function getFirstMessage(uptime, myJob) {
     if (mechanic == "stack") {
         msg = `stack ${stackSpot} later`
     } else if (mechanic == "def"){
-        msg = `def ${defNum} ${defSpot} later`
+        msg = `${defNum == 1 ? ("first") : ("second")} def ${defSpot} later`
     }
 
     return msg
