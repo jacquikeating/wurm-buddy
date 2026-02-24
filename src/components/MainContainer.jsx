@@ -16,7 +16,7 @@ import { useState, useEffect } from "react"
 export default function MainContainer() {
     // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
     const [step, setStep] = useState(21)
-    const [cardsOrInters, setCardsOrInters] = useState("intercards")
+    const [cardsOrInters, setCardsOrInters] = useState("cards")
     const [myJob, setMyJob] = useState({
             location: "SE",
             quadrant: 4,
@@ -28,7 +28,7 @@ export default function MainContainer() {
     const [firstMech, setFirstMech] = useState("defs")
     const [tower, setTower] = useState(["left", "fire", "pyretic", "S"])
     const [portalClone, setPortalClone] = useState("sides safe")
-    const [safePlatform, setSafePlatform] = useState("west platform, north safe")
+    const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
 
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
     // const [step, setStep] = useState(6)
@@ -67,7 +67,7 @@ export default function MainContainer() {
         [`doom`, `${tower[3]}`], // Esuna reminder; where to go for cone spreads 
         [`${tower[3]}`], // Where to go for cone spreads
         [`${cardsOrInters}`, `mit`], // Where to go for first clone stacks; mit reminder
-        [`${safePlatform}`], // Which platform (and where) will be safe for clone telegraph
+        [`${safePlatform[0]}`, `${safePlatform[1]}`], // Which platform (and where) will be safe for clone telegraph
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`], // Where to go for second clone stacks
         [`${portalClone}`], // Where to go to dodge the final clone telegraph
         [`pot soon!`], // Pot reminder
@@ -90,7 +90,7 @@ export default function MainContainer() {
         [`esuna`, `${tower[3]}`],
         [`${tower[3]}`],
         [`${cardsOrInters}`, `eprog kera`],
-        [`${safePlatform}`, `ixo`],
+        [`${safePlatform[0]}, ${safePlatform[1]}`, `ixo`],
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`, `eprog`],
         [`${portalClone}`, `eprog kera`],
         [`pot soon!`],

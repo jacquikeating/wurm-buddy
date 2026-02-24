@@ -13,10 +13,10 @@ export default function Screen7({ portalClone, setSafePlatform }) {
 
     return (
         <div className="screen-7 side-split">
-            <div className="option west" onClick={() => handleInput(`west platform, ${safeSide}`)}>
+            <div className="option west" onClick={() => handleInput([`west platform`, `${safeSide}`])}>
                 <span className="option-name">West</span>
             </div>
-            <div className="option east" onClick={() => handleInput(`east platform, ${safeSide}`)}>
+            <div className="option east" onClick={() => handleInput([`east platform`, `${safeSide}`])}>
                 <span className="option-name">East</span>
             </div>            
         </div>
