@@ -1,5 +1,11 @@
+import { useContext, useEffect, useState } from "react"
+
 export default function MissedInput({   }) {
-    return (
-        <div className="missed-input">Missed input!</div>
-    )
+    const [display, setDisplay] = useState(true)
+    
+    if (display) {
+        return (
+            <div className="missed-input">Missed input!</div>
+        )
+    } 
 }
