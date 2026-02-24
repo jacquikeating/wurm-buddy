@@ -131,11 +131,11 @@ export default function MainContainer() {
             case 20: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} />;
             case 21: return <Screen7 portalClone={portalClone} setSafePlatform={setSafePlatform} />;
             case 22: return <Output messages={outputMessages[13]} timeout={12000} audio={[`/${cardsOrInters}.wav`]} />; // where to go for first stacks
-            case 23: return <Output messages={outputMessages[14]} timeout={12000} not-audio={"change safePlatform to an array"} />; // safe platform
+            case 23: return <Output messages={outputMessages[14]} timeout={12000} audio={[`/${safePlatform[0]}.wav`, `/${safePlatform[1]}.wav`]} />; // safe platform
             case 24: return <Output messages={outputMessages[15]} timeout={10000} audio={[`/${cardsOrInters == "cards" ? ("intercards.wav") : ("cards.wav")}`]} />; // second stacks
-            case 25: return <Output messages={outputMessages[16]} timeout={12000} />; // portal clone --> castbar damage
+            case 25: return <Output messages={outputMessages[16]} timeout={12000} audio={[`/${portalClone}.wav`]} />; // portal clone --> castbar damage
             case 26: return <Output messages={[` `]} timeout={7000} />; // just hit boss time
-            case 27: return <Output messages={outputMessages[17]} timeout={18000} />; // pot reminder for 8:00 burst
+            case 27: return <Output messages={outputMessages[17]} timeout={18000} audio={[`/pot soon.wav`]} />; // pot reminder for 8:00 burst
             case 28: return <Output messages={[` `]} timeout={10000} />; // just hit boss time
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
