@@ -1,6 +1,7 @@
 import { useEffect, useContext, useState } from "react"
 import { StepContext } from "../utils/context.js"
 import AudioPlayer from "./AudioPlayer.jsx"
+import MissedInput from "./MissedInput.jsx"
 
 export default function Output({ messages, timeout, audio, delay }) {
     const { step, setStep } = useContext(StepContext)
@@ -38,6 +39,7 @@ export default function Output({ messages, timeout, audio, delay }) {
                 })}
             </ul>
             {playing && audio && <AudioPlayer audio={audio} /> }
+            <MissedInput />
         </main>
     )
 }
