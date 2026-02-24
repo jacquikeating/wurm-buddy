@@ -24,7 +24,7 @@ export default function Output({ messages, timeout, audio }) {
                     )
                 })}
             </ul>
-            <AudioPlayer src={audio} />
+            {audio && <AudioPlayer src={audio} /> }
         </main>
     )
 }
