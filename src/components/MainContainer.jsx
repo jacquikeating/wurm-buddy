@@ -26,7 +26,7 @@ export default function MainContainer() {
     // const [instructions, setInstructions] = useState(["", "", "", "", ""])
     // const [hourglassLocation, setHourglassLocation] = useState("south")
     // const [firstMech, setFirstMech] = useState("defs")
-    // const [tower, setTower] = useState(["left", "fire", "pyretic", "S"])
+    // const [tower, setTower] = useState(["left", "fire", "pyretic", "S", "platform edge"])
     // const [portalClone, setPortalClone] = useState("sides safe")
     // const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
 
@@ -37,7 +37,7 @@ export default function MainContainer() {
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
     const [hourglassLocation, setHourglassLocation] = useState(null)
     const [firstMech, setFirstMech] = useState(null)
-    const [tower, setTower] = useState(["", "", "", ""])
+    const [tower, setTower] = useState(["", "", "", "", ""])
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(["", ""])
 
@@ -66,7 +66,7 @@ export default function MainContainer() {
         [`platform`], // Which side to go for tower platforms - replace with "east" or "west"
         [`${tower[0]}`, `${tower[2]}`], // Tower side; tower mechanic
         [`doom`, `${tower[3]}`], // Esuna reminder; where to go for cone spreads 
-        [`${tower[3]}`], // Where to go for cone spreads
+        [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads
         [`${cardsOrInters}`, `mit`], // Where to go for first clone stacks; mit reminder
         [`${safePlatform[0]}`, `${safePlatform[1]}`], // Which platform (and where) will be safe for clone telegraph
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`], // Where to go for second clone stacks
@@ -89,7 +89,7 @@ export default function MainContainer() {
         [`east`, `${firstMech == "stacks" ? ("top-up") : ("eprog ixo")}`],
         [`${tower[0]}`, `${tower[2]}`],
         [`esuna`, `${tower[3]}`],
-        [`${tower[3]}`],
+        [`${tower[3]}`, `${tower[4]}`],
         [`${cardsOrInters}`, `eprog kera`],
         [`${safePlatform[0]}, ${safePlatform[1]}`, `ixo`],
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`, `eprog`],
