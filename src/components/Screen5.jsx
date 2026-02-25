@@ -1,8 +1,20 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { StepContext } from "../utils/context.js"
+import AudioPlayer from "./AudioPlayer.jsx"
 
-export default function Screen5({ setTower }) {
+export default function Screen5({ setTower, timeout }) {
     const { step, setStep } = useContext(StepContext)
+    const [timesUp, setTimesUp] = useState(false)
+
+    useEffect(() => {
+        const reminderTimer = setTimeout(() => {
+            setTimesUp(true)
+        }, timeout)
+
+        return () => {
+            clearTimeout(reminderTimer)
+        }
+    }, [])
 
     function handleInput(selectedOption) {
         setTower(selectedOption)
@@ -12,40 +24,41 @@ export default function Screen5({ setTower }) {
     return (
         <div className="screen-5">
             <div className="option-row">
-                <div className="option fire" onClick={() => handleInput(["left", "fire", "pyretic", "S"])}>
+                <div className={timesUp ? ("option fire times-up") : ("option fire")} onClick={() => handleInput(["left", "fire", "pyretic", "S"])}>
                     <span className="option-name">Fire</span>
                 </div>
-                <div className="option fire" onClick={() => handleInput(["right", "fire", "pyretic", "S"])}>
+                <div className={timesUp ? ("option fire times-up") : ("option fire")} onClick={() => handleInput(["right", "fire", "pyretic", "S"])}>
                     <span className="option-name">Fire</span>
                 </div>
             </div>
 
             <div className="option-row">
-                <div className="option earth" onClick={() => handleInput(["left", "earth", "twister", "S"])}>
+                <div className={timesUp ? ("option earth times-up") : ("option earth")} onClick={() => handleInput(["left", "earth", "twister", "S"])}>
                     <span className="option-name">Earth</span>
                 </div>
-                <div className="option earth" onClick={() => handleInput(["right", "earth", "twister", "S"])}>
+                <div className={timesUp ? ("option earth times-up") : ("option earth")} onClick={() => handleInput(["right", "earth", "twister", "S"])}>
                     <span className="option-name">Earth</span>
                 </div>
             </div>
 
             <div className="option-row">
-                <div className="option wind" onClick={() => handleInput(["left", "wind", "kb", "mid"])}>
+                <div className={timesUp ? ("option wind times-up") : ("option wind")} onClick={() => handleInput(["left", "wind", "kb", "mid"])}>
                     <span className="option-name">Wind</span>
                 </div>
-                <div className="option wind" onClick={() => handleInput(["right", "wind", "kb", "mid"])}>
+                <div className={timesUp ? ("option wind times-up") : ("option wind")} onClick={() => handleInput(["right", "wind", "kb", "mid"])}>
                     <span className="option-name">Wind</span>
                 </div>
             </div>
 
             <div className="option-row">
-                <div className="option dark" onClick={() => handleInput(["left", "dark", "point outside", "N"])}>
+                <div className={timesUp ? ("option dark times-up") : ("option dark")} onClick={() => handleInput(["left", "dark", "point outside", "N"])}>
                     <span className="option-name">Dark</span>
                 </div>
-                <div className="option dark" onClick={() => handleInput(["right", "dark", "point outside", "N"])}>
+                <div className={timesUp ? ("option dark times-up") : ("option dark")} onClick={() => handleInput(["right", "dark", "point outside", "N"])}>
                     <span className="option-name">Dark</span>
                 </div>
             </div>
+            {timesUp && <AudioPlayer audio={["/soft ding.mp3"]} />}
         </div>
     )
 }

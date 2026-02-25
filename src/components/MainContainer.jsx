@@ -118,7 +118,7 @@ export default function MainContainer() {
             case 6: return <Screen4 setFirstMech={setFirstMech} timeout={4000} />;
             case 7: return <Output messages={outputMessages[2]} timeout={10000} audio={[`/${hourglassLocation}.wav`]} />;
             case 8: return <Output messages={outputMessages[3]} timeout={10000} audio={[`/platform.wav`]} />;
-            case 9: return <Screen5 setTower={setTower} />;
+            case 9: return <Screen5 setTower={setTower} timeout={10000} />;
             case 10: return <Output messages={outputMessages[4]} timeout={6000} />; // after tower
             case 11: return <Output messages={outputMessages[5]} timeout={6000} audio={[`/${instructions[1]}.wav`]} />; // running to first mech
             case 12: return <Output messages={outputMessages[6]} timeout={5000} audio={[`/${instructions[2]}.wav`]} />; // btwn 1st and 2nd
