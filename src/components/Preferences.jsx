@@ -18,7 +18,8 @@ export default function Preferences({ prefs }) {
             <div className="pref-group">
                 <p className="pref-name">role:</p>
                 <button className={role == "SGE" ? "settings-button active" : "settings-button"} onClick={() => setRole("SGE")}>SGE</button>
-                <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => setRole("Generic")}>not SGE</button>
+                <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => setRole("GenericMelee")}>not SGE (melee)</button>
+                <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => setRole("Generic")}>not SGE (ranged)</button>
             </div>
             
             <button className="close-prefs" onClick={() => setPrefsOpen(false)}>x</button>
