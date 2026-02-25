@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { StepContext } from "../utils/context.js"
 import AudioPlayer from "./AudioPlayer.jsx"
 
-export default function Screen5({ setTower, timeout }) {
+export default function Screen5({ setTower, timeout, role }) {
     const { step, setStep } = useContext(StepContext)
     const [timesUp, setTimesUp] = useState(false)
 
@@ -17,6 +17,12 @@ export default function Screen5({ setTower, timeout }) {
     }, [])
 
     function handleInput(selectedOption) {
+        if (role == "GenericMelee") {
+            if (selectedOption[3] == "S") {
+                selectedOption[3] = "N"
+                selectedOption[4] = "behind buddy"
+            }
+        }
         setTower(selectedOption)
         setStep(step + 1)
     }
