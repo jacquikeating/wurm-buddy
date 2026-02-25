@@ -180,6 +180,10 @@ main {
     &:hover {
       opacity: 0.9;
     }
+
+    &.times-up {
+      animation: opacity-blink 1s infinite;
+    }
   }
 }
 
@@ -401,6 +405,6 @@ main {
 
 @keyframes opacity-blink {
   50% {
-    opacity: 0.33;
+    opacity: 0.5;
   }
 }
