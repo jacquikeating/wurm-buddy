@@ -111,8 +111,8 @@ export default function MainContainer() {
     function renderContent() {
         switch (step) {
             case 1: return <Screen1 setCardsOrInters={setCardsOrInters} />;
-            case 2: return <Screen2 setMyJob={setMyJob} timeout={10000} />;
-            case 3: return <Output messages={outputMessages[0]} timeout={20000} audio={[`/${myJob.quadrant}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
+            case 2: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
+            case 3: return <Output messages={outputMessages[0]} timeout={15000} audio={[`/${myJob.quadrant}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} />;
             case 5: return <Output messages={outputMessages[1]} timeout={20000} audio={[`/${myJob.quadrant}.wav`, `${myJob.mechanic}.wav`]} delay={15000} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} />;
