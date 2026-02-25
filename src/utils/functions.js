@@ -3,6 +3,10 @@ export function getFirstMessage(uptime, myJob) {
         return ("")
     }
 
+    if (myJob.location == "?") {
+        return "missed input"
+    }
+
     let { group, mechanic, defNum } = myJob
 
     let msg = ""
