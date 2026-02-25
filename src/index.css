@@ -341,9 +341,47 @@ main {
   position: absolute;
   bottom: -31px;
   width: calc(100% - 2rem);
-  height: 65px;
   text-align: center;
   padding: 1rem;
   background: rgb(180, 50, 80);
   border-top: 1px solid white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  h2 {
+    font-size: 1rem;
+    margin-top: -5px;
+  }
+
+  .clone-select-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+
+    .clone-select-group {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 0.5rem;
+
+      .fallback-clone-btn {
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+        padding: 0.25rem;
+        border-radius: 2px;
+        width: 2rem;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
 }
