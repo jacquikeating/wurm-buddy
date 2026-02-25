@@ -199,6 +199,7 @@ main {
   width: 90px;
   height: 90px;
   margin: -45px;
+  cursor: pointer;
   
   background: #667eea;
   color: white;
@@ -216,6 +217,14 @@ main {
     translateX(var(--radius))         /* Move away from center */
     rotate(calc(-1 * var(--angle)));  /* Rotate back */
     /* Credit: https://medium.com/@mohitphogat/how-to-arrange-elements-in-a-circle-using-just-css-no-javascript-required-1bd35582307f */
+
+    &:hover {
+      opacity: 0.9;
+    }
+  
+    &.times-up {
+      animation: red-blink 1s infinite;
+    }
 }
 
 .summary-screen {
@@ -384,4 +393,14 @@ main {
   }
 }
 
+@keyframes red-blink {
+  50% {
+    background: rgb(180, 50, 80);
+  }
+}
+
+@keyframes opacity-blink {
+  50% {
+    opacity: 0.33;
+  }
 }

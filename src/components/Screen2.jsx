@@ -4,7 +4,7 @@ import AudioPlayer from "./AudioPlayer.jsx"
 
 export default function Screen2({ setMyJob, timeout }) {
     const { step, setStep } = useContext(StepContext)
-    const [playReminder, setPlayReminder] = useState(false)
+    const [timesUp, setTimesUp] = useState(false)
 
     function handleInput(selectedOption) {
         setMyJob(selectedOption)
@@ -13,29 +13,29 @@ export default function Screen2({ setMyJob, timeout }) {
 
     useEffect(() => {
         const reminderTimer = setTimeout(() => {
-            setPlayReminder(true)
-        }, timeout * 0.66)
+            setTimesUp(true)
+        }, timeout)
 
         return () => {
             clearTimeout(reminderTimer)
         }
     }, [])
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setMyJob({
-                location: "unknown",
-                quadrant: "?",
-                mechanic: "unknown",
-                group: 0
-            })
-            setStep(step + 1)
-        }, timeout)
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         setMyJob({
+    //             location: "?",
+    //             quadrant: "?",
+    //             mechanic: "?",
+    //             group: "?"
+    //         })
+    //         setStep(step + 1)
+    //     }, timeout)
 
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [])
+    //     return () => {
+    //         clearTimeout(timer)
+    //     }
+    // }, [])
 
     const jobOptions = [
         // Has to start with east, not north, because of how the CSS renders the buttons in a circle
@@ -97,12 +97,12 @@ export default function Screen2({ setMyJob, timeout }) {
         <div className="screen-2">
             {jobOptions.map((job, index) => {
                 return (
-                    <button className="clone-button" style={{"--i": index}} key={index} onClick={() => handleInput(job)}>
+                    <button className={timesUp ? ("clone-button times-up") : ("clone-button")} style={{"--i": index}} key={index} onClick={() => handleInput(job)}>
                         {job.location}
                     </button>
                 )
             })}
-            {playReminder && <AudioPlayer audio={["/soft ding.mp3"]} />}
+            {timesUp && <AudioPlayer audio={["/soft ding.mp3"]} />}
         </div>
     )
 }
