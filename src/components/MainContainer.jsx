@@ -129,8 +129,8 @@ export default function MainContainer() {
             case 17: return <Output messages={outputMessages[11]} timeout={5000} audio={[`/${tower[3]}.wav`]} delay={5000} />; // esuna & spread spot
             case 18: return <Output messages={outputMessages[12]} timeout={6000} />; // just spread spot
             case 19: return <Output messages={[` `]} timeout={9000} />; // chilling waiting for clones
-            case 20: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} />;
-            case 21: return <Screen7 portalClone={portalClone} setSafePlatform={setSafePlatform} />;
+            case 20: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} timeout={5000} />;
+            case 21: return <Screen7 portalClone={portalClone} setSafePlatform={setSafePlatform} timeout={5000} />;
             case 22: return <Output messages={outputMessages[13]} timeout={12000} audio={[`/${cardsOrInters}.wav`]} />; // where to go for first stacks
             case 23: return <Output messages={outputMessages[14]} timeout={12000} audio={[`/${safePlatform[0]}.wav`, `/${safePlatform[1]}.wav`]} />; // safe platform
             case 24: return <Output messages={outputMessages[15]} timeout={10000} audio={[`/${cardsOrInters == "cards" ? ("intercards.wav") : ("cards.wav")}`]} />; // second stacks
