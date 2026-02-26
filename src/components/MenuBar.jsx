@@ -8,14 +8,14 @@ export default function MenuBar({ setMechanicVariables, prefs }) {
         setMyJob(null)
         setHourglassLocation(null)
         setFirstMech(null)
-        setTower(["", "", "", ""])
+        setTower(["", "", "", "", ""])
         setPortalClone(null)
         setSafePlatform(["", ""])
     }
 
     return (
         <div className="menu-bar">
-            <button className="menu-button" onClick={() => setPrefsOpen(!prefsOpen)}>prefs</button>
+            <button className="menu-button" onClick={() => setPrefsOpen(!prefsOpen)}>settings</button>
             <button className="menu-button" onClick={reset}>reset</button>
         </div>
     )
