@@ -61,8 +61,8 @@ export default function MainContainer() {
 
     // OUTPUT MESSAGES
     const outputGeneric = [
-        [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
-        [`${myJob?.quadrant} ${myJob?.mechanic}`], // Quadrant and tether to take
+        [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
+        [`${myJob?.quadrant} (${myJob?.quadRel})`, `${myJob?.mechanic}`], // Quadrant and tether to take
         [`${hourglassLocation || "?"}`], // Which side is safe for first clone telegraph
         [`platform`, `mit`], // Which side to go for tower platforms - replace with "east" or "west"; mit reminder
         [`mid`, `${instructions[1]} after`], // Reminder to go mid after tower assignments; sneak preview of your first S/D spot
@@ -84,8 +84,8 @@ export default function MainContainer() {
     ]
 
     const outputSGE = [
-        [`${myJob?.quadrant}`, `${getFirstMessage(uptime, myJob)}`],
-        [`${myJob?.quadrant} ${myJob?.mechanic}`],
+        [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`],
+        [`${myJob?.quadrant} (${myJob?.quadRel})`, `${myJob?.mechanic}`],
         [`${hourglassLocation || "?"}`, `eprog`],
         [`east`, `late kera`, `ixo eprog`],
         [`phys phil eprog`, `${instructions[1]} after`],
@@ -119,9 +119,9 @@ export default function MainContainer() {
         switch (step) {
             case 1: return <Screen1 setCardsOrInters={setCardsOrInters} />;
             case 2: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
-            case 3: return <Output messages={outputMessages[0]} timeout={15000} audio={[`/${myJob.quadrant}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
+            case 3: return <Output messages={outputMessages[0]} timeout={15000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadrant}.wav}`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
             case 4: return <Screen3 setHourglassLocation={setHourglassLocation} timeout={4000} />;
-            case 5: return <Output messages={outputMessages[1]} timeout={20000} audio={[`/${myJob.quadrant}.wav`, `${myJob.mechanic}.wav`]} delay={15000} />;
+            case 5: return <Output messages={outputMessages[1]} timeout={20000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadrant}.wav}`, `${myJob.mechanic}.wav`]} delay={15000} />;
             case 6: return <Screen4 setFirstMech={setFirstMech} timeout={4000} />;
             case 7: return <Output messages={outputMessages[2]} timeout={10000} audio={[`/${hourglassLocation}.wav`]} />;
             case 8: return <Output messages={outputMessages[3]} timeout={10000} audio={[`/platform.wav`]} />;
