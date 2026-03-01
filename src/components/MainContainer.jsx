@@ -20,6 +20,7 @@ export default function MainContainer() {
     // const [myJob, setMyJob] = useState({
     //         location: "SE",
     //         quadrant: 4,
+    //         quadRel: "top left"
     //         mechanic: "stack",
     //         group: 2
     //     })

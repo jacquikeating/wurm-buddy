@@ -42,18 +42,21 @@ export default function Screen2({ setMyJob, timeout }) {
         {
             location: "E",
             quadrant: 3,
+            quadRel: "bottom left",
             mechanic: "stack",
             group: 2
         },
         {
             location: "SE",
             quadrant: 4,
+            quadRel: "top left",
             mechanic: "stack",
             group: 2
         },
         {
             location: "S",
             quadrant: 1,
+            quadRel: "top right",
             mechanic: "def",
             defNum: 1,
             group: 1
@@ -61,6 +64,7 @@ export default function Screen2({ setMyJob, timeout }) {
         {
             location: "SW",
             quadrant: 2,
+            quadRel: "bottom right",
             mechanic: "def",
             defNum: 2,
             group: 1
@@ -68,6 +72,7 @@ export default function Screen2({ setMyJob, timeout }) {
         {
             location: "W",
             quadrant: 3,
+            quadRel: "bottom left",
             mechanic: "def",
             defNum: 1,
             group: 2
@@ -75,6 +80,7 @@ export default function Screen2({ setMyJob, timeout }) {
         {
             location: "NW",
             quadrant: 4,
+            quadRel: "top left",
             mechanic: "def",
             defNum: 2,
             group: 2
@@ -82,12 +88,14 @@ export default function Screen2({ setMyJob, timeout }) {
         {
             location: "N",
             quadrant: 1,
+            quadRel: "top right",
             mechanic: "stack",
             group: 1
         },
         {
             location: "NE",
             quadrant: 2,
+            quadRel: "bottom right",
             mechanic: "stack",
             group: 1
         },
