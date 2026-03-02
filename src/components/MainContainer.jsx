@@ -15,32 +15,32 @@ import { useState, useEffect } from "react"
 
 export default function MainContainer() {
     // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
-    // const [step, setStep] = useState(21)
-    // const [cardsOrInters, setCardsOrInters] = useState("cards")
-    // const [myJob, setMyJob] = useState({
-    //         location: "SE",
-    //         quadrant: 4,
-    //         quadRel: "top left"
-    //         mechanic: "stack",
-    //         group: 2
-    //     })
-    // const [instructions, setInstructions] = useState(["", "", "", "", ""])
-    // const [hourglassLocation, setHourglassLocation] = useState("south")
-    // const [firstMech, setFirstMech] = useState("defs")
-    // const [tower, setTower] = useState(["left", "fire", "pyretic", "S", "platform edge"])
-    // const [portalClone, setPortalClone] = useState("sides safe")
-    // const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
+    const [step, setStep] = useState(10)
+    const [cardsOrInters, setCardsOrInters] = useState("cards")
+    const [myJob, setMyJob] = useState({
+            location: "SE",
+            quadrant: 4,
+            quadRel: "top left",
+            mechanic: "stack",
+            group: 2
+        })
+    const [instructions, setInstructions] = useState(["", "", "", "", ""])
+    const [hourglassLocation, setHourglassLocation] = useState("south")
+    const [firstMech, setFirstMech] = useState("defs")
+    const [tower, setTower] = useState(["left", "fire", "pyretic", "S", "platform edge"])
+    const [portalClone, setPortalClone] = useState("sides safe")
+    const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
 
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(1)
-    const [cardsOrInters, setCardsOrInters] = useState(null)
-    const [myJob, setMyJob] = useState(null)
-    const [instructions, setInstructions] = useState(["", "", "", "", ""])
-    const [hourglassLocation, setHourglassLocation] = useState(null)
-    const [firstMech, setFirstMech] = useState(null)
-    const [tower, setTower] = useState(["", "", "", "", ""])
-    const [portalClone, setPortalClone] = useState(null)
-    const [safePlatform, setSafePlatform] = useState(["", ""])
+    // const [step, setStep] = useState(1)
+    // const [cardsOrInters, setCardsOrInters] = useState(null)
+    // const [myJob, setMyJob] = useState(null)
+    // const [instructions, setInstructions] = useState(["", "", "", "", ""])
+    // const [hourglassLocation, setHourglassLocation] = useState(null)
+    // const [firstMech, setFirstMech] = useState(null)
+    // const [tower, setTower] = useState(["", "", "", "", ""])
+    // const [portalClone, setPortalClone] = useState(null)
+    // const [safePlatform, setSafePlatform] = useState(["", ""])
 
     const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
@@ -72,7 +72,7 @@ export default function MainContainer() {
         [`${instructions[4]}`, `mit`], // Fourth S/D spot
         [`platform`], // Which side to go for tower platforms - replace with "east" or "west"
         [`${tower[0]}`, `${tower[2]}`], // Tower side; tower mechanic
-        [`doom`, `${tower[3]}`], // Esuna reminder; where to go for cone spreads 
+        [`${tower[3]}`], // Where to go for cone spreads 
         [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads
         [`${cardsOrInters}`, `mit`], // Where to go for first clone stacks; mit reminder
         [`${safePlatform[0]}`, `${safePlatform[1]}`], // Which platform (and where) will be safe for clone telegraph
@@ -95,7 +95,7 @@ export default function MainContainer() {
         [`${instructions[4]}`, `${firstMech == "stacks" ? ("eprog ixo") : ("top-up")}`],
         [`east`, `${firstMech == "stacks" ? ("top-up") : ("eprog ixo")}`],
         [`${tower[0]}`, `${tower[2]}`],
-        [`esuna`, `${tower[3]}`],
+        [`esuna dooms`, `${tower[3]}`],
         [`${tower[3]}`, `${tower[4]}`],
         [`${cardsOrInters}`, `eprog kera`],
         [`${safePlatform[0]}, ${safePlatform[1]}`, `ixo`],
@@ -133,7 +133,7 @@ export default function MainContainer() {
             case 14: return <Output messages={outputMessages[8]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
             case 15: return <Output messages={outputMessages[9]} timeout={5000} audio={[`/platform.wav`]} />; // otw to tower spots
             case 16: return <Output messages={outputMessages[10]} timeout={8000} audio={[`/${tower[0]}.wav`, `/${tower[2]}.wav`]} />; // tower type
-            case 17: return <Output messages={outputMessages[11]} timeout={5000} audio={[`/${tower[3]}.wav`]} delay={5000} />; // esuna & spread spot
+            case 17: return <Output messages={outputMessages[11]} timeout={5000} audio={[`/${tower[3]}.wav`, role == "SGE" && "/dooms.wav"]} delay={5000} />; // esuna & spread spot
             case 18: return <Output messages={outputMessages[12]} timeout={6000} />; // just spread spot
             case 19: return <Output messages={[` `]} timeout={9000} />; // chilling waiting for clones
             case 20: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} timeout={5000} />;
