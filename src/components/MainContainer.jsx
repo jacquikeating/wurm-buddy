@@ -15,32 +15,32 @@ import { useState, useEffect } from "react"
 
 export default function MainContainer() {
     // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
-    const [step, setStep] = useState(10)
-    const [cardsOrInters, setCardsOrInters] = useState("cards")
-    const [myJob, setMyJob] = useState({
-            location: "SE",
-            quadrant: 4,
-            quadRel: "top left",
-            mechanic: "stack",
-            group: 2
-        })
-    const [instructions, setInstructions] = useState(["", "", "", "", ""])
-    const [hourglassLocation, setHourglassLocation] = useState("south")
-    const [firstMech, setFirstMech] = useState("defs")
-    const [tower, setTower] = useState(["left", "fire", "pyretic", "S", "platform edge"])
-    const [portalClone, setPortalClone] = useState("sides safe")
-    const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
+    // const [step, setStep] = useState(10)
+    // const [cardsOrInters, setCardsOrInters] = useState("cards")
+    // const [myJob, setMyJob] = useState({
+    //         location: "SE",
+    //         quadrant: 4,
+    //         quadRel: "top left",
+    //         mechanic: "stack",
+    //         group: 2
+    //     })
+    // const [instructions, setInstructions] = useState(["", "", "", "", ""])
+    // const [hourglassLocation, setHourglassLocation] = useState("south")
+    // const [firstMech, setFirstMech] = useState("defs")
+    // const [tower, setTower] = useState(["left", "fire", "pyretic", "S", "platform edge"])
+    // const [portalClone, setPortalClone] = useState("sides safe")
+    // const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
 
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    // const [step, setStep] = useState(1)
-    // const [cardsOrInters, setCardsOrInters] = useState(null)
-    // const [myJob, setMyJob] = useState(null)
-    // const [instructions, setInstructions] = useState(["", "", "", "", ""])
-    // const [hourglassLocation, setHourglassLocation] = useState(null)
-    // const [firstMech, setFirstMech] = useState(null)
-    // const [tower, setTower] = useState(["", "", "", "", ""])
-    // const [portalClone, setPortalClone] = useState(null)
-    // const [safePlatform, setSafePlatform] = useState(["", ""])
+    const [step, setStep] = useState(1)
+    const [cardsOrInters, setCardsOrInters] = useState(null)
+    const [myJob, setMyJob] = useState(null)
+    const [instructions, setInstructions] = useState(["", "", "", "", ""])
+    const [hourglassLocation, setHourglassLocation] = useState(null)
+    const [firstMech, setFirstMech] = useState(null)
+    const [tower, setTower] = useState(["", "", "", "", ""])
+    const [portalClone, setPortalClone] = useState(null)
+    const [safePlatform, setSafePlatform] = useState(["", ""])
 
     const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
