@@ -72,7 +72,7 @@ export default function MainContainer() {
         [`${instructions[4]}`, `mit`], // Fourth S/D spot
         [`platform`], // Which side to go for tower platforms - replace with "east" or "west"
         [`${tower[0]}`, `${tower[2]}`], // Tower side; tower mechanic
-        [`${tower[3]}`], // Where to go for cone spreads 
+        [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads 
         [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads
         [`${cardsOrInters}`, `mit`], // Where to go for first clone stacks; mit reminder
         [`${safePlatform[0]}`, `${safePlatform[1]}`], // Which platform (and where) will be safe for clone telegraph
@@ -95,7 +95,7 @@ export default function MainContainer() {
         [`${instructions[4]}`, `${firstMech == "stacks" ? ("eprog ixo") : ("top-up")}`],
         [`east`, `${firstMech == "stacks" ? ("top-up") : ("eprog ixo")}`],
         [`${tower[0]}`, `${tower[2]}`],
-        [`esuna dooms`, `${tower[3]}`],
+        [`dooms`, `${tower[3]}`, `${tower[4]}`],
         [`${tower[3]}`, `${tower[4]}`],
         [`${cardsOrInters}`, `eprog kera`],
         [`${safePlatform[0]}, ${safePlatform[1]}`, `ixo`],
@@ -133,7 +133,7 @@ export default function MainContainer() {
             case 14: return <Output messages={outputMessages[8]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
             case 15: return <Output messages={outputMessages[9]} timeout={5000} audio={[`/platform.wav`]} />; // otw to tower spots
             case 16: return <Output messages={outputMessages[10]} timeout={8000} audio={[`/${tower[0]}.wav`, `/${tower[2]}.wav`]} />; // tower type
-            case 17: return <Output messages={outputMessages[11]} timeout={5000} audio={[`/${tower[3]}.wav`, role == "SGE" && "/dooms.wav"]} delay={5000} />; // esuna & spread spot
+            case 17: return <Output messages={outputMessages[11]} timeout={5000} audio={[`/${tower[3]}.wav`, `/${tower[4]}.wav`, role == "SGE" && "/dooms.wav"]} delay={5000} />; // esuna & spread spot
             case 18: return <Output messages={outputMessages[12]} timeout={6000} />; // just spread spot
             case 19: return <Output messages={[` `]} timeout={9000} />; // chilling waiting for clones
             case 20: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} timeout={5000} />;

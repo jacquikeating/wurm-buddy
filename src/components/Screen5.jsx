@@ -20,7 +20,7 @@ export default function Screen5({ setTower, timeout, role }) {
         if (role == "GenericMelee") {
             if (selectedOption[3] == "S") {
                 selectedOption[3] = "N"
-                selectedOption[4] = "behind buddy"
+                selectedOption[4] = "big spoon"
             }
         }
         setTower(selectedOption)
@@ -30,19 +30,19 @@ export default function Screen5({ setTower, timeout, role }) {
     return (
         <div className="screen-5">
             <div className="option-row">
-                <div className={timesUp ? ("option fire times-up") : ("option fire")} onClick={() => handleInput(["left", "fire", "pyretic", "S", "platform edge"])}>
+                <div className={timesUp ? ("option fire times-up") : ("option fire")} onClick={() => handleInput(["left", "fire", "pyretic", "S", "platform edge (center)"])}>
                     <span className="option-name">Fire</span>
                 </div>
-                <div className={timesUp ? ("option fire times-up") : ("option fire")} onClick={() => handleInput(["right", "fire", "pyretic", "S", "platform edge"])}>
+                <div className={timesUp ? ("option fire times-up") : ("option fire")} onClick={() => handleInput(["right", "fire", "pyretic", "S", "platform edge (center)"])}>
                     <span className="option-name">Fire</span>
                 </div>
             </div>
 
             <div className="option-row">
-                <div className={timesUp ? ("option earth times-up") : ("option earth")} onClick={() => handleInput(["left", "earth", "twister", "S", "platform edge"])}>
+                <div className={timesUp ? ("option earth times-up") : ("option earth")} onClick={() => handleInput(["left", "earth", "twister", "S", "platform edge (center)"])}>
                     <span className="option-name">Earth</span>
                 </div>
-                <div className={timesUp ? ("option earth times-up") : ("option earth")} onClick={() => handleInput(["right", "earth", "twister", "S", "platform edge"])}>
+                <div className={timesUp ? ("option earth times-up") : ("option earth")} onClick={() => handleInput(["right", "earth", "twister", "S", "platform edge (center)"])}>
                     <span className="option-name">Earth</span>
                 </div>
             </div>
@@ -57,10 +57,10 @@ export default function Screen5({ setTower, timeout, role }) {
             </div>
 
             <div className="option-row">
-                <div className={timesUp ? ("option dark times-up") : ("option dark")} onClick={() => handleInput(["left", "dark", "point outside", "N", "boss ring"])}>
+                <div className={timesUp ? ("option dark times-up") : ("option dark")} onClick={() => handleInput(["left", "dark", "aim out", "N", "boss ring"])}>
                     <span className="option-name">Dark</span>
                 </div>
-                <div className={timesUp ? ("option dark times-up") : ("option dark")} onClick={() => handleInput(["right", "dark", "point outside", "N", "boss ring"])}>
+                <div className={timesUp ? ("option dark times-up") : ("option dark")} onClick={() => handleInput(["right", "dark", "aim out", "N", "boss ring"])}>
                     <span className="option-name">Dark</span>
                 </div>
             </div>
