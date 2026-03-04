@@ -30,9 +30,20 @@ export default function Preferences({ prefs }) {
 
             <div className="pref-group">
                 <p className="pref-name">role:</p>
+                <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>generic - melee</button>
+                <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "Generic")}>generic - ranged</button>
+                <button className={role == "M1" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "M1")}>M1</button>
+                <button className={role == "M2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "M2")}>M2</button>
+                <button className={role == "R1" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "R1")}>R1</button>
+                <button className={role == "R2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "R2")}>R2</button>
+                <button className={role == "MT" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "MT")}>MT</button>
+                <button className={role == "OT" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "OT")}>OT</button>
+                
+                <button className={role == "WHM" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "WHM")}>WHM</button>
+                <button className={role == "AST" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "AST")}>AST</button>
+                <button className={role == "SCH" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "SCH")}>SCH</button>
                 <button className={role == "SGE" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "SGE")}>SGE</button>
-                <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>not SGE (melee)</button>
-                <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "Generic")}>not SGE (ranged)</button>
+
             </div>
             
             <button className="close-prefs" onClick={() => setPrefsOpen(false)}>x</button>
