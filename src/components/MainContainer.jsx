@@ -160,12 +160,12 @@ export default function MainContainer() {
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
             case 31: return <Rep2CloneSelect setRep2Clone={setRep2Clone} />
-            case 32: return <Output messages={rep2Output[0]} timeout={2000} />;
-            case 33: return <Output messages={rep2Output[1]} timeout={2000} />;
-            case 34: return <Output messages={rep2Output[2]} timeout={2000} />;
-            case 35: return <Output messages={rep2Output[3]} timeout={2000} />;
-            case 36: return <Output messages={rep2Output[4]} timeout={2000} />;
-            case 37: return <Output messages={rep2Output[5]} timeout={2000} />;
+            case 32: return <Output messages={rep2Output[0]} timeout={17000} />;
+            case 33: return <Output messages={rep2Output[1]} timeout={8000} />;
+            case 34: return <Output messages={rep2Output[2]} timeout={6000} />;
+            case 35: return <Output messages={rep2Output[3]} timeout={5000} />;
+            case 36: return <Output messages={rep2Output[4]} timeout={20000} />;
+            case 37: return <Output messages={rep2Output[5]} timeout={15000} />;
         }
     }
 

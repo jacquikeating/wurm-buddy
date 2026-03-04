@@ -17,7 +17,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             group: "east",
             tether: "CW from D",
             initialPos: ["D far right", "(facing wall)"],
-            reenactPos1: ["max melee SE", "N of clone"],
+            reenactPos1: ["SE max melee", "near clone"],
             reenactPos2: ["D far right", "(facing wall)"]
         },
         {
@@ -27,7 +27,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             tether: "CW from D",
             initialPos: ["A wall", "slightly S of marker"],
             reenactPos1: ["N boss ring", ""],
-            reenactPos2: ["stack on W clone", "stack on E clone"]
+            reenactPos2: ["W clone stack", "then E clone stack"]
         },
         {
             location: "S",
@@ -36,7 +36,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             tether: "avoid tethers",
             initialPos: ["B wall", ""],
             reenactPos1: ["N boss ring", ""],
-            reenactPos2: ["stack on W clone", "stack on E clone"]
+            reenactPos2: ["W clone stack", "then E clone stack"]
         },
         {
             location: "SW",
@@ -45,7 +45,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             tether: "CCW from D",
             initialPos: ["C wall", "slightly S of marker"],
             reenactPos1: ["N boss ring", ""],
-            reenactPos2: ["stack on W clone", "stack on E clone"]
+            reenactPos2: ["W clone stack", "then E clone stack"]
         },
         {
             location: "W",
@@ -53,7 +53,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             group: "west",
             tether: "CCW from D",
             initialPos: ["D far left", "(facing wall)"],
-            reenactPos1: ["max melee SW", "N of clone"],
+            reenactPos1: ["SW max melee", "near clone"],
             reenactPos2: ["D far left", "(facing wall)"]
         },
         {
@@ -72,7 +72,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             tether: "boss tether",
             initialPos: ["bait to D", "near bottom of diamond"],
             reenactPos1: ["N boss ring", ""],
-            reenactPos2: ["stack on W clone", "stack on E clone"]
+            reenactPos2: ["W clone stack", "then E clone stack"]
         },
         {
             location: "NE",
