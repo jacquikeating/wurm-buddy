@@ -112,6 +112,10 @@ export default function MainContainer() {
         outputMessages = outputSGE
     }
 
+    const rep2Output = [
+        ['tether:']
+    ]
+
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
     }, [firstMech])
@@ -149,6 +153,7 @@ export default function MainContainer() {
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
             case 31: return <Rep2CloneSelect />
+            case 32: return <Output messages={rep2Output[0]} timeout={10000} />;
         }
     }
 
