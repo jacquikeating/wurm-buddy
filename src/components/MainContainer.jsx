@@ -115,7 +115,8 @@ export default function MainContainer() {
     }
 
     const rep2Output = [
-        [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`]
+        [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
+        [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`]
     ]
 
 
@@ -156,7 +157,8 @@ export default function MainContainer() {
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
             case 31: return <Rep2CloneSelect setRep2Clone={setRep2Clone} />
-            case 32: return <Output messages={rep2Output[0]} timeout={20000} />;
+            case 32: return <Output messages={rep2Output[0]} timeout={2000} />;
+            case 33: return <Output messages={rep2Output[1]} timeout={20000} />;
         }
     }
 

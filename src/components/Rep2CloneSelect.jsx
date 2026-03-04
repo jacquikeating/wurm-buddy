@@ -15,49 +15,57 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             location: "E",
             mechanic: "cone",
             group: "east",
-            tether: "CW from D"
+            tether: "CW from D",
+            initialPos: ["D far right", "(facing wall)"]
         },
         {
             location: "SE",
             mechanic: "def",
             group: "east",
-            tether: "CW from D"
+            tether: "CW from D",
+            initialPos: ["A wall", "slightly S of marker"]
         },
         {
             location: "S",
             mechanic: "nothing",
             group: "west",
-            tether: "avoid tethers"
+            tether: "avoid tethers",
+            initialPos: ["B wall", ""]
         },
         {
             location: "SW",
             mechanic: "def",
             group: "west",
-            tether: "CCW from D"
+            tether: "CCW from D",
+            initialPos: ["C wall", "slightly S of marker"]
         },
         {
             location: "W",
             mechanic: "cone",
             group: "west",
-            tether: "CCW from D"
+            tether: "CCW from D",
+            initialPos: ["D far left", "(facing wall)"]
         },
         {
             location: "NW",
             mechanic: "stack",
             group: "west",
-            tether: "CCW from D"
+            tether: "CCW from D",
+            initialPos: ["D inner left", "(facing wall)"]
         },
         {
             location: "N",
             mechanic: "boss",
             group: "east",
-            tether: "boss tether"
+            tether: "boss tether",
+            initialPos: ["bait to D", "near bottom of diamond"]
         },
         {
             location: "NE",
             mechanic: "stack",
             group: "east",
-            tether: "CW from D"
+            tether: "CW from D",
+            initialPos: ["D inner right", "(facing wall)"]
         },
     ]
 
