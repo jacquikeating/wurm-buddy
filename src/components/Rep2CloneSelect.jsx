@@ -16,7 +16,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             mechanic: "cone",
             group: "east",
             tether: "CW from D",
-            initialPos: ["D far right", "(facing wall)"]
+            initialPos: ["D far right", "(facing wall)"],
         },
         {
             location: "SE",
