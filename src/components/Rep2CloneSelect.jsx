@@ -17,56 +17,72 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             group: "east",
             tether: "CW from D",
             initialPos: ["D far right", "(facing wall)"],
+            reenactPos1: ["max melee SE", "N of clone"],
+            reenactPos2: ["D far right", "(facing wall)"]
         },
         {
             location: "SE",
             mechanic: "def",
             group: "east",
             tether: "CW from D",
-            initialPos: ["A wall", "slightly S of marker"]
+            initialPos: ["A wall", "slightly S of marker"],
+            reenactPos1: ["N boss ring", ""],
+            reenactPos2: ["stack on W clone", "stack on E clone"]
         },
         {
             location: "S",
             mechanic: "nothing",
             group: "west",
             tether: "avoid tethers",
-            initialPos: ["B wall", ""]
+            initialPos: ["B wall", ""],
+            reenactPos1: ["N boss ring", ""],
+            reenactPos2: ["stack on W clone", "stack on E clone"]
         },
         {
             location: "SW",
             mechanic: "def",
             group: "west",
             tether: "CCW from D",
-            initialPos: ["C wall", "slightly S of marker"]
+            initialPos: ["C wall", "slightly S of marker"],
+            reenactPos1: ["N boss ring", ""],
+            reenactPos2: ["stack on W clone", "stack on E clone"]
         },
         {
             location: "W",
             mechanic: "cone",
             group: "west",
             tether: "CCW from D",
-            initialPos: ["D far left", "(facing wall)"]
+            initialPos: ["D far left", "(facing wall)"],
+            reenactPos1: ["max melee SW", "N of clone"],
+            reenactPos2: ["D far left", "(facing wall)"]
         },
         {
             location: "NW",
             mechanic: "stack",
             group: "west",
             tether: "CCW from D",
-            initialPos: ["D inner left", "(facing wall)"]
+            initialPos: ["D inner left", "(facing wall)"],
+            reenactPos1: ["inner ring SW", "slightly N of gap"],
+            reenactPos2: ["D inner left", "(facing wall)"]
         },
         {
             location: "N",
             mechanic: "boss",
             group: "east",
             tether: "boss tether",
-            initialPos: ["bait to D", "near bottom of diamond"]
+            initialPos: ["bait to D", "near bottom of diamond"],
+            reenactPos1: ["N boss ring", ""],
+            reenactPos2: ["stack on W clone", "stack on E clone"]
         },
         {
             location: "NE",
             mechanic: "stack",
             group: "east",
             tether: "CW from D",
-            initialPos: ["D inner right", "(facing wall)"]
-        },
+            initialPos: ["D inner right", "(facing wall)"],
+            reenactPos1: ["inner ring SE", "slightly N of gap"],
+            reenactPos2: ["D inner right", "(facing wall)"]
+        }
     ]
 
     return (
