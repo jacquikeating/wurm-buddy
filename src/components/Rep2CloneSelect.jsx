@@ -6,7 +6,6 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
 
     function handleInput(selectedOption) {
         setRep2Clone(selectedOption)
-        console.log(selectedOption)
         setStep(step + 1)
     }
 
@@ -15,42 +14,50 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
         {
             location: "E",
             mechanic: "cone",
-            group: "east"
+            group: "east",
+            tether: "CW from D"
         },
         {
             location: "SE",
             mechanic: "def",
-            group: "east"
+            group: "east",
+            tether: "CW from D"
         },
         {
             location: "S",
             mechanic: "nothing",
-            group: "west"
+            group: "west",
+            tether: "avoid tethers"
         },
         {
             location: "SW",
             mechanic: "def",
-            group: "west"
+            group: "west",
+            tether: "CCW from D"
         },
         {
             location: "W",
             mechanic: "cone",
-            group: "west"
+            group: "west",
+            tether: "CCW from D"
         },
         {
             location: "NW",
             mechanic: "stack",
-            group: "west"
+            group: "west",
+            tether: "CCW from D"
         },
         {
             location: "N",
             mechanic: "boss",
-            group: "east"
+            group: "east",
+            tether: "boss tether"
         },
         {
             location: "NE",
             mechanic: "stack",
-            group: "east"
+            group: "east",
+            tether: "CW from D"
         },
     ]
 

@@ -115,8 +115,9 @@ export default function MainContainer() {
     }
 
     const rep2Output = [
-        [`${rep2Clone?.mechanic}`]
+        [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`]
     ]
+
 
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
