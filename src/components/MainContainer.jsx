@@ -118,9 +118,10 @@ export default function MainContainer() {
         [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
         [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`],
         [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? "inside boss ring" : ""}`, `2 min burst`],
-        [`cones & kick`]
+        [`cones & kick`],
+        [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`],
+        [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
     ]
-
 
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
@@ -162,7 +163,9 @@ export default function MainContainer() {
             case 32: return <Output messages={rep2Output[0]} timeout={2000} />;
             case 33: return <Output messages={rep2Output[1]} timeout={2000} />;
             case 34: return <Output messages={rep2Output[2]} timeout={2000} />;
-            case 35: return <Output messages={rep2Output[3]} timeout={20000} />;
+            case 35: return <Output messages={rep2Output[3]} timeout={2000} />;
+            case 36: return <Output messages={rep2Output[4]} timeout={2000} />;
+            case 37: return <Output messages={rep2Output[5]} timeout={2000} />;
         }
     }
 
