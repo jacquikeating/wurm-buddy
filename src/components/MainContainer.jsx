@@ -8,6 +8,7 @@ import Screen6 from "./Screen6"
 import Screen7 from "./Screen7"
 import Output from "./Output"
 import Preferences from "./Preferences"
+import Rep2CloneSelect from "./Rep2CloneSelect"
 import { getFirstMessage, getStackDefInstructions } from "../utils/functions"
 import { StepContext } from "../utils/context.js"
 // import { outputMessages } from "../utils/output-messages.js"
@@ -32,7 +33,7 @@ export default function MainContainer() {
     // const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
 
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(31)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
@@ -147,6 +148,7 @@ export default function MainContainer() {
             case 28: return <Output messages={[` `]} timeout={10000} />; // just hit boss time
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
+            case 31: return <Rep2CloneSelect />
         }
     }
 
