@@ -189,7 +189,7 @@ main {
 
 
 /* SCREEN 2: CLONE POSITION */
-.screen-2 {
+.screen-2, .rep-2 {
   position: relative;
   width: calc(var(--radius) * 2);
   height: calc(var(--radius) * 2);
