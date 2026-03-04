@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Rep2CloneSelect({  }) {
+export default function Rep2CloneSelect({ setRep2Clone }) {
     const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
-        // setRep2Clone(selectedOption)
+        setRep2Clone(selectedOption)
         console.log(selectedOption)
         setStep(step + 1)
     }

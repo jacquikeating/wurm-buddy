@@ -43,6 +43,8 @@ export default function MainContainer() {
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(["", ""])
 
+    const [rep2Clone, setRep2Clone] = useState(null)
+
     const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
@@ -113,7 +115,7 @@ export default function MainContainer() {
     }
 
     const rep2Output = [
-        ['tether:']
+        [`${rep2Clone?.mechanic}`]
     ]
 
     useEffect(() => {
@@ -152,7 +154,7 @@ export default function MainContainer() {
             case 28: return <Output messages={[` `]} timeout={10000} />; // just hit boss time
             case 29: return <Output messages={outputMessages[18]} timeout={10000} />; // arcadian hell 1
             case 30: return <Output messages={outputMessages[19]} timeout={20000} />; // arcadian hell 2
-            case 31: return <Rep2CloneSelect />
+            case 31: return <Rep2CloneSelect setRep2Clone={setRep2Clone} />
             case 32: return <Output messages={rep2Output[0]} timeout={10000} />;
         }
     }
