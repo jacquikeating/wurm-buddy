@@ -117,7 +117,8 @@ export default function MainContainer() {
     const rep2Output = [
         [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
         [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`],
-        [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? "inside boss ring" : ""}`]
+        [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? "inside boss ring" : ""}`, `2 min burst`],
+        [`cones & kick`]
     ]
 
 
@@ -161,6 +162,7 @@ export default function MainContainer() {
             case 32: return <Output messages={rep2Output[0]} timeout={2000} />;
             case 33: return <Output messages={rep2Output[1]} timeout={2000} />;
             case 34: return <Output messages={rep2Output[2]} timeout={2000} />;
+            case 35: return <Output messages={rep2Output[3]} timeout={20000} />;
         }
     }
 
