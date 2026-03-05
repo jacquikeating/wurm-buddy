@@ -62,7 +62,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             group: "west",
             tether: "CCW from D",
             initialPos: ["D inner left", "(facing wall)"],
-            reenactPos1: ["inner ring SW", "slightly N of gap"],
+            reenactPos1: ["SW inner ring", "slightly N of gap"],
             reenactPos2: ["D inner left", "(facing wall)"]
         },
         {
@@ -80,7 +80,7 @@ export default function Rep2CloneSelect({ setRep2Clone }) {
             group: "east",
             tether: "CW from D",
             initialPos: ["D inner right", "(facing wall)"],
-            reenactPos1: ["inner ring SE", "slightly N of gap"],
+            reenactPos1: ["SE inner ring", "slightly N of gap"],
             reenactPos2: ["D inner right", "(facing wall)"]
         }
     ]

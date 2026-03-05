@@ -9,7 +9,7 @@ export default function MissedInput({   }) {
     const [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setMechanicVariables
 
     useEffect(() => {
-        if (step == 3 && myJob.location == "?") {
+        if (step == 11 && myJob.location == "?") {
             setDisplay(true)
         }
     }, [step])
@@ -20,7 +20,7 @@ export default function MissedInput({   }) {
     }
 
     function renderContent() {
-        if (step >= 3 && myJob.location == "?") {
+        if (step >= 11 && myJob.location == "?") {
             return (
                 <div className="clone-select-container">
                     <h2>Select clone:</h2>
