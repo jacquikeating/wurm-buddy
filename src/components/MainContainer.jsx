@@ -136,7 +136,7 @@ export default function MainContainer() {
             case 5: return <Output messages={rep2Output[3]} timeout={5000} audio={[`cones & kick.wav`]} />;
             case 6: return <Output messages={rep2Output[4]} timeout={20000} audio={[`/${rep2Clone?.reenactPos1[0]}.wav`]} />;
             case 7: return <Output messages={rep2Output[5]} timeout={15000} audio={[`/${rep2Clone?.reenactPos2[0]}.wav`]} />;
-            case 8: return <Output messages={[` `]} timeout={980000} />;
+            case 8: return <Output messages={[` `]} timeout={98000} />;
             case 9: return <Screen1 setCardsOrInters={setCardsOrInters} />;
             case 10: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
             case 11: return <Output messages={outputMessages[0]} timeout={15000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadrant}.wav}`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
