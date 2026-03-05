@@ -130,12 +130,12 @@ export default function MainContainer() {
     function renderContent() {
         switch (step) {
             case 1: return <Rep2CloneSelect setRep2Clone={setRep2Clone} />
-            case 2: return <Output messages={rep2Output[0]} timeout={17000} />;
-            case 3: return <Output messages={rep2Output[1]} timeout={8000} />;
-            case 4: return <Output messages={rep2Output[2]} timeout={6000} />;
-            case 5: return <Output messages={rep2Output[3]} timeout={5000} />;
-            case 6: return <Output messages={rep2Output[4]} timeout={20000} />;
-            case 7: return <Output messages={rep2Output[5]} timeout={15000} />;
+            case 2: return <Output messages={rep2Output[0]} timeout={17000} audio={[`/${rep2Clone?.mechanic}.wav`, `/${rep2Clone?.tether}.wav`]} />;
+            case 3: return <Output messages={rep2Output[1]} timeout={8000} audio={[`/${rep2Clone?.initialPos[0]}.wav`]} />;
+            case 4: return <Output messages={rep2Output[2]} timeout={6000} audio={[`/stack ${rep2Clone?.group}.wav`, `/burst.wav`]} />;
+            case 5: return <Output messages={rep2Output[3]} timeout={5000} audio={[`cones & kick.wav`]} />;
+            case 6: return <Output messages={rep2Output[4]} timeout={20000} audio={[`/${rep2Clone?.reenactPos1[0]}.wav`]} />;
+            case 7: return <Output messages={rep2Output[5]} timeout={15000} audio={[`/${rep2Clone?.reenactPos2[0]}.wav`]} />;
             case 8: return <Output messages={[` `]} timeout={980000} />;
             case 9: return <Screen1 setCardsOrInters={setCardsOrInters} />;
             case 10: return <Screen2 setMyJob={setMyJob} timeout={9000} />;

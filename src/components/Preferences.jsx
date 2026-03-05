@@ -17,7 +17,7 @@ export default function Preferences({ prefs }) {
     return (
         <div className={prefsOpen ? ("prefs open") : ("prefs")}>
             <div className="pref-group">
-                <p className="pref-name">strat:</p>
+                <p className="pref-name">idyllic:</p>
                 <button className={uptime ? "settings-button active" : "settings-button"} onClick={() => handleChange("uptime", true)}>uptime</button>
                 <button className={uptime ? "settings-button" : "settings-button active"} onClick={() => handleChange("uptime", false)}>regular</button>
             </div>
@@ -30,27 +30,30 @@ export default function Preferences({ prefs }) {
 
             <div className="pref-group">
                 <p className="pref-name">role:</p>
+                    <button className={role == "SGE" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "SGE")}>SGE</button>
+                    <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>not SGE (melee)</button>
+                    <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "Generic")}>not SGE (ranged)</button>
                 <div className="role-btn-group">
-                    <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>generic - melee</button>
-                    <div className="role-btn-subgroup">
+                    {/* <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>generic - melee</button> */}
+                    {/* <div className="role-btn-subgroup">
                         <button className={role == "M1" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "M1")}>M1</button>
                         <button className={role == "M2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "M2")}>M2</button>
                     </div>
                     <div className="role-btn-subgroup">
                         <button className={role == "MT" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "MT")}>MT</button>
                         <button className={role == "OT" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "OT")}>OT</button>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="role-btn-group">
-                    <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "Generic")}>generic - ranged</button>
-                    <div className="role-btn-subgroup">
+                    {/* <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "Generic")}>generic - ranged</button> */}
+                    {/* <div className="role-btn-subgroup">
                         <button className={role == "R1" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "R1")}>R1</button>
                         <button className={role == "R2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "R2")}>R2</button>
                     </div>
                     <div className="role-btn-subgroup">
                         <button className={role == "H1" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "H1")}>H1</button>
                         <button className={role == "H2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "H2")}>H2</button>
-                    </div>
+                    </div> */}
                 </div>
                 
                 {/* <button className={role == "WHM" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "WHM")}>WHM</button>
