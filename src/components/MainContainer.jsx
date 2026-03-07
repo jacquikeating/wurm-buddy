@@ -50,17 +50,18 @@ export default function MainContainer() {
 
     // PREFERENCES
     const localStoragePrefs = JSON.parse(localStorage.getItem("prefs"))
-    let defaultPrefs = {uptime: true, size: "mini", role: "GenericMelee"}
+    let defaultPrefs = {banana: true, uptime: true, size: "mini", role: "GenericMelee"}
     if (localStoragePrefs) {
         defaultPrefs = localStoragePrefs
     }
 
     const [prefsOpen, setPrefsOpen] = useState(false)
+    const [banana, setBanana] = useState(defaultPrefs.banana)
     const [uptime, setUptime] = useState(defaultPrefs.uptime)
     const [size, setSize] = useState(defaultPrefs.size)
     const [role, setRole] = useState(defaultPrefs.role)
 
-    const prefs = [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize, role, setRole]
+    const prefs = [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, role, setRole]
 
     // OUTPUT MESSAGES
     const outputGeneric = [
