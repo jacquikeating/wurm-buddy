@@ -1,21 +1,29 @@
 export default function Preferences({ prefs }) {
-    const [prefsOpen, setPrefsOpen, uptime, setUptime, size, setSize, role, setRole] = prefs
+    const [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, role, setRole] = prefs
 
     function handleChange(pref, value) {
         if (pref == "uptime") {
             setUptime(value)
-            localStorage.setItem("prefs", JSON.stringify({uptime: value, size: size, role: role})) 
+            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: value, size: size, role: role})) 
         } else if (pref =="size") {
             setSize(value)
-            localStorage.setItem("prefs", JSON.stringify({uptime: uptime, size: value, role: role})) 
+            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: uptime, size: value, role: role})) 
         } else if (pref == "role") {
             setRole(value)
-            localStorage.setItem("prefs", JSON.stringify({uptime: uptime, size: size, role: value})) 
-        } 
+            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: uptime, size: size, role: value})) 
+        } else if (pref == "rep2") {
+            setBanana(value)
+            localStorage.setItem("prefs", JSON.stringify({banana: value, uptime: uptime, size: size, role: role})) 
+        }
     }
 
     return (
         <div className={prefsOpen ? ("prefs open") : ("prefs")}>
+            <div className="pref-group">
+                <p className="pref-name">rep 2:</p>
+                <button className={banana ? "settings-button active" : "settings-button"} onClick={() => handleChange("rep2", true)}>banana</button>
+                <button className={banana ? "settings-button" : "settings-button active"} onClick={() => handleChange("rep2", false)}>clone zone</button>
+            </div>
             <div className="pref-group">
                 <p className="pref-name">idyllic:</p>
                 <button className={uptime ? "settings-button active" : "settings-button"} onClick={() => handleChange("uptime", true)}>uptime</button>
