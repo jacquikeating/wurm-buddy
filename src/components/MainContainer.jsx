@@ -130,7 +130,7 @@ export default function MainContainer() {
 
     function renderContent() {
         switch (step) {
-            case 1: return <Rep2CloneSelect banana={banana} setRep2Clone={setRep2Clone} />
+            case 1: return <Rep2CloneSelect banana={banana} setRep2Clone={setRep2Clone} role={role} />
             case 2: return <Output messages={rep2Output[0]} timeout={17000} audio={[`/${rep2Clone?.mechanic}.wav`, `/${rep2Clone?.tether}.wav`]} />;
             case 3: return <Output messages={rep2Output[1]} timeout={8000} audio={[`/${rep2Clone?.initialPos[0]}.wav`]} />;
             case 4: return <Output messages={rep2Output[2]} timeout={6000} audio={[`/stack ${rep2Clone?.group}.wav`, `/burst.wav`]} />;

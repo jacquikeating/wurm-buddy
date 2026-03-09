@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Rep2CloneSelect({ banana, setRep2Clone }) {
+export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
     const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
@@ -85,6 +85,81 @@ export default function Rep2CloneSelect({ banana, setRep2Clone }) {
             reenactPos1: ["SE inner ring", "slightly N of gap"],
             reenactPos2: ["D inner right", "(facing wall)"]
         }
+    ]
+
+    const cloneZoneOptions = [
+        {
+            location: "",
+            mechanic: "",
+            group: "",
+            tether: "",
+            initialPos: [],
+            reenactPos1: [],
+            reenactPos2: []
+        },
+        {
+            location: "",
+            mechanic: "",
+            group: "",
+            tether: "",
+            initialPos: [],
+            reenactPos1: [],
+            reenactPos2: []
+        },
+        {
+            location: "",
+            mechanic: "",
+            group: "",
+            tether: "",
+            initialPos: [],
+            reenactPos1: [],
+            reenactPos2: []
+        },
+        {
+            location: "",
+            mechanic: "",
+            group: "",
+            tether: "",
+            initialPos: [],
+            reenactPos1: [],
+            reenactPos2: []
+        },
+        {
+            location: "",
+            mechanic: "",
+            group: "",
+            tether: "",
+            initialPos: [],
+            reenactPos1: [],
+            reenactPos2: []
+        },
+        {
+            location: "",
+            mechanic: "",
+            group: "",
+            tether: "",
+            initialPos: [],
+            reenactPos1: [],
+            reenactPos2: []
+        },
+        {
+            location: "N",
+            mechanic: "boss",
+            group: "east",
+            tether: "boss tether",
+            initialPos: ["bait to A", "(between A and 1)"], 
+            reenactPos1: ["E near/far bait", "don't bait, just stack with baiter"],
+            reenactPos2: [`${role == "genericMelee" ? "stack E" : "stack W"}`]
+        },
+        {
+            location: "",
+            mechanic: "",
+            group: "",
+            tether: "",
+            initialPos: [],
+            reenactPos1: [],
+            reenactPos2: []
+        },
     ]
 
     return (
