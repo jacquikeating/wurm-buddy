@@ -1,13 +1,15 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Rep2CloneSelect({ setRep2Clone }) {
+export default function Rep2CloneSelect({ banana, setRep2Clone }) {
     const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         setRep2Clone(selectedOption)
         setStep(step + 1)
     }
+
+    console.log(`Banana strat: ${banana}`)
 
     const cloneOptions = [
         // Has to start with east, not north, because of how the CSS renders the buttons in a circle
