@@ -7,6 +7,7 @@ export default function Onboarding({ prefs, setOnboarded }) {
     const [playSound, setPlaySound] = useState(false)
 
     function finishOnboarding() {
+        window.open("https://www.youtube.com/watch?v=axQJc2kI3lY", "_blank", 'noopener,noreferrer')
         localStorage.setItem("onboarded", true)
         setOnboarded(true)
     }
@@ -38,7 +39,7 @@ export default function Onboarding({ prefs, setOnboarded }) {
                     <p>I'm a browser-based tool that can help you with rep 2 and idyllic dream.</p>
                     <p>I cannot read your game data. Instead, you will tell me which mechanics you get, and I will use my auto-timers to provide text and audio callouts.</p>
                     <div className="footer">
-                        <p>{onboardingStep}/5</p>
+                        <p>{onboardingStep}/4</p>
                         <button className="next-btn" onClick={() => setOnboardingStep(2)}>➜</button>
                     </div> 
                 </div>   
@@ -52,7 +53,7 @@ export default function Onboarding({ prefs, setOnboarded }) {
                     <p>Open me on a second monitor or phone, or use a program to keep me on top, like <a href="https://learn.microsoft.com/en-us/windows/powertoys/">Microsoft PowerToys</a> or an <a href="https://chromewebstore.google.com/detail/always-on-top-window/kmmfdmaiadakelcogiabcebofcgfkdma">extension</a>.</p>
                     <p>Click mechanic options as they become available, and reset (top right) after each pull.</p>
                     <div className="footer">
-                        <p>{onboardingStep}/5</p>
+                        <p>{onboardingStep}/4</p>
                         <button className="next-btn" onClick={() => setOnboardingStep(3)}>➜</button>
                     </div> 
                 </div>
@@ -68,26 +69,26 @@ export default function Onboarding({ prefs, setOnboarded }) {
                     <button className="play-btn" onClick={play}>🕪</button>
                     {playSound && <AudioPlayer audio={["/soft ding.mp3"]} />}
                     <div className="footer">
-                        <p>{onboardingStep}/5</p>
+                        <p>{onboardingStep}/4</p>
                         <button className="next-btn" onClick={() => setOnboardingStep(4)}>➜</button>
                     </div>                 
                 </div>
             )
+        // } else if (onboardingStep == 4) {
+        //     return (
+        //         <div className="onboarding">
+        //             <div className="header">
+        //                 <h1>settings & reset</h1>
+        //             </div>
+        //             <p>Change your strats, window size, and role in the <button className="secret-btn" onClick={() => setPrefsOpen(true)}>settings</button>.</p>
+        //             <p><span>Reset</span> at the end of each pull.</p>
+        //             <div className="footer">
+        //                 <p>{onboardingStep}/5</p>
+        //                 <button className="next-btn" onClick={() => setOnboardingStep(5)}>➜</button>
+        //             </div>
+        //         </div>
+        //     )
         } else if (onboardingStep == 4) {
-            return (
-                <div className="onboarding">
-                    <div className="header">
-                        <h1>settings & reset</h1>
-                    </div>
-                    <p>Change your strats, window size, and role in the <button className="secret-btn" onClick={() => setPrefsOpen(true)}>settings</button>.</p>
-                    <p><span>Reset</span> at the end of each pull.</p>
-                    <div className="footer">
-                        <p>{onboardingStep}/5</p>
-                        <button className="next-btn" onClick={() => setOnboardingStep(5)}>➜</button>
-                    </div>
-                </div>
-            )
-        } else if (onboardingStep == 5) {
             return (
                 <div className="onboarding">
                     <div className="header">
@@ -97,7 +98,7 @@ export default function Onboarding({ prefs, setOnboarded }) {
                     <p><a href="https://www.youtube.com/watch?v=axQJc2kI3lY" target="_blank">Here's a video</a> using Banana Codex and Uptime DN.</p>
                     <button onClick={finishOnboarding}>let's go! ➜</button>
                     <div className="footer">
-                        <p>{onboardingStep}/5</p>
+                        <p>{onboardingStep}/4</p>
                     </div>
                 </div>
             )

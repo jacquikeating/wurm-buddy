@@ -45,7 +45,6 @@ export default function MainContainer() {
     const [safePlatform, setSafePlatform] = useState(["", ""])
     const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
-        localStorage.removeItem("onboarded")
 
     // LOCAL STORAGE
     const [onboarded, setOnboarded] = useState(JSON.parse(localStorage.getItem("onboarded"))) 
