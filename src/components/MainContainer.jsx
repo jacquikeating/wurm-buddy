@@ -131,7 +131,7 @@ export default function MainContainer() {
 
     function renderContent() {
         if (!onboarded) {
-            return <Onboarding />
+            return <Onboarding prefs={prefs} />
         }
 
         switch (step) {

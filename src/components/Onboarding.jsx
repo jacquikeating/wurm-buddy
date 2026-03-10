@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-export default function Onboarding() {
+export default function Onboarding({ prefs }) {
+    const setPrefsOpen = prefs[1]
     const [onboardingStep, setOnboardingStep] = useState(1)
 
     function renderContent() {
@@ -33,6 +34,17 @@ export default function Onboarding() {
                     <p>Open me on a second monitor, phone, or use a program to keep this window on top (such as <a href="https://learn.microsoft.com/en-us/windows/powertoys/">Microsoft PowerToys</a>, or a <a href="https://chromewebstore.google.com/detail/always-on-top-window/kmmfdmaiadakelcogiabcebofcgfkdma">browser extension</a>).</p>
                     <p>Click mechanic options as they become available, and my automated timeline will guide you along.</p>
                     <button className="next-btn" onClick={() => setOnboardingStep(4)}>➜</button>
+                </div>
+            )
+        } else if (onboardingStep == 4) {
+            return (
+                <div className="onboarding">
+                    <div className="header">
+                        <h1>settings & reset</h1>
+                    </div>
+                    <p>Change your strats, window size, and role in the <button className="secret-btn" onClick={() => setPrefsOpen(true)}>settings</button>.</p>
+                    <p><span>Reset</span> at the end of each pull.</p>
+                    <button className="next-btn" onClick={() => setOnboardingStep(5)}>➜</button>
                 </div>
             )
         }
