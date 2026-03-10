@@ -24,6 +24,17 @@ export default function Onboarding() {
                     <button className="next-btn" onClick={() => setOnboardingStep(3)}>➜</button>
                 </div>   
             )
+        } else if (onboardingStep == 3) {
+            return (
+                <div className="onboarding">
+                    <div className="header">
+                        <h1>how to use</h1>
+                    </div>
+                    <p>Open me on a second monitor, phone, or use a program to keep this window on top (such as <a href="https://learn.microsoft.com/en-us/windows/powertoys/">Microsoft PowerToys</a>, or a <a href="https://chromewebstore.google.com/detail/always-on-top-window/kmmfdmaiadakelcogiabcebofcgfkdma">browser extension</a>).</p>
+                    <p>Click mechanic options as they become available, and my automated timeline will guide you along.</p>
+                    <button className="next-btn" onClick={() => setOnboardingStep(4)}>➜</button>
+                </div>
+            )
         }
     }
 

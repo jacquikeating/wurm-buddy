@@ -446,6 +446,14 @@ main {
     }
   }
 
+  a {
+    color: rgb(224, 24, 24);
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
   .next-btn {
     position: absolute;
     bottom: 1rem;
