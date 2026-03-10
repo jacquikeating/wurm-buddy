@@ -9,6 +9,7 @@ import Screen7 from "./Screen7"
 import Output from "./Output"
 import Preferences from "./Preferences"
 import Rep2CloneSelect from "./Rep2CloneSelect"
+import Onboarding from "./Onboarding"
 import { getFirstMessage, getStackDefInstructions } from "../utils/functions"
 import { StepContext } from "../utils/context.js"
 import { useState, useEffect } from "react"
@@ -129,6 +130,10 @@ export default function MainContainer() {
     }, [firstMech])
 
     function renderContent() {
+        if (!onboarded) {
+            return <Onboarding />
+        }
+
         switch (step) {
             case 1: return <Rep2CloneSelect banana={banana} setRep2Clone={setRep2Clone} role={role} />
             case 2: return <Output messages={rep2Output[0]} timeout={17000} audio={[`/${rep2Clone?.mechanic}.wav`, `/${rep2Clone?.tether}.wav`]} />;
