@@ -408,3 +408,39 @@ main {
     opacity: 0.5;
   }
 }
+
+
+/* ONBOARDING */
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+
+  img {
+    height: 100px;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: normal;
+  }
+
+  button {
+    border: none;
+    color: white;
+    background: rgb(187, 21, 21);
+    padding: 0.5rem 1.25rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    line-height: 1;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
