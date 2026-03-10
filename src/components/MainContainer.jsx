@@ -11,7 +11,6 @@ import Preferences from "./Preferences"
 import Rep2CloneSelect from "./Rep2CloneSelect"
 import { getFirstMessage, getStackDefInstructions } from "../utils/functions"
 import { StepContext } from "../utils/context.js"
-// import { outputMessages } from "../utils/output-messages.js"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
@@ -34,6 +33,7 @@ export default function MainContainer() {
 
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
     const [step, setStep] = useState(1)
+    const [rep2Clone, setRep2Clone] = useState(null)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
@@ -42,25 +42,23 @@ export default function MainContainer() {
     const [tower, setTower] = useState(["", "", "", "", ""])
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(["", ""])
-
-    const [rep2Clone, setRep2Clone] = useState(null)
-
     const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
-    // PREFERENCES
+    // LOCAL STORAGE
+    const onboarded = JSON.parse(localStorage.getItem("onboarded"))
     const localStoragePrefs = JSON.parse(localStorage.getItem("prefs"))
+
+    // PREFERENCES
     let defaultPrefs = {banana: true, uptime: true, size: "mini", role: "GenericMelee"}
     if (localStoragePrefs) {
         defaultPrefs = localStoragePrefs
     }
-
     const [prefsOpen, setPrefsOpen] = useState(false)
     const [banana, setBanana] = useState(defaultPrefs.banana)
     const [uptime, setUptime] = useState(defaultPrefs.uptime)
     const [size, setSize] = useState(defaultPrefs.size)
     const [role, setRole] = useState(defaultPrefs.role)
-
     const prefs = [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, role, setRole]
 
     // OUTPUT MESSAGES
