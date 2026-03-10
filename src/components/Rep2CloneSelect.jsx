@@ -105,7 +105,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
             mechanic: "def",
             group: "east",
             tether: "CW from A",
-            initialPos: ["E wall", "parallel with diamond point"],
+            initialPos: ["B wall", "parallel with diamond point"],
             reenactPos1: ["E near/far bait", "be nearest or furthest"],
             reenactPos2: [`${role == "genericMelee" ? "stack E" : "stack W"}`]
         },
@@ -114,7 +114,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
             mechanic: "nothing",
             group: "west",
             tether: "avoid tethers",
-            initialPos: ["S wall"],
+            initialPos: ["C wall"],
             reenactPos1: ["W near/far", "don't bait, just stack with baiter"],
             reenactPos2: [`${role == "genericMelee" ? "stack E" : "stack W"}`]
         },
@@ -123,7 +123,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
             mechanic: "def",
             group: "west",
             tether: "CCW from NW",
-            initialPos: ["W wall", "parallel with diamond point"],
+            initialPos: ["D wall", "parallel with diamond point"],
             reenactPos1: ["W near/far bait", "be nearest or furthest"],
             reenactPos2: [`${role == "genericMelee" ? "stack E" : "stack W"}`]
         },
