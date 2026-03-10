@@ -417,7 +417,7 @@ main {
   align-items: center;
   gap: 1.5rem;
   width: 100%;
-  padding: 2rem 1rem 1rem;
+  padding: 1.5rem 1rem 1rem;
   position: relative;
 
   img {
@@ -454,9 +454,6 @@ main {
   }
 
   .next-btn {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
     font-size: 0.8rem;
     padding: 0.25rem 0.75rem;
   }
@@ -492,8 +489,22 @@ main {
       opacity: 0.9;
     }
   }
+
+  .footer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .play-btn {
+    transform: rotateY(180deg);
+  }
 }
 
-.play-btn {
-  transform: rotateY(180deg);
-}
