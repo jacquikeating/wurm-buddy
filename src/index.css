@@ -415,10 +415,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 1.5rem;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
   position: relative;
 
   img {
@@ -475,8 +474,8 @@ main {
 
     h1 {
       text-align: left;
-      font-size: 1.25rem;
-      font-weight: bold;
+      font-size: 1.3rem;
+      color: white;
     }
   }
 
@@ -493,4 +492,8 @@ main {
       opacity: 0.9;
     }
   }
+}
+
+.play-btn {
+  transform: rotateY(180deg);
 }

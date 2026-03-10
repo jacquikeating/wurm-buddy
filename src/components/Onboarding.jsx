@@ -1,12 +1,22 @@
 import { useState } from "react"
+import AudioPlayer from "./AudioPlayer"
 
 export default function Onboarding({ prefs, setOnboarded }) {
     const setPrefsOpen = prefs[1]
     const [onboardingStep, setOnboardingStep] = useState(1)
+    const [playSound, setPlaySound] = useState(false)
 
     function finishOnboarding() {
         localStorage.setItem("onboarded", true)
         setOnboarded(true)
+    }
+
+    function play() {
+        setPlaySound(true)
+
+        setTimeout(() => {
+            setPlaySound(false)
+        }, 1000)
     }
 
     function renderContent() {
@@ -26,7 +36,7 @@ export default function Onboarding({ prefs, setOnboarded }) {
                         <h1>hi, I'm wurm buddy</h1>
                     </div>
                     <p>I'm a browser-based tool that can help you with rep 2 and idyllic dream.</p>
-                    <p>I cannot read your game data. Instead, you will tell me which mechanics you get, and I will provide callouts.</p>
+                    <p>I cannot read your game data. Instead, you will tell me which mechanics you get, and I will use my auto-timers to provide callouts.</p>
                     <button className="next-btn" onClick={() => setOnboardingStep(3)}>➜</button>
                 </div>   
             )
@@ -45,14 +55,27 @@ export default function Onboarding({ prefs, setOnboarded }) {
             return (
                 <div className="onboarding">
                     <div className="header">
-                        <h1>settings & reset</h1>
+                        <h1>timing</h1>
                     </div>
-                    <p>Change your strats, window size, and role in the <button className="secret-btn" onClick={() => setPrefsOpen(true)}>settings</button>.</p>
-                    <p><span>Reset</span> at the end of each pull.</p>
+                    <p>My timeline will fall behind if you take too long to select options during Idyllic.</p>
+                    <p>If time is about to run out, the screen will flash and this reminder sound will play.</p>
+                    <button className="play-btn" onClick={play}>🕪</button>
+                    {playSound && <AudioPlayer audio={["/soft ding.mp3"]} />}
                     <button className="next-btn" onClick={() => setOnboardingStep(5)}>➜</button>
                 </div>
             )
         } else if (onboardingStep == 5) {
+            return (
+                <div className="onboarding">
+                    <div className="header">
+                        <h1>settings & reset</h1>
+                    </div>
+                    <p>Change your strats, window size, and role in the <button className="secret-btn" onClick={() => setPrefsOpen(true)}>settings</button>.</p>
+                    <p><span>Reset</span> at the end of each pull.</p>
+                    <button className="next-btn" onClick={() => setOnboardingStep(6)}>➜</button>
+                </div>
+            )
+        } else if (onboardingStep == 6) {
             return (
                 <div className="onboarding">
                     <div className="header">
