@@ -59,7 +59,7 @@ export default function Onboarding({ prefs, setOnboarded }) {
                         <h1>try me out!</h1>
                     </div>
                     <p>Before you jump into a party, find a PoV video and take me out for a test ride!</p>
-                    <p><a href="" target="_blank">Here's a video</a> using Banana Codex and Uptime DN.</p>
+                    <p><a href="https://www.youtube.com/watch?v=axQJc2kI3lY" target="_blank">Here's a video</a> using Banana Codex and Uptime DN.</p>
                     <button onClick={finishOnboarding}>let's go! ➜</button>
                 </div>
             )
