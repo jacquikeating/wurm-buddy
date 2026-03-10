@@ -1,8 +1,13 @@
 import { useState } from "react"
 
-export default function Onboarding({ prefs }) {
+export default function Onboarding({ prefs, setOnboarded }) {
     const setPrefsOpen = prefs[1]
     const [onboardingStep, setOnboardingStep] = useState(1)
+
+    function finishOnboarding() {
+        localStorage.setItem("onboarded", true)
+        setOnboarded(true)
+    }
 
     function renderContent() {
         if (onboardingStep == 1) {
@@ -45,6 +50,17 @@ export default function Onboarding({ prefs }) {
                     <p>Change your strats, window size, and role in the <button className="secret-btn" onClick={() => setPrefsOpen(true)}>settings</button>.</p>
                     <p><span>Reset</span> at the end of each pull.</p>
                     <button className="next-btn" onClick={() => setOnboardingStep(5)}>➜</button>
+                </div>
+            )
+        } else if (onboardingStep == 5) {
+            return (
+                <div className="onboarding">
+                    <div className="header">
+                        <h1>try me out!</h1>
+                    </div>
+                    <p>Before you jump into a party, find a PoV video and take me out for a test ride!</p>
+                    <p><a href="" target="_blank">Here's a video</a> using Banana Codex and Uptime DN.</p>
+                    <button onClick={finishOnboarding}>let's go! ➜</button>
                 </div>
             )
         }

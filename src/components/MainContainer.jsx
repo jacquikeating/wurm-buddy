@@ -45,9 +45,9 @@ export default function MainContainer() {
     const [safePlatform, setSafePlatform] = useState(["", ""])
     const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
     const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
-
+    
     // LOCAL STORAGE
-    const onboarded = JSON.parse(localStorage.getItem("onboarded"))
+    const [onboarded, setOnboarded] = useState(JSON.parse(localStorage.getItem("onboarded"))) 
     const localStoragePrefs = JSON.parse(localStorage.getItem("prefs"))
 
     // PREFERENCES
@@ -131,7 +131,7 @@ export default function MainContainer() {
 
     function renderContent() {
         if (!onboarded) {
-            return <Onboarding prefs={prefs} />
+            return <Onboarding prefs={prefs} setOnboarded={setOnboarded} />
         }
 
         switch (step) {
