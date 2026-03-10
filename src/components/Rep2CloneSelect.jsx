@@ -5,11 +5,14 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
     const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
-        setRep2Clone(selectedOption)
+        if (banana) {
+            setRep2Clone(selectedOption)
+        } else  {
+            let cloneZoneEquivalent = cloneZoneOptions.find((clone) => clone.location == selectedOption.location)
+            setRep2Clone(cloneZoneEquivalent)
+        }
         setStep(step + 1)
     }
-
-    console.log(`Banana strat: ${banana}`)
 
     const cloneOptions = [
         // Has to start with east, not north, because of how the CSS renders the buttons in a circle
