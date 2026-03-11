@@ -146,8 +146,8 @@ export default function MainContainer() {
             case 9: return <Screen1 setCardsOrInters={setCardsOrInters} />;
             case 10: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
             case 11: return <Output messages={outputMessages[0]} timeout={15000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadrant}.wav}`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
-            case 12: return <Screen3 setHourglassLocation={setHourglassLocation} timeout={4000} />;
-            case 13: return <Output messages={outputMessages[1]} timeout={20000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadrant}.wav}`, `${myJob.mechanic}.wav`]} delay={15000} />;
+            case 12: return <Screen3 setHourglassLocation={setHourglassLocation} timeout={8000} />;
+            case 13: return <Output messages={outputMessages[1]} timeout={18000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadrant}.wav}`, `${myJob.mechanic}.wav`]} delay={15000} />;
             case 14: return <Screen4 setFirstMech={setFirstMech} timeout={4000} />;
             case 15: return <Output messages={outputMessages[2]} timeout={10000} audio={[`/${hourglassLocation}.wav`]} />;
             case 16: return <Output messages={outputMessages[3]} timeout={10000} audio={[`/platform.wav`]} />;
