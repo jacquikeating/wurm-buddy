@@ -87,8 +87,8 @@ export default function MainContainer() {
     ]
 
     const outputSGE = [
-        [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`],
-        [`${myJob?.quadrant} (${myJob?.quadRel})`, `${myJob?.mechanic}`],
+        [`${myJob?.quadrant}`, `${myJob?.quadRel}`, `${getFirstMessage(uptime, myJob)}`],
+        [`${myJob?.quadrant}`, `${myJob?.quadRel}`, `${myJob?.mechanic}`],
         [`${hourglassLocation || "?"}`, `eprog`],
         [`east`, `late kera`, `ixo eprog`],
         [`phys phil eprog`, `${instructions[1]} after`],
