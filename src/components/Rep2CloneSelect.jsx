@@ -19,7 +19,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "E",
             mechanic: "cone",
-            group: "east",
+            group: "E",
             tether: "CW from D",
             initialPos: ["D far right", "(facing wall)"],
             reenactPos1: ["SE max melee", "near clone"],
@@ -28,7 +28,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "SE",
             mechanic: "def",
-            group: "east",
+            group: "E",
             tether: "CW from D",
             initialPos: ["A wall", "slightly S of marker"],
             reenactPos1: ["N boss ring", ""],
@@ -37,7 +37,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "S",
             mechanic: "nothing",
-            group: "west",
+            group: "W",
             tether: "avoid tethers",
             initialPos: ["B wall", ""],
             reenactPos1: ["N boss ring", ""],
@@ -46,7 +46,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "SW",
             mechanic: "def",
-            group: "west",
+            group: "W",
             tether: "CCW from D",
             initialPos: ["C wall", "slightly S of marker"],
             reenactPos1: ["N boss ring", ""],
@@ -55,7 +55,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "W",
             mechanic: "cone",
-            group: "west",
+            group: "W",
             tether: "CCW from D",
             initialPos: ["D far left", "(facing wall)"],
             reenactPos1: ["SW max melee", "near clone"],
@@ -64,7 +64,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "NW",
             mechanic: "stack",
-            group: "west",
+            group: "W",
             tether: "CCW from D",
             initialPos: ["D inner left", "(facing wall)"],
             reenactPos1: ["SW inner ring", "slightly N of gap"],
@@ -73,7 +73,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "N",
             mechanic: "boss",
-            group: "east",
+            group: "E",
             tether: "boss tether",
             initialPos: ["bait to D", "near bottom of diamond"],
             reenactPos1: ["N boss ring", ""],
@@ -82,7 +82,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "NE",
             mechanic: "stack",
-            group: "east",
+            group: "E",
             tether: "CW from D",
             initialPos: ["D inner right", "(facing wall)"],
             reenactPos1: ["SE inner ring", "slightly N of gap"],
@@ -94,7 +94,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "E",
             mechanic: "stack",
-            group: "east",
+            group: "E",
             tether: "CW from A",
             initialPos: ["A far right", "(facing wall)"],
             reenactPos1: ["A far right", "(facing wall)"],
@@ -103,7 +103,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "SE",
             mechanic: "def",
-            group: "east",
+            group: "E",
             tether: "CW from A",
             initialPos: ["B wall", "parallel with diamond point"],
             reenactPos1: ["E near far bait", "be nearest or furthest"],
@@ -112,7 +112,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "S",
             mechanic: "nothing",
-            group: "west",
+            group: "W",
             tether: "avoid tethers",
             initialPos: ["C wall", ""],
             reenactPos1: ["W near far", "don't bait, just stack with baiter"],
@@ -121,7 +121,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "SW",
             mechanic: "def",
-            group: "west",
+            group: "W",
             tether: "CCW from NW",
             initialPos: ["D wall", "parallel with diamond point"],
             reenactPos1: ["W near/far bait", "be nearest or furthest"],
@@ -130,7 +130,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "W",
             mechanic: "stack",
-            group: "west",
+            group: "W",
             tether: "CCW from NW",
             initialPos: ["A far left", "(facing wall)"],
             reenactPos1: ["A far left", "(facing wall)"],
@@ -139,7 +139,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "NW",
             mechanic: "cone",
-            group: "west",
+            group: "W",
             tether: "CCW from NW",
             initialPos: ["A inner left", "(facing wall)"],
             reenactPos1: ["A inner left", "(facing wall)"],
@@ -148,7 +148,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "N",
             mechanic: "boss",
-            group: "east",
+            group: "E",
             tether: "boss tether",
             initialPos: ["bait to A", "(between A and 1)"], 
             reenactPos1: ["E near far", "don't bait, just stack with baiter"],
@@ -157,7 +157,7 @@ export default function Rep2CloneSelect({ banana, setRep2Clone, role }) {
         {
             location: "NE",
             mechanic: "cone",
-            group: "east",
+            group: "E",
             tether: "CW from A",
             initialPos: ["A inner right", "(facing wall)"],
             reenactPos1: ["A inner right", "(facing wall)"],

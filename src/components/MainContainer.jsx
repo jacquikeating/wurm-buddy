@@ -119,7 +119,7 @@ export default function MainContainer() {
     const rep2Output = [
         [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
         [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`],
-        [`stack ${rep2Clone?.group == "east" ? "E" : "W"}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
+        [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
         [`cones & kick`],
         [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`],
         [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
