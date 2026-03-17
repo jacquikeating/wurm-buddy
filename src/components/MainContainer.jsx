@@ -43,8 +43,8 @@ export default function MainContainer() {
     const [tower, setTower] = useState(["", "", "", "", ""])
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(["", ""])
-    const mechanicVariables = [step, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
-    const setMechanicVariables = [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
+    const mechanicVariables = [step, rep2Clone, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
+    const setMechanicVariables = [setStep, setRep2Clone, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
     // LOCAL STORAGE
     const [onboarded, setOnboarded] = useState(JSON.parse(localStorage.getItem("onboarded"))) 
@@ -129,6 +129,12 @@ export default function MainContainer() {
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
     }, [firstMech])
+
+    useEffect(() => {
+        if (mechs == "idyllic") {
+            setStep(9)
+        }
+    }, [mechs])
 
     function renderContent() {
         if (!onboarded) {

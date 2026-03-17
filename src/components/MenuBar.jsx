@@ -1,9 +1,14 @@
 export default function MenuBar({ setMechanicVariables, prefs }) {
-    const [setStep, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setMechanicVariables
-    const [prefsOpen, setPrefsOpen] = prefs
+    const [setStep, setRep2Clone, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setMechanicVariables
+    const [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, mechs, setMechs, role, setRole] = prefs
 
     function reset() {
-        setStep(1)
+        if (mechs == "idyllic") {
+            setStep(9)
+        } else {
+            setStep(1)
+        }
+        setRep2Clone(null)
         setCardsOrInters(null)
         setMyJob(null)
         setHourglassLocation(null)
