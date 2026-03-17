@@ -1,19 +1,22 @@
 export default function Preferences({ prefs }) {
-    const [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, role, setRole] = prefs
+    const [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, mechs, setMechs, role, setRole] = prefs
 
     function handleChange(pref, value) {
         if (pref == "uptime") {
             setUptime(value)
-            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: value, size: size, role: role})) 
+            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: value, size: size, mechs: mechs, role: role})) 
         } else if (pref =="size") {
             setSize(value)
-            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: uptime, size: value, role: role})) 
+            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: uptime, size: value, mechs: mechs, role: role})) 
         } else if (pref == "role") {
             setRole(value)
-            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: uptime, size: size, role: value})) 
+            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: uptime, size: size, mechs: mechs, role: value})) 
         } else if (pref == "rep2") {
             setBanana(value)
-            localStorage.setItem("prefs", JSON.stringify({banana: value, uptime: uptime, size: size, role: role})) 
+            localStorage.setItem("prefs", JSON.stringify({banana: value, uptime: uptime, size: size, mechs: mechs, role: role})) 
+        } else if (pref == "mechs") {
+            setMechs(value)
+            localStorage.setItem("prefs", JSON.stringify({banana: banana, uptime: uptime, size: size, mechs: value, role: role})) 
         }
     }
 
@@ -34,6 +37,13 @@ export default function Preferences({ prefs }) {
                 <p className="pref-name">size:</p>
                 <button className={size == "mini" ? "settings-button active" : "settings-button"} onClick={() => handleChange("size", "mini")}>mini</button>
                 <button className={size == "large" ? "settings-button active" : "settings-button"} onClick={() => handleChange("size", "large")}>large</button>
+            </div>
+
+            <div className="pref-group">
+                <p className="pref-name">mechs:</p>
+                <button className={mechs == "both" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "both")}>both</button>
+                <button className={mechs == "rep2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "rep2")}>rep 2 only</button>
+                <button className={mechs == "idyllic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "idyllic")}>idyllic only</button>
             </div>
 
             <div className="pref-group">
