@@ -154,9 +154,9 @@ export default function MainContainer() {
             case 10: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
             case 11: return <Output messages={outputMessages[0]} timeout={18000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
             case 12: return <Screen3 setHourglassLocation={setHourglassLocation} timeout={8000} />;
-            case 13: return <Output messages={outputMessages[1]} timeout={18000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${myJob.mechanic}.wav`]} delay={15000} />;
+            case 13: return <Output messages={outputMessages[1]} timeout={22000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${myJob.mechanic}.wav`]} delay={12000} />;
             case 14: return <Screen4 setFirstMech={setFirstMech} timeout={4000} />;
-            case 15: return <Output messages={outputMessages[2]} timeout={10000} audio={[`/${hourglassLocation}.wav`]} />;
+            case 15: return <Output messages={outputMessages[2]} timeout={6000} audio={[`/${hourglassLocation}.wav`]} />;
             case 16: return <Output messages={outputMessages[3]} timeout={10000} audio={[`/platform.wav`]} />;
             case 17: return <Screen5 setTower={setTower} timeout={10000} role={role} />;
             case 18: return <Output messages={outputMessages[4]} timeout={6000} />; // after tower
