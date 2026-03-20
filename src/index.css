@@ -33,7 +33,7 @@
     height: 350px;
 
     main {
-      height: calc(100% - 2rem);
+      height: calc(100% - 1.9rem);
     }
 
     .clone-button {
