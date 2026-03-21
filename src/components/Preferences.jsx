@@ -42,8 +42,8 @@ export default function Preferences({ prefs }) {
             <div className="pref-group">
                 <p className="pref-name">mechs:</p>
                 <button className={mechs == "both" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "both")}>both</button>
-                <button className={mechs == "rep2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "rep2")}>rep 2 only</button>
-                <button className={mechs == "idyllic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "idyllic")}>idyllic only</button>
+                <button className={mechs == "rep2" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "rep2")}>rep 2<br />only</button>
+                <button className={mechs == "idyllic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("mechs", "idyllic")}>idyllic<br />only</button>
             </div>
 
             <div className="pref-group">
