@@ -49,8 +49,9 @@ export default function Preferences({ prefs }) {
             <div className="pref-group">
                 <p className="pref-name">role:</p>
                     <button className={role == "SGE" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "SGE")}>SGE</button>
-                    <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>not SGE<br />(melee)</button>
-                    <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "Generic")}>not SGE<br />(ranged)</button>
+                    <button className="settings-button text-only" onClick={() => console.log("test")}>change...</button>
+                    {/* <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>not SGE<br />(melee)</button> */}
+                    {/* <button className={role == "Generic" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "Generic")}>not SGE<br />(ranged)</button> */}
                 {/* <div className="role-btn-group">
                     <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>generic - melee</button>
                     <div className="role-btn-subgroup">

@@ -325,6 +325,13 @@ main {
     border: 1px solid transparent;
     text-wrap: nowrap;
 
+    &.text-only {
+      font-size: 0.7rem;
+      font-style: italic;
+      opacity: 0.85;
+      letter-spacing: 0.03em;
+    }
+
     &:hover {
       color: white;
     }
