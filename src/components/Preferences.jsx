@@ -1,5 +1,8 @@
+import { useState } from "react"
+
 export default function Preferences({ prefs }) {
     const [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, mechs, setMechs, role, setRole] = prefs
+    const [openRolesMenu, setOpenRolesMenu] = useState(false)
 
     function handleChange(pref, value) {
         if (pref == "uptime") {
