@@ -357,6 +357,14 @@ main {
       color: rgb(224, 24, 24);
     }
   }
+
+  .roles-menu {
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
 }
 
 .missed-input {
