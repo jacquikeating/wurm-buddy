@@ -283,7 +283,7 @@ main {
 .prefs {
   display: none;
   background: rgb(25,25,25);
-  width: calc(100cw - 2px);
+  min-width: 251px; 
   transform: scaleX(0.994);
   position: absolute;
   top: 2rem;
