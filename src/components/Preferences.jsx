@@ -27,7 +27,7 @@ export default function Preferences({ prefs }) {
     return (
         <div className={prefsOpen ? ("prefs open") : ("prefs")}>
             {openRolesMenu ? (
-                <div>
+                <div className="roles-menu">
                     <div className="role-btn-group">
                         <button className={role == "GenericMelee" ? "settings-button active" : "settings-button"} onClick={() => handleChange("role", "GenericMelee")}>melee</button>
                         <div className="role-btn-subgroup">
