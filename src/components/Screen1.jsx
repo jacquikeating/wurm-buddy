@@ -1,12 +1,16 @@
 import { useContext } from "react"
 import { StepContext } from "../utils/context.js"
 
-export default function Screen1({ setCardsOrInters }) {
+export default function Screen1({ setCardsOrInters, mechs }) {
     const { step, setStep } = useContext(StepContext)
 
     function handleInput(selectedOption) {
         setCardsOrInters(selectedOption)
         setStep(step + 1)
+    }
+
+    if (mechs == "rep2") {
+        return <></>
     }
 
     return (
