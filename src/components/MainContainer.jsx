@@ -64,17 +64,24 @@ export default function MainContainer() {
     const prefs = [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, mechs, setMechs, role, setRole]
 
     // OUTPUT MESSAGES
+    let platform = "platform"
+    if (role == "MT" || role == "M1" || role == "H1" || role == "R1") {
+        platform = "west"
+    } else if (role == "OT" || role == "M2" || role == "SGE" || role == "R2") {
+        platform = "east"
+    }
+
     const outputGeneric = [
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${myJob?.mechanic}`], // Quadrant and tether to take
         [`${hourglassLocation || "?"}`], // Which side is safe for first clone telegraph
-        [`platform`, `mit`], // Which side to go for tower platforms - replace with "east" or "west"; mit reminder
+        [`${platform}`, `mit`], // Which side to go for tower platforms; mit reminder
         [`mid`, `${instructions[1]} after`], // Reminder to go mid after tower assignments; sneak preview of your first S/D spot
         [`${instructions[1]}`, `mit`], // First S/D (stack/def) spot; mit reminder
         [`${instructions[2]}`, `mit`], // Second S/D spot (non-healers can use same mit message for every hit)
         [`${instructions[3]}`, `mit`], // Third S/D spot
         [`${instructions[4]}`, `mit`], // Fourth S/D spot
-        [`platform`], // Which side to go for tower platforms - replace with "east" or "west"
+        [`${platform}`], // Which side to go for tower platforms
         [`${tower[0]}`, `${tower[2]}`], // Tower side; tower mechanic
         [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads 
         [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads
