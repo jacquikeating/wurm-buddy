@@ -74,6 +74,31 @@ export default function MainContainer() {
     // Each array item represents a mechanic in the mit plan:
     // rep 2 start, reenact, platform break, stacks/defs, clone stacks, idyllic 2, hell 1, hell 2
     let mitPlan = ["", "", "", "", "", "", "", ""] // Empty strings for generic roles
+    
+    switch (role) {
+        case "MT": 
+            mitPlan =  ["rep", "party mit", "rep", "party mit", "rep", "party mit", "rep", ""]
+            break;
+        case "OT":
+            mitPlan = ["party mit", "rep", "party mit", "", "party mit", "rep", "", "rep + party mit"]
+            break;
+        case "M1":
+            mitPlan = ["feint", "", "feint", "personals", "", "feint", "", ""]
+            break;
+        case "M2":
+            mitPlan = ["", "feint", "", "personals", "feint", "", "", "feint"]   
+            break;
+        case "R1":
+            mitPlan = ["party mit", "", "party mit", "personals", "party mit", "", "", "party mit"]
+            break;
+        case "R2":
+            mitPlan = ["addle", "", "addle", "personals", "", "addle", "", ""]
+            break;
+        case "H1":
+            mitPlan = ["3 min cd", "10% mit + 2 min cd", "10% mit", "use all cds", "", "10% mit", "2 min cd", "10% mit"]
+            break;        
+    }
+
 
     const outputGeneric = [
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
@@ -153,7 +178,7 @@ export default function MainContainer() {
         }
 
         switch (step) {
-            case 1: return <Rep2CloneSelect banana={banana} setRep2Clone={setRep2Clone} role={role} />
+            case 1: return <Rep2CloneSelect banana={banana} setRep2Clone={setRep2Clone} role={role} />;
             case 2: return <Output messages={rep2Output[0]} timeout={17000} audio={[`/${rep2Clone?.mechanic}.wav`, `/${rep2Clone?.tether}.wav`]} />;
             case 3: return <Output messages={rep2Output[1]} timeout={8000} audio={[`/${rep2Clone?.initialPos[0]}.wav`]} />;
             case 4: return <Output messages={rep2Output[2]} timeout={6000} audio={[`/stack ${rep2Clone?.group}.wav`, `/burst.wav`]} />;
