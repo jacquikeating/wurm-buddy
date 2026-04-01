@@ -24,6 +24,13 @@ export default function Preferences({ prefs }) {
         }
     }
 
+    let roleName = role
+    if (role == "Generic") {
+        roleName = "ranged (generic)"
+    } else if (role == "GenericMelee") {
+        roleName = "melee (generic)"
+    }
+
     return (
         <div className={prefsOpen ? ("prefs open") : ("prefs")}>
             {openRolesMenu ? (
@@ -76,7 +83,7 @@ export default function Preferences({ prefs }) {
                     </div>
                     <div className="pref-group">
                         <p className="pref-name">role:</p>
-                            <button className="settings-button active">{role}</button>
+                            <button className="settings-button active">{roleName}</button>
                             <button className="settings-button text-only" onClick={() => setOpenRolesMenu(true)}>change...</button>
                     </div>
                 </div>
