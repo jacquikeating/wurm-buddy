@@ -64,41 +64,53 @@ export default function MainContainer() {
     const prefs = [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, mechs, setMechs, role, setRole]
 
     // OUTPUT MESSAGES
-    let platform = "platform"
-    if (role == "MT" || role == "M1" || role == "H1" || role == "R1") {
-        platform = "west"
-    } else if (role == "OT" || role == "M2" || role == "SGE" || role == "R2") {
-        platform = "east"
-    }
 
     // Each array item represents a mechanic in the mit plan:
     // rep 2 start, reenact, platform break, stacks/defs, clone stacks, idyllic 2, hell 1, hell 2
     let mitPlan = ["", "", "", "", "", "", "", ""] // Empty strings for generic roles
-    
+    let platform = "platform" // Fallback for generic roles
+
     switch (role) {
         case "MT": 
             mitPlan =  ["rep", "party mit", "rep", "party mit", "rep", "party mit", "rep", ""]
+            platform = "west"
             break;
         case "OT":
             mitPlan = ["party mit", "rep", "party mit", "", "party mit", "rep", "", "rep + party mit"]
+            platform = "east"
             break;
         case "M1":
             mitPlan = ["feint", "", "feint", "personals", "", "feint", "", ""]
+            platform = "west"
             break;
         case "M2":
-            mitPlan = ["", "feint", "", "personals", "feint", "", "", "feint"]   
+            mitPlan = ["", "feint", "", "personals", "feint", "", "", "feint"]
+            platform = "east"
             break;
         case "R1":
             mitPlan = ["party mit", "", "party mit", "personals", "party mit", "", "", "party mit"]
+            platform = "west"
             break;
         case "R2":
             mitPlan = ["addle", "", "addle", "personals", "", "addle", "", ""]
+            platform = "east"
             break;
         case "H1":
             mitPlan = ["3 min cd", "10% mit + 2 min cd", "10% mit", "use all cds", "", "10% mit", "2 min cd", "10% mit"]
+            platform = "west"
             break;        
     }
 
+    const coneMsg = banana ? "inside boss ring" : "face N"
+
+    const rep2Output = [
+        [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
+        [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`, `${mitPlan[0]}`],
+        [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
+        [`cones & kick`],
+        [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
+        [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
+    ]
 
     const outputGeneric = [
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
@@ -149,18 +161,8 @@ export default function MainContainer() {
     let outputMessages = outputGeneric
     if (role == "SGE") {
         outputMessages = outputSGE
+        platform = "east"
     }
-
-    const coneMsg = banana ? "inside boss ring" : "face N"
-
-    const rep2Output = [
-        [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
-        [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`, `${mitPlan[0]}`],
-        [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
-        [`cones & kick`],
-        [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
-        [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
-    ]
 
     useEffect(() => {
         firstMech && setInstructions(getStackDefInstructions(uptime, myJob, firstMech))
