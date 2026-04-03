@@ -110,7 +110,12 @@ export default function MainContainer() {
         [`cones & kick`],
         [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
         [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
-    ]
+        // Mechs between rep 2 and idyllic
+        // [`check debuff`, `${mitPlan[2]}`], // [2] will be replaced with mits for Blood Mana
+        // [`near/far`, `${mitPlan[3]}`], // [3] will be replaced with mits for Netherworld Near/Far + Arcadia Aflame
+        // [`tankbuster`],
+        // [`${mitPlan[4]}`] // [4] will be replaced with mits for Idyllic Dream castbar
+    ]   
 
     const outputGeneric = [
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
