@@ -23,6 +23,24 @@ export default function BloodMana({ /* setterFunction, timeout */ }) {
     }
 
     return (
-        <h1>Blood Mana</h1>
+        <div className="blood-mana side-split">
+           <div className="side">
+                <div className="option">
+                    <span className="option-name">Green/Orange</span>
+                </div>
+                <div className="option">
+                    <span className="option-name">Blue/Purple</span>
+                </div>
+           </div>
+            <div className="side">
+                <div className="option">
+                    <span className="option-name">Green/Orange</span>
+                </div>
+                <div className="option">
+                    <span className="option-name">Blue/Purple</span>
+                </div>
+           </div>
+            {timesUp && <AudioPlayer audio={["/soft ding.mp3"]} />}            
+        </div>
     )
 }
