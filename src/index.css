@@ -553,3 +553,34 @@ main {
   }
 }
 
+
+.blood-mana {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+    .side {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      &:first-of-type {
+        border-right: 1px solid white;
+      }
+
+      .option {
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+
+        &:first-of-type {
+          border-bottom: 1px solid white;
+          background-color: green;
+        }
+      }
+    }
+    
+}
