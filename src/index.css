@@ -574,11 +574,19 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: blue;
+        background: #3c20c7;
+        background: linear-gradient(0deg, rgba(60, 32, 199, 1) 16%, rgba(0, 255, 242, 1) 100%);
+        transition: all 0.15s ease;
+        cursor: pointer;
 
         &:first-of-type {
           border-bottom: 1px solid white;
-          background-color: green;
+          background: #2de0a5;
+          background: linear-gradient(0deg, rgba(45, 224, 165, 1) 0%, rgba(247, 116, 22, 1) 100%);
+        }
+
+        &:hover {
+          opacity: 0.9;
         }
       }
     }
