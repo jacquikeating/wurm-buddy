@@ -36,6 +36,7 @@ export default function MainContainer() {
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
     const [step, setStep] = useState(1)
     const [rep2Clone, setRep2Clone] = useState(null)
+    const [bloodMana, setBloodMana] = useState(null)
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
@@ -44,8 +45,8 @@ export default function MainContainer() {
     const [tower, setTower] = useState(["", "", "", "", ""])
     const [portalClone, setPortalClone] = useState(null)
     const [safePlatform, setSafePlatform] = useState(["", ""])
-    const mechanicVariables = [step, rep2Clone, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
-    const setMechanicVariables = [setStep, setRep2Clone, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
+    const mechanicVariables = [step, rep2Clone, bloodMana, cardsOrInters, myJob, instructions, hourglassLocation, firstMech, tower, portalClone, safePlatform]
+    const setMechanicVariables = [setStep, setRep2Clone, setBloodMana, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform]
 
     // LOCAL STORAGE
     const [onboarded, setOnboarded] = useState(JSON.parse(localStorage.getItem("onboarded"))) 
@@ -186,7 +187,7 @@ export default function MainContainer() {
         }
 
         switch (step) {
-            // case 1: return <BloodMana />
+            case 1: return <BloodMana setBloodMana={setBloodMana} />
             case 1: return <Rep2CloneSelect banana={banana} setRep2Clone={setRep2Clone} role={role} />;
             case 2: return <Output messages={rep2Output[0]} timeout={17000} audio={[`/${rep2Clone?.mechanic}.wav`, `/${rep2Clone?.tether}.wav`]} />;
             case 3: return <Output messages={rep2Output[1]} timeout={8000} audio={[`/${rep2Clone?.initialPos[0]}.wav`]} />;
