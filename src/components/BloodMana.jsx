@@ -3,7 +3,7 @@ import { StepContext } from "../utils/context.js"
 import AudioPlayer from "./AudioPlayer.jsx"
 
 
-export default function BloodMana({ /* setterFunction, timeout */ }) {
+export default function BloodMana({ setBloodMana /* , timeout */ }) {
     const { step, setStep } = useContext(StepContext)
     const [timesUp, setTimesUp] = useState(false)
 
@@ -18,25 +18,25 @@ export default function BloodMana({ /* setterFunction, timeout */ }) {
     // }, [])
 
     function handleInput(selectedOption) {
-        // setterFunction(selectedOption)
+        setBloodMana(selectedOption)
         setStep(step + 1)
     }
 
     return (
         <div className="blood-mana side-split">
            <div className="side">
-                <div className="option">
+                <div className="option" onClick={() => handleInput("W")}>
                     <span className="option-name">Green/Orange</span>
                 </div>
-                <div className="option">
+                <div className="option" onClick={() => handleInput("E")}>
                     <span className="option-name">Blue/Purple</span>
                 </div>
            </div>
             <div className="side">
-                <div className="option">
+                <div className="option" onClick={() => handleInput("E")}>
                     <span className="option-name">Green/Orange</span>
                 </div>
-                <div className="option">
+                <div className="option" onClick={() => handleInput("W")}>
                     <span className="option-name">Blue/Purple</span>
                 </div>
            </div>
