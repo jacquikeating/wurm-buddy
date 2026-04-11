@@ -569,24 +569,55 @@ main {
         border-right: 1px solid white;
       }
 
+    
+
       .option {
         height: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #3c20c7;
-        background: linear-gradient(0deg, rgba(60, 32, 199, 1) 16%, rgba(0, 255, 242, 1) 100%);
+        flex-direction: column;
+        gap: 0.5rem;
+        /* background: #3c20c7;
+        background: linear-gradient(0deg, rgba(60, 32, 199, 1) 16%, rgba(0, 255, 242, 1) 100%); */
         transition: all 0.15s ease;
         cursor: pointer;
 
         &:first-of-type {
           border-bottom: 1px solid white;
-          background: #2de0a5;
-          background: linear-gradient(0deg, rgba(45, 224, 165, 1) 0%, rgba(247, 116, 22, 1) 100%);
+          /* background: #2de0a5;
+          background: linear-gradient(0deg, rgba(45, 224, 165, 1) 0%, rgba(247, 116, 22, 1) 100%); */
         }
 
         &:hover {
           opacity: 0.9;
+        }
+
+        .dots {
+          display: flex;
+          gap: 0.65rem;
+        }
+
+        .dot {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+
+          &.green {
+            background: rgb(45, 224, 165);
+          }
+
+          &.orange {
+            background: rgb(247, 116, 22);
+          }
+
+          &.blue {
+            background: rgb(0, 183, 255);
+          }
+
+          &.purple {
+            background: rgb(75, 43, 233);
+          }
         }
       }
     }

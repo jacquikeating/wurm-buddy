@@ -27,17 +27,33 @@ export default function BloodMana({ setBloodMana /* , timeout */ }) {
            <div className="side">
                 <div className="option" onClick={() => handleInput("W")}>
                     <span className="option-name">Green/Orange</span>
+                    <div className="dots">
+                        <div className="dot green"></div>
+                        <div className="dot orange"></div>
+                    </div>
                 </div>
                 <div className="option" onClick={() => handleInput("E")}>
                     <span className="option-name">Blue/Purple</span>
+                    <div className="dots">
+                        <div className="dot blue"></div>
+                        <div className="dot purple"></div>
+                    </div>
                 </div>
            </div>
             <div className="side">
                 <div className="option" onClick={() => handleInput("E")}>
                     <span className="option-name">Green/Orange</span>
+                    <div className="dots">
+                        <div className="dot green"></div>
+                        <div className="dot orange"></div>
+                    </div>
                 </div>
                 <div className="option" onClick={() => handleInput("W")}>
                     <span className="option-name">Blue/Purple</span>
+                    <div className="dots">
+                        <div className="dot blue"></div>
+                        <div className="dot purple"></div>
+                    </div>
                 </div>
            </div>
             {timesUp && <AudioPlayer audio={["/soft ding.mp3"]} />}            
