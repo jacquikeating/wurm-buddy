@@ -68,37 +68,37 @@ export default function MainContainer() {
     // OUTPUT MESSAGES
 
     // Each array item represents a mechanic in the mit plan:
-    // rep 2 start, reenact, platform break, stacks/defs, clone stacks, idyllic 2, hell 1, hell 2
-    let mitPlan = ["", "", "", "", "", "", "", ""] // Empty strings for generic roles
+    // rep 2 start, reenact, blood mana, near/far + rw, idyllic 1, platform break, stacks/defs, clone stacks, idyllic 2, hell 1, hell 2
+    let mitPlan = ["", "", "", "", "", "", "", "", "", "", ""] // Empty strings for generic roles
     let platform = "platform" // Fallback for generic roles
 
     switch (role) {
         case "MT": 
-            mitPlan =  ["rep", "party mit", "rep", "party mit", "rep", "party mit", "rep", ""]
+            mitPlan =  ["rep", "party mit", "", "rep", "party mit", "rep", "party mit", "rep", "party mit", "rep", ""]
             platform = "west"
             break;
         case "OT":
-            mitPlan = ["party mit", "rep", "party mit", "", "party mit", "rep", "", "rep + party mit"]
+            mitPlan = ["party mit", "rep", "", "party mit", "rep", "party mit", "", "party mit", "rep", "", "rep + party mit"]
             platform = "east"
             break;
         case "M1":
-            mitPlan = ["feint", "", "feint", "personals", "", "feint", "", ""]
+            mitPlan = ["feint", "", "", "feint", "", "feint", "personals", "", "feint", "", ""]
             platform = "west"
             break;
         case "M2":
-            mitPlan = ["", "feint", "", "personals", "feint", "", "", "feint"]
+            mitPlan = ["", "feint", "", "", "feint", "", "personals", "feint", "", "", "feint"]
             platform = "east"
             break;
         case "R1":
-            mitPlan = ["party mit", "", "party mit", "personals", "party mit", "", "", "party mit"]
+            mitPlan = ["party mit", "", "", "party mit", "", "party mit", "personals", "party mit", "", "", "party mit"]
             platform = "west"
             break;
         case "R2":
-            mitPlan = ["addle", "", "addle", "personals", "", "addle", "", ""]
+            mitPlan = ["addle", "", "", "addle", "", "addle", "personals", "", "addle", "", ""]
             platform = "east"
             break;
         case "H1":
-            mitPlan = ["3 min cd", "10% mit + 2 min cd", "10% mit", "use all cds", "", "10% mit", "2 min cd", "10% mit"]
+            mitPlan = ["3 min cd", "10% mit + 2 min cd", "", "10% mit", "", "10% mit", "use all cds", "", "10% mit", "2 min cd", "10% mit"]
             platform = "west"
             break;        
     }
@@ -113,12 +113,12 @@ export default function MainContainer() {
         [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
         [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
         // Mechs between rep 2 and idyllic
-        [`check debuff`, `${mitPlan[2]}`], // [2] will be replaced with mits for Blood Mana
+        [`check debuff`, `${mitPlan[2]}`], // SGE: kera
         [`${bloodMana[0]}`],
         [`${bloodMana[1]}`],
-        [`near/far`, `${mitPlan[3]}`], // [3] will be replaced with mits for Netherworld Near/Far + Arcadia Aflame
-        [`tankbuster`],
-        [`${mitPlan[4]}`] // [4] will be replaced with mits for Idyllic Dream castbar
+        [`near/far`, `${mitPlan[3]}`], // SGE: kera
+        [`tankbuster`], // SGE: zoe eprog holos
+        [`${mitPlan[4]}`] // SGE: kera
     ]   
 
     const outputGeneric = [
