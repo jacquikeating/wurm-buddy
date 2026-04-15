@@ -122,6 +122,23 @@ export default function MainContainer() {
     ]   
 
     const outputGeneric = [
+        // // Rep 2
+        // [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
+        // [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`, `${mitPlan[0]}`],
+        // [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
+        // [`cones & kick`],
+        // [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
+        // [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
+
+        // // Blood Mana
+        // [`check debuff`, `${mitPlan[2]}`], // SGE: kera
+        // [`${bloodMana[0]}`],
+        // [`${bloodMana[1]}`],
+        // [`near/far`, `${mitPlan[3]}`], // SGE: kera
+        // [`tankbuster`], // SGE: zoe eprog holos
+        // [`${mitPlan[4]}`] // SGE: kera
+
+        // Idyllic
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${myJob?.mechanic}`], // Quadrant and tether to take
         [`${hourglassLocation || "?"}`], // Which side is safe for first clone telegraph
@@ -139,6 +156,8 @@ export default function MainContainer() {
         [`${safePlatform[0]}`, `${safePlatform[1]}`], // Which platform (and where) will be safe for clone telegraph
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`], // Where to go for second clone stacks
         [`${portalClone}`, `${mitPlan[5]}`], // Where to go to dodge the final clone telegraph
+
+        // Enrage
         [`pot soon!`], // Pot reminder
         [`${mitPlan[6]}`], // Mits for Arcadian Hell 1
         [`${mitPlan[7]}`] // Mits for Arcadian Hell 2
