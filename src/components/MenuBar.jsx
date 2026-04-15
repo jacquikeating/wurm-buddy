@@ -1,5 +1,5 @@
 export default function MenuBar({ setMechanicVariables, prefs }) {
-    const [setStep, setRep2Clone, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setMechanicVariables
+    const [setStep, setRep2Clone, setBloodMana, setCardsOrInters, setMyJob, setHourglassLocation, setFirstMech, setTower, setPortalClone, setSafePlatform] = setMechanicVariables
     const [prefsOpen, setPrefsOpen, banana, setBanana, uptime, setUptime, size, setSize, mechs, setMechs, role, setRole] = prefs
 
     function reset() {
@@ -9,6 +9,7 @@ export default function MenuBar({ setMechanicVariables, prefs }) {
             setStep(1)
         }
         setRep2Clone(null)
+        setBloodMana(["", ""])
         setCardsOrInters(null)
         setMyJob(null)
         setHourglassLocation(null)
