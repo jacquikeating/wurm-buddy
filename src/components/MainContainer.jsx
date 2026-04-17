@@ -111,7 +111,7 @@ export default function MainContainer() {
         [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
         [`cones & kick`],
         [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
-        [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
+        [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`],
         // Mechs between rep 2 and idyllic
         [`check debuff`, `${mitPlan[2]}`], // SGE: kera
         [`${bloodMana[0]}`],
@@ -128,7 +128,7 @@ export default function MainContainer() {
         // [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
         // [`cones & kick`],
         // [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
-        // [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`]
+        // [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`],
 
         // // Blood Mana
         // [`check debuff`, `${mitPlan[2]}`], // SGE: kera
@@ -136,7 +136,7 @@ export default function MainContainer() {
         // [`${bloodMana[1]}`],
         // [`near/far`, `${mitPlan[3]}`], // SGE: kera
         // [`tankbuster`], // SGE: zoe eprog holos
-        // [`${mitPlan[4]}`] // SGE: kera
+        // [`${mitPlan[4]}`], // SGE: kera
 
         // Idyllic
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
