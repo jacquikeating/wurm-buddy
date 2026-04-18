@@ -117,7 +117,7 @@ export default function MainContainer() {
         [`${bloodMana[0]}`],
         [`${bloodMana[1]}`],
         [`near/far`, `${mitPlan[3]}`], // SGE: kera
-        [`tankbuster`], // SGE: zoe eprog holos
+        [`tankbuster`, `burst`], // SGE: zoe eprog holos
         [`${mitPlan[4]}`] // SGE: kera
     ]   
 
@@ -135,7 +135,7 @@ export default function MainContainer() {
         // [`${bloodMana[0]}`],
         // [`${bloodMana[1]}`],
         // [`near/far`, `${mitPlan[3]}`], // SGE: kera
-        // [`tankbuster`], // SGE: zoe eprog holos
+        // [`tankbuster`, `burst`], // SGE: zoe eprog holos
         // [`${mitPlan[4]}`], // SGE: kera
 
         // Idyllic
@@ -144,7 +144,7 @@ export default function MainContainer() {
         [`${hourglassLocation || "?"}`], // Which side is safe for first clone telegraph
         [`${platform}`, `${mitPlan[2]}`], // Which side to go for tower platforms; mit reminder
         [`mid`, `${instructions[1]} after`], // Reminder to go mid after tower assignments; sneak preview of your first S/D spot
-        [`${instructions[1]}`, `${mitPlan[3]}`], // First S/D (stack/def) spot; mit reminder
+        [`${instructions[1]}`, `burst`, `${mitPlan[3]}`], // First S/D (stack/def) spot; mit reminder
         [`${instructions[2]}`, `${mitPlan[3]}`], // Second S/D spot (non-healers can use same mit message for every hit)
         [`${instructions[3]}`, `${mitPlan[3]}`], // Third S/D spot
         [`${instructions[4]}`, `${mitPlan[3]}`], // Fourth S/D spot
@@ -227,7 +227,7 @@ export default function MainContainer() {
             case 16: return <Output messages={outputMessages[3]} timeout={10000} audio={[`/platform.wav`]} />;
             case 17: return <Screen5 setTower={setTower} timeout={10000} role={role} />;
             case 18: return <Output messages={outputMessages[4]} timeout={6000} />; // after tower
-            case 19: return <Output messages={outputMessages[5]} timeout={6000} audio={[`/${instructions[1]}.wav`]} />; // running to first mech
+            case 19: return <Output messages={outputMessages[5]} timeout={6000} audio={[`/${instructions[1]}.wav`, `/burst.wav`]} />; // running to first mech
             case 20: return <Output messages={outputMessages[6]} timeout={5000} audio={[`/${instructions[2]}.wav`]} />; // btwn 1st and 2nd
             case 21: return <Output messages={outputMessages[7]} timeout={5000} audio={[`/${instructions[3]}.wav`]} />; // btwn 2nd and 3rd
             case 22: return <Output messages={outputMessages[8]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
