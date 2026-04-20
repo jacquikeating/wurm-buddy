@@ -131,12 +131,12 @@ export default function MainContainer() {
         [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`],
 
         // Blood Mana
-        [`check debuff`, `${mitPlan[2]}`], // SGE: kera
+        [`check debuff`, `${mitPlan[2]}`],
         [`${bloodMana[0]}`],
         [`${bloodMana[1]}`],
-        [`near/far`, `${mitPlan[3]}`], // SGE: kera
-        [`tankbuster`, `burst`], // SGE: zoe eprog holos
-        [`${mitPlan[4]}`], // SGE: kera
+        [`near/far`, `${mitPlan[3]}`],
+        [`tankbuster`, `burst`],
+        [`${mitPlan[4]}`],
 
         // Idyllic
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
@@ -164,6 +164,23 @@ export default function MainContainer() {
     ]
 
     const outputSGE = [
+        // Rep 2
+        [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
+        [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`, `phil holos kera`],
+        [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
+        [`cones & kick`],
+        [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `zoe pan kera`],
+        [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`],
+
+        // Blood Mana
+        [`check debuff`, `kera`],
+        [`${bloodMana[0]}`],
+        [`${bloodMana[1]}`],
+        [`near/far`, `kera`],
+        [`tankbuster`, `burst`, `zoe eprog holos`],
+        [`kera`],
+
+        // Idyllic
         [`${myJob?.quadrant}`, `${myJob?.quadRel}`, `${getFirstMessage(uptime, myJob)}`],
         [`${myJob?.quadrant}`, `${myJob?.quadRel}`, `${myJob?.mechanic}`],
         [`${hourglassLocation || "?"}`, `eprog`],
@@ -181,6 +198,8 @@ export default function MainContainer() {
         [`${safePlatform[0]}, ${safePlatform[1]}`, `ixo`],
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`, `eprog`],
         [`${portalClone}`, `eprog kera`],
+
+        // Enrage
         [`pot soon!`],
         [`phys eprog holos`, `zoe eprog`],
         [`pan kera`]
