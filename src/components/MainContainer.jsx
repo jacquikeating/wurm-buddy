@@ -131,12 +131,13 @@ export default function MainContainer() {
         [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`],
 
         // Blood Mana
-        [`check debuff`, `${mitPlan[2]}`],
-        [`${bloodMana[0]}`],
-        [`${bloodMana[1]}`],
-        [`near/far`, `${mitPlan[3]}`],
-        [`tankbuster`, `burst`],
-        [`${mitPlan[4]}`],
+        [`check debuff`, `${mitPlan[2]}`], // 3:19 in example vid (show for 9s)
+        // BloodMana screen 3:28 (maybe show for 10s?)
+        [`${bloodMana[0]}`], // first explosion 3:51 (5s)
+        [`${bloodMana[1]}`], // second 3:56 (3s?)
+        [`near/far`, `${mitPlan[3]}`], // resolves 4:02 + 4:10
+        [`tankbuster`, `burst`], // tb cast starts 4:13 (show for 15s)
+        [`${mitPlan[4]}`], // idyllic cast starts 4:36 ()
 
         // Idyllic
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
