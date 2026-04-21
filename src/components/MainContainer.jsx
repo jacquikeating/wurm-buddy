@@ -36,7 +36,7 @@ export default function MainContainer() {
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
     const [step, setStep] = useState(1)
     const [rep2Clone, setRep2Clone] = useState(null)
-    const [bloodMana, setBloodMana] = useState(["", ""])
+    const [bloodMana, setBloodMana] = useState(["", "", "", ""])
     const [cardsOrInters, setCardsOrInters] = useState(null)
     const [myJob, setMyJob] = useState(null)
     const [instructions, setInstructions] = useState(["", "", "", "", ""])
@@ -133,9 +133,10 @@ export default function MainContainer() {
         // Blood Mana
         [`check debuff`, `${mitPlan[2]}`], // 3:19 in example vid (show for 9s)
         // BloodMana screen 3:28 (maybe show for 10s?)
-        [`${bloodMana[0]}`], // first explosion 3:51 (5s)
-        [`${bloodMana[1]}`], // second 3:56 (3s?)
-        [`near/far`, `${mitPlan[3]}`], // resolves 4:02 + 4:10
+        [`betas ${bloodMana[0]}`, `${bloodMana[1]}`], // which gummies to eat
+        [`${bloodMana[2]}`], // first explosion 3:51 (5s)
+        [`${bloodMana[3]}`], // second 3:56 (3s?)
+        [`near far`, `${mitPlan[3]}`], // resolves 4:02 + 4:10
         [`tankbuster`, `burst`], // tb cast starts 4:13 (show for 15s)
         [`${mitPlan[4]}`], // idyllic cast starts 4:36 ()
 
@@ -175,8 +176,9 @@ export default function MainContainer() {
 
         // Blood Mana
         [`check debuff`, `kera`],
-        [`${bloodMana[0]}`],
-        [`${bloodMana[1]}`],
+        [`betas ${bloodMana[0]}`, `${bloodMana[1]}`],
+        [`${bloodMana[2]}`],
+        [`${bloodMana[3]}`],
         [`near/far`, `kera`],
         [`tankbuster`, `burst`, `zoe eprog holos`],
         [`kera`],

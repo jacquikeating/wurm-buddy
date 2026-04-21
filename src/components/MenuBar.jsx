@@ -9,7 +9,7 @@ export default function MenuBar({ setMechanicVariables, prefs }) {
             setStep(1)
         }
         setRep2Clone(null)
-        setBloodMana(["", ""])
+        setBloodMana(["", "", "", ""])
         setCardsOrInters(null)
         setMyJob(null)
         setHourglassLocation(null)

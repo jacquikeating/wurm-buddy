@@ -25,14 +25,14 @@ export default function BloodMana({ setBloodMana /* , timeout */ }) {
     return (
         <div className="blood-mana side-split">
            <div className="side">
-                <div className="option" onClick={() => handleInput(["W", "E"])}>
+                <div className="option" onClick={() => handleInput(["E", "green orange", "W", "E"])}>
                     <span className="option-name">Green/Orange</span>
                     <div className="dots">
                         <div className="dot green"></div>
                         <div className="dot orange"></div>
                     </div>
                 </div>
-                <div className="option" onClick={() => handleInput(["E", "W"])}>
+                <div className="option" onClick={() => handleInput(["E", "blue purple", "E", "W"])}>
                     <span className="option-name">Blue/Purple</span>
                     <div className="dots">
                         <div className="dot blue"></div>
@@ -41,14 +41,14 @@ export default function BloodMana({ setBloodMana /* , timeout */ }) {
                 </div>
            </div>
             <div className="side">
-                <div className="option" onClick={() => handleInput(["E", "W"])}>
+                <div className="option" onClick={() => handleInput(["W", "green orange", "E", "W"])}>
                     <span className="option-name">Green/Orange</span>
                     <div className="dots">
                         <div className="dot green"></div>
                         <div className="dot orange"></div>
                     </div>
                 </div>
-                <div className="option" onClick={() => handleInput(["W", "E"])}>
+                <div className="option" onClick={() => handleInput(["W", "blue purple", "W", "E"])}>
                     <span className="option-name">Blue/Purple</span>
                     <div className="dots">
                         <div className="dot blue"></div>
