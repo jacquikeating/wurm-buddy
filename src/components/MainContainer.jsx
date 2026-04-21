@@ -34,7 +34,7 @@ export default function MainContainer() {
     // const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
 
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(10)
+    const [step, setStep] = useState(1)
     const [rep2Clone, setRep2Clone] = useState(null)
     const [bloodMana, setBloodMana] = useState(["", "", "", ""])
     const [cardsOrInters, setCardsOrInters] = useState(null)
