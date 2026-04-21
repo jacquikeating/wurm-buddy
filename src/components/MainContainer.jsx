@@ -249,35 +249,35 @@ export default function MainContainer() {
             case 17: return <Output messages={[` `]} timeout={11000} />; // downtime between tb and idyllic
             case 18: return <Output messages={outputMessages[12]} timeout={10000} />;
             case 19: return <Screen1 setCardsOrInters={setCardsOrInters} mechs={mechs} />;
-            // case 10: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
-            // case 11: return <Output messages={outputMessages[12]} timeout={18000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
-            // case 12: return <Screen3 setHourglassLocation={setHourglassLocation} timeout={8000} />;
-            // case 13: return <Output messages={outputMessages[13]} timeout={22000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${myJob.mechanic}.wav`]} delay={12000} />;
-            // case 14: return <Screen4 setFirstMech={setFirstMech} timeout={4000} />;
-            // case 15: return <Output messages={outputMessages[14]} timeout={6000} audio={[`/${hourglassLocation}.wav`]} />;
-            // case 16: return <Output messages={outputMessages[15]} timeout={10000} audio={[`/platform.wav`]} />;
-            // case 17: return <Screen5 setTower={setTower} timeout={10000} role={role} />;
-            // case 18: return <Output messages={outputMessages[16]} timeout={6000} />; // after tower
-            // case 19: return <Output messages={outputMessages[17]} timeout={6000} audio={[`/${instructions[1]}.wav`, `/burst.wav`]} />; // running to first mech
-            // case 20: return <Output messages={outputMessages[18]} timeout={5000} audio={[`/${instructions[2]}.wav`]} />; // btwn 1st and 2nd
-            // case 21: return <Output messages={outputMessages[19]} timeout={5000} audio={[`/${instructions[3]}.wav`]} />; // btwn 2nd and 3rd
-            // case 22: return <Output messages={outputMessages[20]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
-            // case 23: return <Output messages={outputMessages[21]} timeout={5000} audio={[`/platform.wav`]} />; // otw to tower spots
-            // case 24: return <Output messages={outputMessages[22]} timeout={8000} audio={[`/${tower[0]}.wav`, `/${tower[2]}.wav`]} />; // tower type
-            // case 25: return <Output messages={outputMessages[23]} timeout={5000} audio={[`/${tower[3]}.wav`, `/${tower[4]}.wav`, role == "SGE" && "/dooms.wav"]} delay={5000} />; // esuna & spread spot
-            // case 26: return <Output messages={outputMessages[24]} timeout={6000} />; // just spread spot
-            // case 27: return <Output messages={[` `]} timeout={9000} />; // chilling waiting for clones
-            // case 28: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} timeout={5000} />;
-            // case 29: return <Screen7 portalClone={portalClone} setSafePlatform={setSafePlatform} timeout={5000} />;
-            // case 30: return <Output messages={outputMessages[25]} timeout={12000} audio={[`/${cardsOrInters}.wav`]} />; // where to go for first stacks
-            // case 31: return <Output messages={outputMessages[26]} timeout={12000} audio={[`/${safePlatform[0]}.wav`, `/${safePlatform[1]}.wav`]} />; // safe platform
-            // case 32: return <Output messages={outputMessages[27]} timeout={10000} audio={[`/${cardsOrInters == "cards" ? ("intercards.wav") : ("cards.wav")}`]} />; // second stacks
-            // case 33: return <Output messages={outputMessages[28]} timeout={12000} audio={[`/${portalClone}.wav`]} />; // portal clone --> castbar damage
-            // case 34: return <Output messages={[` `]} timeout={7000} />; // just hit boss time
-            // case 35: return <Output messages={outputMessages[29]} timeout={18000} audio={[`/pot soon.wav`]} />; // pot reminder for 8:00 burst
-            // case 36: return <Output messages={[` `]} timeout={10000} />; // just hit boss time
-            // case 37: return <Output messages={outputMessages[30]} timeout={10000} />; // arcadian hell 1
-            // case 38: return <Output messages={outputMessages[31]} timeout={20000} />; // arcadian hell 2
+            case 20: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
+            case 21: return <Output messages={outputMessages[12]} timeout={18000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
+            case 22: return <Screen3 setHourglassLocation={setHourglassLocation} timeout={8000} />;
+            case 23: return <Output messages={outputMessages[13]} timeout={22000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${myJob.mechanic}.wav`]} delay={12000} />;
+            case 24: return <Screen4 setFirstMech={setFirstMech} timeout={4000} />;
+            case 25: return <Output messages={outputMessages[14]} timeout={6000} audio={[`/${hourglassLocation}.wav`]} />;
+            case 26: return <Output messages={outputMessages[15]} timeout={10000} audio={[`/platform.wav`]} />;
+            case 27: return <Screen5 setTower={setTower} timeout={10000} role={role} />;
+            case 28: return <Output messages={outputMessages[16]} timeout={6000} />; // after tower
+            case 29: return <Output messages={outputMessages[17]} timeout={6000} audio={[`/${instructions[1]}.wav`, `/burst.wav`]} />; // running to first mech
+            case 30: return <Output messages={outputMessages[18]} timeout={5000} audio={[`/${instructions[2]}.wav`]} />; // btwn 1st and 2nd
+            case 31: return <Output messages={outputMessages[19]} timeout={5000} audio={[`/${instructions[3]}.wav`]} />; // btwn 2nd and 3rd
+            case 32: return <Output messages={outputMessages[20]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
+            case 33: return <Output messages={outputMessages[21]} timeout={5000} audio={[`/platform.wav`]} />; // otw to tower spots
+            case 34: return <Output messages={outputMessages[22]} timeout={8000} audio={[`/${tower[0]}.wav`, `/${tower[2]}.wav`]} />; // tower type
+            case 35: return <Output messages={outputMessages[23]} timeout={5000} audio={[`/${tower[3]}.wav`, `/${tower[4]}.wav`, role == "SGE" && "/dooms.wav"]} delay={5000} />; // esuna & spread spot
+            case 36: return <Output messages={outputMessages[24]} timeout={6000} />; // just spread spot
+            case 37: return <Output messages={[` `]} timeout={9000} />; // chilling waiting for clones
+            case 38: return <Screen6 hourglassLocation={hourglassLocation} setPortalClone={setPortalClone} timeout={5000} />;
+            case 39: return <Screen7 portalClone={portalClone} setSafePlatform={setSafePlatform} timeout={5000} />;
+            case 40: return <Output messages={outputMessages[25]} timeout={12000} audio={[`/${cardsOrInters}.wav`]} />; // where to go for first stacks
+            case 41: return <Output messages={outputMessages[26]} timeout={12000} audio={[`/${safePlatform[0]}.wav`, `/${safePlatform[1]}.wav`]} />; // safe platform
+            case 42: return <Output messages={outputMessages[27]} timeout={10000} audio={[`/${cardsOrInters == "cards" ? ("intercards.wav") : ("cards.wav")}`]} />; // second stacks
+            case 43: return <Output messages={outputMessages[28]} timeout={12000} audio={[`/${portalClone}.wav`]} />; // portal clone --> castbar damage
+            case 44: return <Output messages={[` `]} timeout={7000} />; // just hit boss time
+            case 45: return <Output messages={outputMessages[29]} timeout={18000} audio={[`/pot soon.wav`]} />; // pot reminder for 8:00 burst
+            case 46: return <Output messages={[` `]} timeout={10000} />; // just hit boss time
+            case 47: return <Output messages={outputMessages[30]} timeout={10000} />; // arcadian hell 1
+            case 48: return <Output messages={outputMessages[31]} timeout={20000} />; // arcadian hell 2
         }
     }
 
