@@ -68,7 +68,7 @@ export default function MainContainer() {
     // OUTPUT MESSAGES
 
     // Each array item represents a mechanic in the mit plan:
-    // rep 2 start, reenact, blood mana, near/far + rw, idyllic 1, platform break, stacks/defs, clone stacks, idyllic 2, hell 1, hell 2
+    // 0 rep 2 start, 1 reenact, 2 blood mana, 3 near/far + rw, 4 idyllic 1, 5 platform break, 6 stacks/defs, 7 clone stacks, 8 idyllic 2, 9 hell 1, 10 hell 2
     let mitPlan = ["", "", "", "", "", "", "", "", "", "", ""] // Empty strings for generic roles
     let platform = "platform" // Fallback for generic roles
 
@@ -144,26 +144,26 @@ export default function MainContainer() {
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${getFirstMessage(uptime, myJob)}`], // What quadrant to go to; what job you'll have later
         [`${myJob?.quadrant} (${myJob?.quadRel})`, `${myJob?.mechanic}`], // Quadrant and tether to take
         [`${hourglassLocation || "?"}`], // Which side is safe for first clone telegraph
-        [`${platform}`, `${mitPlan[2]}`], // Which side to go for tower platforms; mit reminder
+        [`${platform}`, `${mitPlan[5]}`], // Which side to go for tower platforms; mit reminder
         [`mid`, `${instructions[1]} after`], // Reminder to go mid after tower assignments; sneak preview of your first S/D spot
-        [`${instructions[1]}`, `burst`, `${mitPlan[3]}`], // First S/D (stack/def) spot; mit reminder
-        [`${instructions[2]}`, `${mitPlan[3]}`], // Second S/D spot (non-healers can use same mit message for every hit)
-        [`${instructions[3]}`, `${mitPlan[3]}`], // Third S/D spot
-        [`${instructions[4]}`, `${mitPlan[3]}`], // Fourth S/D spot
+        [`${instructions[1]}`, `burst`, `${mitPlan[6]}`], // First S/D (stack/def) spot; mit reminder
+        [`${instructions[2]}`, `${mitPlan[6]}`], // Second S/D spot (non-healers can use same mit message for every hit)
+        [`${instructions[3]}`, `${mitPlan[6]}`], // Third S/D spot
+        [`${instructions[4]}`, `${mitPlan[6]}`], // Fourth S/D spot
         [`${platform}`], // Which side to go for tower platforms
         [`${tower[0]}`, `${tower[2]}`], // Tower side; tower mechanic
         [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads 
         [`${tower[3]}`, `${tower[4]}`], // Where to go for cone spreads
-        [`${cardsOrInters}`, `${mitPlan[4]}`], // Where to go for first clone stacks; mit reminder
+        [`${cardsOrInters}`, `${mitPlan[7]}`], // Where to go for first clone stacks; mit reminder
         [`${safePlatform[0]}`, `${safePlatform[1]}`], // Which platform (and where) will be safe for clone telegraph
         [`${cardsOrInters == "cards" ? ("inters") : ("cards")}`], // Where to go for second clone stacks
-        [`${portalClone}`, `${mitPlan[5]}`], // Where to go to dodge the final clone telegraph
+        [`${portalClone}`, `${mitPlan[8]}`], // Where to go to dodge the final clone telegraph
 
         // Enrage
         [`tankbuster`],
         [`pot soon!`], // Pot reminder
-        [`${mitPlan[6]}`], // Mits for Arcadian Hell 1
-        [`${mitPlan[7]}`] // Mits for Arcadian Hell 2
+        [`${mitPlan[9]}`], // Mits for Arcadian Hell 1
+        [`${mitPlan[10]}`] // Mits for Arcadian Hell 2
     ]
 
     const outputSGE = [
