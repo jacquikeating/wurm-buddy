@@ -599,8 +599,8 @@ main {
         }
 
         .dot {
-          width: 30px;
-          height: 30px;
+          width: 45px;
+          height: 45px;
           border-radius: 100%;
 
           &.green {
