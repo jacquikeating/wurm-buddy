@@ -26,14 +26,14 @@ export default function BloodMana({ setBloodMana /* , timeout */ }) {
         <div className="blood-mana side-split">
            <div className="side">
                 <div className="option" onClick={() => handleInput(["E", "green orange", "W", "E"])}>
-                    <span className="option-name">Green/Orange</span>
+                    <span className="option-name">Green/Orange<br />West</span>
                     <div className="dots">
                         <div className="dot green"></div>
                         <div className="dot orange"></div>
                     </div>
                 </div>
                 <div className="option" onClick={() => handleInput(["E", "blue purple", "E", "W"])}>
-                    <span className="option-name">Blue/Purple</span>
+                    <span className="option-name">Blue/Purple<br />West</span>
                     <div className="dots">
                         <div className="dot blue"></div>
                         <div className="dot purple"></div>
@@ -42,17 +42,17 @@ export default function BloodMana({ setBloodMana /* , timeout */ }) {
            </div>
             <div className="side">
                 <div className="option" onClick={() => handleInput(["W", "green orange", "E", "W"])}>
-                    <span className="option-name">Green/Orange</span>
+                    <span className="option-name">Green/Orange<br />East</span>
                     <div className="dots">
-                        <div className="dot green"></div>
                         <div className="dot orange"></div>
+                        <div className="dot green"></div>
                     </div>
                 </div>
                 <div className="option" onClick={() => handleInput(["W", "blue purple", "W", "E"])}>
-                    <span className="option-name">Blue/Purple</span>
+                    <span className="option-name">Blue/Purple<br />East</span>
                     <div className="dots">
-                        <div className="dot blue"></div>
                         <div className="dot purple"></div>
+                        <div className="dot blue"></div>
                     </div>
                 </div>
            </div>
