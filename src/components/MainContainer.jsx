@@ -16,25 +16,7 @@ import { StepContext } from "../utils/context.js"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
-    // // PREFILLED VARIABLES FOR TIMELINE DEVELOPMENT PURPOSES
-    // const [step, setStep] = useState(10)
-    // const [cardsOrInters, setCardsOrInters] = useState("cards")
-    // const [myJob, setMyJob] = useState({
-    //         location: "SE",
-    //         quadrant: 4,
-    //         quadRel: "top left",
-    //         mechanic: "stack",
-    //         group: 2
-    //     })
-    // const [instructions, setInstructions] = useState(["", "", "", "", ""])
-    // const [hourglassLocation, setHourglassLocation] = useState("south")
-    // const [firstMech, setFirstMech] = useState("defs")
-    // const [tower, setTower] = useState(["left", "fire", "pyretic", "S", "platform edge"])
-    // const [portalClone, setPortalClone] = useState("sides safe")
-    // const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
-
-    // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(10)
+    const [step, setStep] = useState(1)
     const [rep2Clone, setRep2Clone] = useState(null)
     const [bloodMana, setBloodMana] = useState(["", "", "", ""])
     const [cardsOrInters, setCardsOrInters] = useState(null)
@@ -104,22 +86,6 @@ export default function MainContainer() {
     }
 
     const coneMsg = banana ? "inside boss ring" : "face N"
-
-    const rep2Output = [
-        [`${rep2Clone?.mechanic}`, `${rep2Clone?.tether}`],
-        [`${rep2Clone?.initialPos[0]}`, `${rep2Clone?.initialPos[1]}`, `${mitPlan[0]}`],
-        [`stack ${rep2Clone?.group}`, `${rep2Clone?.mechanic == "cone" ? coneMsg : ""}`, `2 min burst`],
-        [`cones & kick`],
-        [`${rep2Clone?.reenactPos1[0]}`, `${rep2Clone?.reenactPos1[1]}`, `${mitPlan[1]}`],
-        [`${rep2Clone?.reenactPos2[0]}`, `${rep2Clone?.reenactPos2[1]}`],
-        // Mechs between rep 2 and idyllic
-        [`check debuff`, `${mitPlan[2]}`], // SGE: kera
-        [`${bloodMana[0]}`],
-        [`${bloodMana[1]}`],
-        [`near/far`, `${mitPlan[3]}`], // SGE: kera
-        [`tankbuster`, `burst`], // SGE: zoe eprog holos
-        [`${mitPlan[4]}`] // SGE: kera
-    ]   
 
     const outputGeneric = [
         // Rep 2
@@ -244,8 +210,8 @@ export default function MainContainer() {
             case 10: return <BloodMana setBloodMana={setBloodMana} timeout={10000} />;
             case 11: return <Output messages={outputMessages[7]} timeout={7000} audio={[`/betas.wav`, `/${bloodMana[0]}.wav`, `/${bloodMana[1]}.wav`]} />;
             case 12: return <Output messages={[` `]} timeout={3000} />; // brief downtime
-            case 13: return <Output messages={outputMessages[8]} timeout={11000} audio={[`/${bloodMana[2]}.wav`]} />; // , `/safe.wav`
-            case 14: return <Output messages={outputMessages[9]} timeout={7000} audio={[`/${bloodMana[3]}.wav`]} />; // , `/safe.wav`
+            case 13: return <Output messages={outputMessages[8]} timeout={11000} audio={[`/${bloodMana[2]}.wav`]} />;
+            case 14: return <Output messages={outputMessages[9]} timeout={7000} audio={[`/${bloodMana[3]}.wav`]} />;
             case 15: return <Output messages={outputMessages[10]} timeout={15000} audio={[`/near far.wav`]} />;
             case 16: return <Output messages={outputMessages[11]} timeout={10000} audio={[`/tankbuster.wav`, `/burst.wav`]} />; 
             case 17: return <Output messages={[` `]} timeout={11000} />; // downtime between tb and idyllic
