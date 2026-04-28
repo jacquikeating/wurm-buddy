@@ -34,7 +34,7 @@ export default function MainContainer() {
     // const [safePlatform, setSafePlatform] = useState(["west platform", "north safe"])
 
     // // DEFAULT EMPTY VARIABLES - USE WHILE NOT ACTIVELY DEVELOPING TIMELINE
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(10)
     const [rep2Clone, setRep2Clone] = useState(null)
     const [bloodMana, setBloodMana] = useState(["", "", "", ""])
     const [cardsOrInters, setCardsOrInters] = useState(null)
@@ -240,14 +240,14 @@ export default function MainContainer() {
             case 6: return <Output messages={outputMessages[4]} timeout={20000} audio={[`/${rep2Clone?.reenactPos1[0]}.wav`]} />;
             case 7: return <Output messages={outputMessages[5]} timeout={15000} audio={[`/${rep2Clone?.reenactPos2[0]}.wav`]} />;
             case 8: return <Output messages={[` `]} timeout={11000} />; // downtime between rep 2 and blood mana
-            case 9: return <Output messages={outputMessages[6]} timeout={8000} />; // audio={[`/check debuff.wav`]}
+            case 9: return <Output messages={outputMessages[6]} timeout={8000} audio={[`/check debuff.wav`]} />;
             case 10: return <BloodMana setBloodMana={setBloodMana} timeout={10000} />;
-            case 11: return <Output messages={outputMessages[7]} timeout={7000} audio={[`/${bloodMana[0]}.wav`]} />; // `/betas.wav`, `/${bloodMana[0]}.wav`, `/${bloodMana[1]}.wav`
+            case 11: return <Output messages={outputMessages[7]} timeout={7000} audio={[`/betas.wav`, `/${bloodMana[0]}.wav`, `/${bloodMana[1]}.wav`]} />;
             case 12: return <Output messages={[` `]} timeout={3000} />; // brief downtime
             case 13: return <Output messages={outputMessages[8]} timeout={11000} audio={[`/${bloodMana[2]}.wav`]} />; // , `/safe.wav`
             case 14: return <Output messages={outputMessages[9]} timeout={7000} audio={[`/${bloodMana[3]}.wav`]} />; // , `/safe.wav`
-            case 15: return <Output messages={outputMessages[10]} timeout={15000} />; // audio={[`/near far.wav`]}"
-            case 16: return <Output messages={outputMessages[11]} timeout={10000} audio={[`/burst.wav`]} />; // `/tankbuster.wav`, 
+            case 15: return <Output messages={outputMessages[10]} timeout={15000} audio={[`/near far.wav`]} />;
+            case 16: return <Output messages={outputMessages[11]} timeout={10000} audio={[`/tankbuster.wav`, `/burst.wav`]} />; 
             case 17: return <Output messages={[` `]} timeout={11000} />; // downtime between tb and idyllic
             case 18: return <Output messages={outputMessages[12]} timeout={10000} />;
             case 19: return <Screen1 setCardsOrInters={setCardsOrInters} mechs={mechs} />;
