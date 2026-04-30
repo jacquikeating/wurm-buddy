@@ -3,19 +3,19 @@ import { StepContext } from "../utils/context.js"
 import AudioPlayer from "./AudioPlayer.jsx"
 
 
-export default function BloodMana({ setBloodMana /* , timeout */ }) {
+export default function BloodMana({ setBloodMana, timeout }) {
     const { step, setStep } = useContext(StepContext)
     const [timesUp, setTimesUp] = useState(false)
 
-    // useEffect(() => {
-    //     const reminderTimer = setTimeout(() => {
-    //         setTimesUp(true)
-    //     }, timeout)
+    useEffect(() => {
+        const reminderTimer = setTimeout(() => {
+            setTimesUp(true)
+        }, timeout)
 
-    //     return () => {
-    //         clearTimeout(reminderTimer)
-    //     }
-    // }, [])
+        return () => {
+            clearTimeout(reminderTimer)
+        }
+    }, [])
 
     function handleInput(selectedOption) {
         setBloodMana(selectedOption)
