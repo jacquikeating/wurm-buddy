@@ -57,31 +57,31 @@ export default function MainContainer() {
     switch (role) {
         case "MT": 
             mitPlan =  ["rep", "party mit", "", "rep", "party mit", "rep", "party mit", "rep", "party mit", "rep", ""]
-            platform = "west"
+            platform = "W"
             break;
         case "OT":
             mitPlan = ["party mit", "rep", "", "party mit", "rep", "party mit", "", "party mit", "rep", "", "rep + party mit"]
-            platform = "east"
+            platform = "E"
             break;
         case "M1":
             mitPlan = ["feint", "", "", "feint", "", "feint", "personals", "", "feint", "", ""]
-            platform = "west"
+            platform = "W"
             break;
         case "M2":
             mitPlan = ["", "feint", "", "", "feint", "", "personals", "feint", "", "", "feint"]
-            platform = "east"
+            platform = "E"
             break;
         case "R1":
             mitPlan = ["party mit", "", "", "party mit", "", "party mit", "personals", "party mit", "", "", "party mit"]
-            platform = "west"
+            platform = "W"
             break;
         case "R2":
             mitPlan = ["addle", "", "", "addle", "", "addle", "personals", "", "addle", "", ""]
-            platform = "east"
+            platform = "E"
             break;
         case "H1":
             mitPlan = ["3 min cd", "10% mit + 2 min cd", "", "10% mit", "", "10% mit", "use all cds", "", "10% mit", "2 min cd", "10% mit"]
-            platform = "west"
+            platform = "W"
             break;        
     }
 
@@ -179,7 +179,7 @@ export default function MainContainer() {
     let outputMessages = outputGeneric
     if (role == "SGE") {
         outputMessages = outputSGE
-        platform = "east"
+        platform = "E"
     }
 
     useEffect(() => {
@@ -223,14 +223,14 @@ export default function MainContainer() {
             case 23: return <Output messages={outputMessages[14]} timeout={22000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${myJob.mechanic}.wav`]} delay={12000} />;
             case 24: return <Screen4 setFirstMech={setFirstMech} timeout={4000} />;
             case 25: return <Output messages={outputMessages[15]} timeout={6000} audio={[`/${hourglassLocation}.wav`]} />;
-            case 26: return <Output messages={outputMessages[16]} timeout={10000} audio={[`/platform.wav`]} />;
+            case 26: return <Output messages={outputMessages[16]} timeout={10000} audio={[`/${platform}.wav`]} />;
             case 27: return <Screen5 setTower={setTower} timeout={10000} role={role} />;
             case 28: return <Output messages={outputMessages[17]} timeout={6000} />; // after tower
             case 29: return <Output messages={outputMessages[18]} timeout={6000} audio={[`/${instructions[1]}.wav`, `/burst.wav`]} />; // running to first mech
             case 30: return <Output messages={outputMessages[19]} timeout={5000} audio={[`/${instructions[2]}.wav`]} />; // btwn 1st and 2nd
             case 31: return <Output messages={outputMessages[20]} timeout={5000} audio={[`/${instructions[3]}.wav`]} />; // btwn 2nd and 3rd
             case 32: return <Output messages={outputMessages[21]} timeout={6000} audio={[`/${instructions[4]}.wav`]} />; // btwn 3rd and 4th
-            case 33: return <Output messages={outputMessages[22]} timeout={5000} audio={[`/platform.wav`]} />; // otw to tower spots
+            case 33: return <Output messages={outputMessages[22]} timeout={5000} audio={[`/${platform}.wav`]} />; // otw to tower spots
             case 34: return <Output messages={outputMessages[23]} timeout={8000} audio={[`/${tower[0]}.wav`, `/${tower[2]}.wav`]} />; // tower type
             case 35: return <Output messages={outputMessages[24]} timeout={5000} audio={[`/${tower[3]}.wav`, `/${tower[4]}.wav`, role == "SGE" && "/dooms.wav"]} delay={5000} />; // esuna & spread spot
             case 36: return <Output messages={outputMessages[25]} timeout={6000} />; // just spread spot
