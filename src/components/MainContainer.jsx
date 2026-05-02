@@ -210,8 +210,8 @@ export default function MainContainer() {
             case 10: return <BloodMana setBloodMana={setBloodMana} timeout={10000} />;
             case 11: return <Output messages={outputMessages[7]} timeout={7000} audio={[`/betas.wav`, `/${bloodMana[0]}.wav`, `/${bloodMana[1]}.wav`]} />;
             case 12: return <Output messages={[` `]} timeout={3000} />; // brief downtime
-            case 13: return <Output messages={outputMessages[8]} timeout={11000} audio={[`/${bloodMana[2]}.wav`]} />;
-            case 14: return <Output messages={outputMessages[9]} timeout={7000} audio={[`/${bloodMana[3]}.wav`]} />;
+            case 13: return <Output messages={outputMessages[8]} timeout={11000} audio={[`/${bloodMana[2]}.wav`, `/safe.wav`]} />;
+            case 14: return <Output messages={outputMessages[9]} timeout={7000} audio={[`/${bloodMana[3]}.wav`, `/safe.wav`]} />;
             case 15: return <Output messages={outputMessages[10]} timeout={15000} audio={[`/near far.wav`]} />;
             case 16: return <Output messages={outputMessages[11]} timeout={10000} audio={[`/tankbuster.wav`, `/burst.wav`]} />; 
             case 17: return <Output messages={[` `]} timeout={11000} />; // downtime between tb and idyllic
