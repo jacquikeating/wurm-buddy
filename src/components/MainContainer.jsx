@@ -216,7 +216,7 @@ export default function MainContainer() {
             case 16: return <Output messages={outputMessages[11]} timeout={10000} audio={[`/tankbuster.wav`, `/burst.wav`]} />; 
             case 17: return <Output messages={[` `]} timeout={11000} />; // downtime between tb and idyllic
             case 18: return <Output messages={outputMessages[12]} timeout={10000} />;
-            case 19: return <Screen1 setCardsOrInters={setCardsOrInters} mechs={mechs} />;
+            case 19: return <Screen1 setCardsOrInters={setCardsOrInters} mechs={mechs} timeout={5000} />;
             case 20: return <Screen2 setMyJob={setMyJob} timeout={9000} />;
             case 21: return <Output messages={outputMessages[13]} timeout={18000} audio={[`/${myJob.quadrant}.wav`, `/${myJob.quadRel}.wav`, `${getFirstMessage(uptime, myJob)}.wav`]} />;
             case 22: return <Screen3 setHourglassLocation={setHourglassLocation} timeout={8000} />;
