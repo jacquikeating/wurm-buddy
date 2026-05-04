@@ -4,7 +4,7 @@ export default function MenuBar({ setMechanicVariables, prefs }) {
 
     function reset() {
         if (mechs == "idyllic") {
-            setStep(9)
+            setStep(19)
         } else {
             setStep(1)
         }

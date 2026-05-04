@@ -188,7 +188,7 @@ export default function MainContainer() {
 
     useEffect(() => {
         if (mechs == "idyllic") {
-            setStep(9)
+            setStep(19)
         }
     }, [mechs])
 
