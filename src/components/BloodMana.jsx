@@ -25,7 +25,7 @@ export default function BloodMana({ setBloodMana, timeout }) {
     return (
         <div className="blood-mana side-split">
            <div className="side">
-                <div className="option" onClick={() => handleInput(["E", "green orange", "W", "E"])}>
+                <div className="option" onClick={() => handleInput(["betas E", "green orange", "W safe", "E safe"])}>
                     <span className="option-name">Green/Orange<br />West</span>
                     <div className="dots">
                         <div className="dot green"></div>

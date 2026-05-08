@@ -16,7 +16,7 @@ import { StepContext } from "../utils/context.js"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
-    const [step, setStep] = useState(1)
+    const [step, setStep] = useState(10)
     const [rep2Clone, setRep2Clone] = useState(null)
     const [bloodMana, setBloodMana] = useState(["", "", "", ""])
     const [cardsOrInters, setCardsOrInters] = useState(null)
@@ -99,7 +99,7 @@ export default function MainContainer() {
         // Blood Mana
         [`check debuff`, `${mitPlan[2]}`], // 3:19 in example vid (show for 9s)
         // BloodMana screen 3:28 (maybe show for 10s?)
-        [`betas ${bloodMana[0]}`, `${bloodMana[1]}`], // which gummies to eat
+        [`${bloodMana[0]}`, `${bloodMana[1]}`], // which gummies to eat
         [`${bloodMana[2]}`], // first explosion 3:51 (5s)
         [`${bloodMana[3]}`], // second 3:56 (3s?)
         [`near far`, `${mitPlan[3]}`], // resolves 4:02 + 4:10
@@ -143,7 +143,7 @@ export default function MainContainer() {
 
         // Blood Mana
         [`check debuff`, `kera`],
-        [`betas ${bloodMana[0]}`, `${bloodMana[1]}`],
+        [`${bloodMana[0]}`, `${bloodMana[1]}`],
         [`${bloodMana[2]}`],
         [`${bloodMana[3]}`],
         [`near/far`, `kera`],
@@ -208,10 +208,10 @@ export default function MainContainer() {
             case 8: return <Output messages={[` `]} timeout={11000} />; // downtime between rep 2 and blood mana
             case 9: return <Output messages={outputMessages[6]} timeout={8000} audio={[`/check debuff.wav`]} />;
             case 10: return <BloodMana setBloodMana={setBloodMana} timeout={10000} />;
-            case 11: return <Output messages={outputMessages[7]} timeout={7000} audio={[`/betas.wav`, `/${bloodMana[0]}.wav`, `/${bloodMana[1]}.wav`]} />;
+            case 11: return <Output messages={outputMessages[7]} timeout={7000} audio={[`/${bloodMana[0]}.wav`, `/${bloodMana[1]}.wav`]} />;
             case 12: return <Output messages={[` `]} timeout={3000} />; // brief downtime
-            case 13: return <Output messages={outputMessages[8]} timeout={11000} audio={[`/${bloodMana[2]}.wav`, `/safe.wav`]} />;
-            case 14: return <Output messages={outputMessages[9]} timeout={7000} audio={[`/${bloodMana[3]}.wav`, `/safe.wav`]} />;
+            case 13: return <Output messages={outputMessages[8]} timeout={11000} audio={[`/${bloodMana[2]}.wav`]} />;
+            case 14: return <Output messages={outputMessages[9]} timeout={7000} audio={[`/${bloodMana[3]}.wav`]} />;
             case 15: return <Output messages={outputMessages[10]} timeout={15000} audio={[`/near far.wav`]} />;
             case 16: return <Output messages={outputMessages[11]} timeout={10000} audio={[`/tankbuster.wav`, `/burst.wav`]} />; 
             case 17: return <Output messages={[` `]} timeout={11000} />; // downtime between tb and idyllic
