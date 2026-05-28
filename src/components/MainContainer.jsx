@@ -16,7 +16,7 @@ import { StepContext } from "../utils/context.js"
 import { useState, useEffect } from "react"
 
 export default function MainContainer() {
-    const [step, setStep] = useState(10)
+    const [step, setStep] = useState(1)
     const [rep2Clone, setRep2Clone] = useState(null)
     const [bloodMana, setBloodMana] = useState(["", "", "", ""])
     const [cardsOrInters, setCardsOrInters] = useState(null)
