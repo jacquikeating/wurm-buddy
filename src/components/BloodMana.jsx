@@ -32,7 +32,7 @@ export default function BloodMana({ setBloodMana, timeout }) {
                         <div className="dot orange"></div>
                     </div>
                 </div>
-                <div className="option" onClick={() => handleInput(["E", "blue purple", "E", "W"])}>
+                <div className="option" onClick={() => handleInput(["E", "blue purple", "E safe", "W safe"])}>
                     <span className="option-name">Blue/Purple<br />West</span>
                     <div className="dots">
                         <div className="dot blue"></div>
@@ -41,14 +41,14 @@ export default function BloodMana({ setBloodMana, timeout }) {
                 </div>
            </div>
             <div className="side">
-                <div className="option" onClick={() => handleInput(["W", "green orange", "E", "W"])}>
+                <div className="option" onClick={() => handleInput(["W", "green orange", "E safe", "W safe"])}>
                     <span className="option-name">Green/Orange<br />East</span>
                     <div className="dots">
                         <div className="dot orange"></div>
                         <div className="dot green"></div>
                     </div>
                 </div>
-                <div className="option" onClick={() => handleInput(["W", "blue purple", "W", "E"])}>
+                <div className="option" onClick={() => handleInput(["W", "blue purple", "W safe", "E safe"])}>
                     <span className="option-name">Blue/Purple<br />East</span>
                     <div className="dots">
                         <div className="dot purple"></div>
